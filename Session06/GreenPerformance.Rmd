@@ -5,6 +5,50 @@ date: "2025-02-20"
 ---
 
 
+```{r setup, include=FALSE}
+# Run the below once in the terminal to create the R_Library directory
+#mkdir /workspaces/BBM104/R_Library
+
+# Add this directory for the R library to the search path (Run once in R after R is installed but before any R library is installed)
+#.libPaths("/workspaces/BBM104/R_Library")
+
+# Run the below once to install the necessary packages
+#install.packages("languageserver")
+
+
+
+
+install.packages("/workspaces/BBM104/Session06/stringr_1.5.1.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+#install.packages(c("kableExtra"), dependencies = TRUE, type = "binary")
+#install.packages(c("tidyverse", "lubridate", "kableExtra"), dependencies = TRUE)
+```
+
+```{r}
+packageVersion("languageserver")
+```
+
+```{r}
+# Download the package using wget
+system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
+
+# Install the downloaded package
+install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+
+
+```
+
+
+
+```{r}
+library(stringr)
+# Example: Use the str_length function to check the length of a string
+str_length("test string")
+
+```
+
+
 #q: what does the code chunk below do?
 #A: It loads the necessary libraries and the ESG data.
 
