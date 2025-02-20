@@ -1,0 +1,156 @@
+---
+title: "Setup to run once"
+output: html_document
+date: "2025-02-20"
+---
+
+# Run the below once to install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
+# update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+# install R itself
+sudo apt install --no-install-recommends r-base
+
+
+# Run this chunk once to set up the R environment
+```{r setup, include=FALSE}
+# Install Ubuntu packages harfbuzz and libfribidi
+# harfbuzz is primarily a text shaping library used for rendering text
+# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
+#system("sudo apt-get install libharfbuzz-dev")
+#system("sudo apt-get install libfribidi-dev")
+
+# Create the R_Library directory
+#system("mkdir -p /workspaces/BBM104/R_Library")
+
+# Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
+#.libPaths(c("/workspaces/BBM104/R_library", .libPaths()))
+
+# Run the below  to install the necessary packages
+# Download the package using wget; Install the downloaded package
+#system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
+#install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+```
+
+
+# Run the below once to install the necessary packages
+```{r}
+
+# Make sure this R-library directory is added to the search path
+.libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
+
+# Install packages required for installing rvest
+required_packages <- c('languageserver', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys')
+exact_files <- c('languageserver_0.3.16.tar.gz', 
+'curl_6.2.1.tar.gz', 
+'mime_0.12.tar.gz', 
+'fansi_1.0.6.tar.gz',  
+'pkgconfig_2.0.3.tar.gz', 
+'sys_3.4.3.tar.gz'
+)
+
+for (file in exact_files) {
+  system(paste0("wget https://cran.r-project.org/src/contrib/", file))
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+
+# Install more required packages and rvest
+required_packages <- c('askpass', 'openssl', 'utf8', 'pillar', 'httr', 'selectr', 'tibble', 'rvest', 'remotes')
+exact_files <- c('askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'pillar_1.10.1.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz', 'tibble_3.2.1.tar.gz', 'rvest_1.0.4.tar.gz', 'remotes_2.5.0.tar.gz')
+
+for (file in exact_files) {
+    system(paste0("wget https://cran.r-project.org/src/contrib/", file))
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+
+```
+
+
+```{r}
+system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
+install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+```
+
+
+```{r}
+# Load necessary library
+library(rvest)
+
+# Save the required packages into a vector of strings
+required_packages <- c("bit", "sass", "rappdirs", "base64enc", "fastmap", "cachem", 
+                        "farver", "labeling", "munsell", "RColorBrewer", "viridisLite", "bit64",
+                        "rematch", "memoise", "blob", "DBI", "gtable", "isoband", "scales",
+                       "gargle", "uuid", "googledrive", "ids", "rematch2", "prettyunits",
+                       "bslib", "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
+                       "generics", "timechange", "systemfonts", "textshaping", "clipr", "crayon", 
+                       "vroom", "tzdb", "cellranger", "progress", "rmarkdown", "data.table", "tidyselect",
+                       "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", 
+                       "googlesheets4", "hms", "lubridate", "ragg", "readr", "haven", 
+                       "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr")
+
+# Collect the list of .tar.gz files from the webpage
+url <- "https://cran.r-project.org/src/contrib/"
+page <- read_html(url)
+tar_gz_files <- page %>% html_nodes("a") %>% html_attr("href") %>% 
+                grep("\\.tar\\.gz$", ., value = TRUE)
+
+# Extract the exact full names of the .tar.gz files to be downloaded
+exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
+
+# Start a loop over the list of exact full names of .tar.gz files to download all the files
+for (file in exact_files) {
+  print(paste0(url, file))
+  download.file(paste0(url, file), destfile = file)
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+#install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+# Use remotes::install_local to install all the downloaded packages
+for (file in exact_files) {
+  remotes::install_local(file, dependencies = TRUE)
+}
+
+```
+
+
+```{r}
+system("wget https://cran.r-project.org/src/contrib/rvest_1.0.4.tar.gz")
+install.packages("rvest_1.0.4.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+```
+
+```{r}
+#install.packages(c("kableExtra"), dependencies = TRUE, type = "binary")
+#install.packages(c("tidyverse", "lubridate", "kableExtra"), dependencies = TRUE)
+packageVersion("languageserver")
+```
+
+```{r}
+# Download the package using wget
+system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
+# Install the downloaded package
+install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+
+
+```
+
+
+
+```{r}
+library(stringr)
+# Example: Use the str_length function to check the length of a string
+str_length("test string")
+
+```
