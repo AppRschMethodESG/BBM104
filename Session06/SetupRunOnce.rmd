@@ -19,24 +19,28 @@ sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_
 sudo apt install --no-install-recommends r-base
 
 
-# Run this chunk once to set up the R environment
+# Run this chunk **only once** to set up the R environment
 ```{r setup, include=FALSE}
 # Install Ubuntu packages harfbuzz and libfribidi
 # harfbuzz is primarily a text shaping library used for rendering text
 # fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-#system("sudo apt-get install libharfbuzz-dev")
-#system("sudo apt-get install libfribidi-dev")
+system("sudo apt-get install -y libharfbuzz-dev")
+system("sudo apt-get install -y libfribidi-dev")
 
 # Create the R_Library directory
-#system("mkdir -p /workspaces/BBM104/R_Library")
+system("mkdir -p /workspaces/BBM104/R_Library")
 
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
-#.libPaths(c("/workspaces/BBM104/R_library", .libPaths()))
+.libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
 
 # Run the below  to install the necessary packages
 # Download the package using wget; Install the downloaded package
-#system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
-#install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
+install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+# Install radian Terminal
+system("mkdir -p /workspaces/BBM104/Python_Library")
+system("pip3 install -U radian --target /workspaces/BBM104/Python_Library)
 ```
 
 
