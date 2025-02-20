@@ -1,0 +1,175 @@
+---
+title: "GreenPerformance"
+output: html_document
+date: "2025-02-20"
+---
+
+
+#q: what does the code chunk below do?
+#A: It loads the necessary libraries and the ESG data.
+
+# Load libraries and data
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(lubridate)
+library(kableExtra)
+load("ESG_data.RData")
+
+```
+
+#q: What does the next code chunk do? Please reply based on each line of code. Don't look beyond the next code chunk (i.e., only the code inside the immediately previous pair of opening and closing ```).
+#A: The code chunk filters the ESG data to include only the years between 2003 and 2023 and the data from Provider B. It then groups the data by date and classifies the firms into two groups, Green and Brown, based on the ESG metric. Finally, it selects a few columns for further analysis.
+
+
+```{r}
+q <- 0.5
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  filter(source == "Provider_B") |>
+  group_by(date) |>                # This means that all operations will be run date by date, separately
+  mutate(type = if_else(esg_metric > quantile(esg_metric, q, na.rm = T), # This creates the sorts...
+                        "Green",                                         # ...Green if high ESG...
+                        "Brown")) |>                                     # ...Brown if not
+  select(name, date, close, esg_metric, type)                            # Select a few columns
+
+```
+
+
+#q: What does the previous code chunk do? Please reply based on each line of code. Don't look beyond the previous code chunk (i.e., only the code inside the immediately previous pair of opening and closing ```). 
+#A: The code chunk filters the ESG data to include only the years between 2003 and 2023 and the data from Provider B. It then groups the data by date and classifies the firms into two groups, Green and Brown, based on the ESG metric. Finally, it selects a few columns for further analysis.
+
+
+
+
+#q: What does the next code chunk do? Please reply based on each line of code. Don't look beyond the next code chunk (i.e., only the code inside the immediately previous pair of opening and closing ```).
+#A: The code chunk computes the return of the stock price for each firm and each date, and then classifies the firms into two groups: Green and Brown, based on the ESG metric.
+# Please give an elaborated reply. 
+#A: The code chunk first filters the data to include only the years between 2003 and 2023 and the data from Provider B. It then groups the data by date and calculates the return of the stock price for each firm. Next, it classifies the firms into two groups, Green and Brown, based on the ESG metric. Finally, it filters out the firms with crazy returns and selects a few columns for further analysis.
+# Provide a reply that is more detailed than the previous one.
+#A: The code chunk first filters the data to include only the years between 2003 and 2023 and the data from Provider B. It then groups the data by date and calculates the return of the stock price for each firm. Next, it classifies the firms into two groups, Green and Brown, based on the ESG metric. Finally, it filters out the firms with crazy returns and selects a few columns for further analysis.
+
+
+```{r}
+q <- 0.5
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  filter(source == "Provider_B") |>
+  group_by(date) |>                # This means that all operations will be run date by date, separately
+  mutate(type = if_else(esg_metric > quantile(esg_metric, q, na.rm = T), # This creates the sorts...
+                        "Green",                                         # ...Green if high ESG...
+                        "Brown")) |>                                     # ...Brown if not
+  ungroup() |>
+  group_by(name) |>                                                      # Now we group by firm
+  mutate(return = close / lag(close) - 1) |>                             # Here we compute the return
+  filter(return < 3) |>                                                  # Remove crazy returns
+  select(name, date, close, esg_metric, type, return)
+
+```
+
+#q: what does the previous code chunk do?
+#A: It computes the return of the stock price for each firm and each date, and then classifies the firms into two groups: Green and Brown, based on the ESG metric. 
+
+#q: your reply was a bit brief. Can you provide more details?
+#A: The code chunk first filters the data to include only the years between 2003 and 2023 and the data from Provider B. It then groups the data by date and calculates the return of the stock price for each firm. Next, it classifies the firms into two groups, Green and Brown, based on the ESG metric. Finally, it filters out the firms with crazy returns and selects a few columns for further analysis.
+
+```{r}
+ESG_data <- ESG_data |>  
+  group_by(name) |>                                           # Now we group by firm
+  mutate(return = close / lag(close) - 1) |>                  # Here we compute the return             
+  ungroup() 
+```
+
+
+```{r}
+q <- 0.5
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  filter(source == "Provider_B", is.finite(esg_metric)) |>    # Keeps non missing ESG fields
+  group_by(date) |>                    # All operations will be run date by date, separately
+  mutate(type = if_else(esg_metric > quantile(esg_metric, q), # This creates the sorts...
+                        "Green",                              # ...Green if high ESG...
+                        "Brown")) |>                          # ...Brown if not
+  ungroup() |>
+  filter(return < 3) |>                                       # Remove crazy returns
+  group_by(type) |>
+  summarise(avg_return = mean(return, na.rm = T))  |>
+  kableExtra::kable(caption = 'ESG metric and portfolio performance (q = 0.5) - Provider B')
+```
+
+
+```{r}
+q <- 0.5
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  filter(source == "Provider_A", is.finite(esg_metric)) |>    # Keeps non missing ESG fields
+  group_by(date) |>                    # All operations will be run date by date, separately
+  mutate(type = if_else(esg_metric < quantile(esg_metric, q), # This creates the sorts...
+                        "Green",                              # ...Green if high ESG...
+                        "Brown")) |>                          # ...Brown if not
+  ungroup() |>
+  filter(return < 2) |>                                       # Remove crazy returns!
+  group_by(type) |>
+  summarise(avg_return = mean(return*12, na.rm = T)) |>
+  kableExtra::kable(caption = 'ESG metric and portfolio performance (q = 0.5) - Provider A')
+```
+
+
+```{r}
+q <- 0.5
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  mutate(intensity = scope_3 / market_cap) |>
+  filter(source == "Provider_A", is.finite(intensity)) |>     # Keeps non missing ESG fields
+  group_by(date) |>                    # All operations will be run date by date, separately
+  mutate(type = if_else(intensity < quantile(intensity, q),   # This creates the sorts...
+                        "Green",                              # ...Green if high ESG...
+                        "Brown")) |>                          # ...Brown if not
+  ungroup() |>
+  filter(return < 2) |>                                       # Remove crazy returns
+  group_by(type) |>
+  summarise(avg_return = mean(return*12, na.rm = T) * 12)  |>    # Annualize
+  kableExtra::kable(caption = 'Scope 3 intensity and portfolio performance (q = 0.5)')
+```
+
+
+```{r}
+q <- 0.2
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  filter(source == "Provider_B") |>
+  group_by(date) |>                # This means that all operations will be run date by date, separately
+  mutate(type = if_else(esg_metric > quantile(esg_metric, 1-q, na.rm = T),  # This creates the sorts...
+                        "Green",                                            # Green if high
+                        if_else(esg_metric < quantile(esg_metric, q, na.rm = T),
+                                "Brown",                                 # ...Brown if low...
+                                "Grey"))) |>                             # ... Grey otherwise
+  ungroup() |>
+  filter(is.finite(esg_metric), return < 3) |>
+  group_by(type) |>
+  summarize(avg_return = mean(return*12, na.rm = T))  |>
+  kableExtra::kable(caption = 'ESG metric and portfolio performance (q = 0.2)')
+```
+
+```{r}
+q <- 0.2
+ESG_data |> 
+  filter(year(date) > 2002, year(date) < 2024) |>
+  mutate(intensity = scope_3 / market_cap) |>
+  filter(source == "Provider_A", is.finite(intensity)) |>     # Keeps non missing ESG fields
+  group_by(date) |>                    # All operations will be run date by date, separately
+  mutate(type = if_else(intensity < quantile(intensity, q),   # This creates the sorts...
+                        "Green",                              # ...Green if high ESG...
+                        if_else(intensity > quantile(intensity, 1-q),
+                                "Brown",
+                                "Grey"))) |>                          # ...Brown if not
+  ungroup() |>
+  group_by(name) |>                                           # Now we group by firm
+  mutate(return = close / lag(close) - 1) |>                  # Here we compute the return             
+  ungroup() |>
+  filter(return < 2) |>
+  group_by(type) |>
+  summarise(avg_return = mean(return, na.rm = T) * 12) |>
+  kableExtra::kable(caption = 'Scope 3 intensity and portfolio performance (q = 0.2)')
+```
+
