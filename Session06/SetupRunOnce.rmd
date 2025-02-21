@@ -1,5 +1,5 @@
 ---
-title: "Setup to run once"
+title: "Setup to run once" 
 output: html_document
 date: "2025-02-20"
 ---
@@ -100,8 +100,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 
 ```{r}
-
-install.packages("rvest", dependencies = TRUE)
 
 
 # Install packages required for installing rvest
