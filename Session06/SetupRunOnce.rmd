@@ -44,6 +44,9 @@ install.packages("remotes")
 #install.packages('rvest_1.0.4.tar.gz', repos = NULL, type = "source")#, dependencies = TRUE)
 install.packages("rvest")
 
+install.packages("magrittr")
+
+
 
 #/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/',lib='/workspaces/BBM104/R_Library')"
 
@@ -107,20 +110,20 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```{r}
 
-# Load necessary library
-#library(rvest)
+# Load necessary libraries
+library(rvest) 
+library(magrittr) 
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-'cli', 'magrittr', 'glue', 'stringi', 
+'cli', 'glue', 'stringi', 
 'rlang', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
 'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'vctrs', 'xml2', 'pillar', 'tibble'
                        )
-
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
-page <- read_html(url)
-tar_gz_files <- page %>% html_nodes("a") %>% html_attr("href") %>% 
+page <- rvest::read_html(url)
+tar_gz_files <- page %>% rvest::html_nodes("a") %>% rvest::html_attr("href") %>% 
                 grep("\\.tar\\.gz$", ., value = TRUE)
 
 # Extract the exact full names of the .tar.gz files to be downloaded
@@ -150,8 +153,9 @@ install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependen
 
 
 ```{r}
-# Load necessary library
-library(rvest)
+# Load necessary libraries
+library(rvest) 
+library(magrittr) 
 
 #ps_1.9.0.tar.gz, processx_3.8.5.tar.gz,
 
@@ -184,11 +188,11 @@ for (file in exact_files) {
 }
 
 # Use a vector-based syntax to install all the downloaded packages
-#install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
 # Use remotes::install_local to install all the downloaded packages
-for (file in exact_files) {
-  remotes::install_local(file, dependencies = TRUE)
-}
+#for (file in exact_files) {
+#  remotes::install_local(file, dependencies = TRUE)
+#}
 
 ```
 
