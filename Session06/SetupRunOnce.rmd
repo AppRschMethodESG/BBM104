@@ -38,8 +38,10 @@ system("mkdir -p /workspaces/BBM104/Python_Library")
 system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
 
 #system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
-#install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+#install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source")#, dependencies = TRUE)
 install.packages("remotes")
+#system(paste0("wget https://cran.r-project.org/src/contrib/", 'rvest_1.0.4.tar.gz'))
+#install.packages('rvest_1.0.4.tar.gz', repos = NULL, type = "source")#, dependencies = TRUE)
 install.packages("rvest")
 
 
@@ -96,22 +98,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```{r}
 
 
-# Install packages required for installing rvest
-required_packages <- c(
-  'rvest'
-)
-exact_files <- c(
-  'rvest_1.0.4.tar.gz'
-)
-
-
-for (file in exact_files) {
-  system(paste0("wget https://cran.r-project.org/src/contrib/", file))
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-
 ```
 
 
@@ -120,6 +106,39 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 
 ```{r}
+
+# Load necessary library
+#library(rvest)
+
+# Save the required packages into a vector of strings
+required_packages <- c(
+'cli', 'magrittr', 'glue', 'stringi', 
+'rlang', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
+'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'vctrs', 'xml2', 'pillar', 'tibble'
+                       )
+
+# Collect the list of .tar.gz files from the webpage
+url <- "https://cran.r-project.org/src/contrib/"
+page <- read_html(url)
+tar_gz_files <- page %>% html_nodes("a") %>% html_attr("href") %>% 
+                grep("\\.tar\\.gz$", ., value = TRUE)
+
+# Extract the exact full names of the .tar.gz files to be downloaded
+exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
+
+# Start a loop over the list of exact full names of .tar.gz files to download all the files
+for (file in exact_files) {
+  print(paste0(url, file))
+  download.file(paste0(url, file), destfile = file)
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+# Use remotes::install_local to install all the downloaded packages
+#for (file in exact_files) {
+#  remotes::install_local(file, dependencies = TRUE)
+#}
+
 
 ```
 
