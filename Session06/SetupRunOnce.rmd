@@ -37,21 +37,13 @@ system("mkdir -p /workspaces/BBM104/R_Library")
 system("mkdir -p /workspaces/BBM104/Python_Library")
 system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
 
-system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
-install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+#system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
+#install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+install.packages("remotes")
+install.packages("rvest")
 
 
-
-# Run the below to install the necessary packages
-# Download the package using wget; Install the downloaded package
-#system("wget https://cran.r-project.org/src/contrib/ps_1.9.0.tar.gz")
-#install.packages("ps_1.9.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
-#system("wget https://cran.r-project.org/src/contrib/processx_3.8.5.tar.gz")
-#install.packages("processx_3.8.5.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
-#system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
-#install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
-
-#/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', dependencies=TRUE, lib='/workspaces/BBM104/R_Library')"
+#/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/',lib='/workspaces/BBM104/R_Library')"
 
 
 
@@ -82,6 +74,8 @@ exact_files <- c(#'languageserver_0.3.16.tar.gz',
 'askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz',
 'vctrs_0.6.5.tar.gz', 'xml2_1.3.6.tar.gz', 'pillar_1.10.1.tar.gz', 'tibble_3.2.1.tar.gz' 
 )
+
+#ps_1.9.0.tar.gz, processx_3.8.5.tar.gz,
 
 
 for (file in exact_files) {
@@ -126,24 +120,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 
 ```{r}
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-
-# Install more required packages and rvest
-required_packages <- c('askpass', 'openssl', 'utf8', 'pillar', 'httr', 'selectr', 'tibble', 'rvest')
-exact_files <- c('askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'pillar_1.10.1.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz', 'tibble_3.2.1.tar.gz', 'rvest_1.0.4.tar.gz')
-
-for (file in exact_files) {
-    system(paste0("wget https://cran.r-project.org/src/contrib/", file))
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-#install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-
-# Use remotes::install_local to install all the downloaded packages
-for (file in exact_files) {
-  remotes::install_local(file, dependencies = TRUE)
-}
 
 ```
 
@@ -158,8 +134,10 @@ install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependen
 # Load necessary library
 library(rvest)
 
+#ps_1.9.0.tar.gz, processx_3.8.5.tar.gz,
+
 # Save the required packages into a vector of strings
-required_packages <- c("bit", "sass", "rappdirs", "base64enc", "fastmap", "cachem", 
+required_packages <- c("ps", "processx", "bit", "sass", "rappdirs", "base64enc", "fastmap", "cachem", 
                         "farver", "labeling", "munsell", "RColorBrewer", "viridisLite", "bit64",
                         "rematch", "memoise", "blob", "DBI", "gtable", "isoband", "scales",
                        "gargle", "uuid", "googledrive", "ids", "rematch2", "prettyunits",
