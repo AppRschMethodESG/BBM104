@@ -27,15 +27,15 @@ sudo apt install --no-install-recommends r-base
 system("sudo apt-get install -y libharfbuzz-dev")
 system("sudo apt-get install -y libfribidi-dev")
 
+# Install radian Terminal
+system("mkdir -p /workspaces/BBM104/Python_Library")
+system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
+
 # Create the R_Library directory
 system("mkdir -p /workspaces/BBM104/R_Library")
 
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
-
-# Install radian Terminal
-system("mkdir -p /workspaces/BBM104/Python_Library")
-system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
 
 #system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
 #install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source")#, dependencies = TRUE)
@@ -45,11 +45,14 @@ install.packages("remotes")
 install.packages("rvest")
 install.packages("magrittr")
 install.packages("lubridate")  # This will also install "generics", "timechange"
+install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
+install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
 
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
 # Removed the dependencies=T flag
-#/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/',lib='/workspaces/BBM104/R_Library')"
+#/usr/bin/
+#R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
 packageVersion("languageserver")
 
 ```
