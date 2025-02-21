@@ -300,8 +300,8 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```{r}
 
-install.packages(c("tidyverse"), dependencies = TRUE)
-#install.packages(c("kableExtra"), dependencies = TRUE)
+install.packages("tidyverse")#, dependencies = TRUE)
+install.packages("kableExtra")#, dependencies = TRUE)
 ```
 
 
