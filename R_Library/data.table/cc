@@ -1,0 +1,2 @@
+CC=gcc
+CFLAGS=-g -O2 -fdebug-prefix-map=/build/r-base-LHi8Yy/r-base-4.4.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2

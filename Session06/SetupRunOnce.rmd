@@ -56,10 +56,13 @@ install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
 
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
-# Removed the dependencies=T flag
+# Do not include the dependencies=T flag
 #/usr/bin/
 #R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
 packageVersion("languageserver")
+# To ensure that the R executable path is correctly set in your VS Code settings. Open your VS Code settings and search for r.rpath.linux. Set it to the path of your R executable, for example:
+#"r.rpath.linux": "/usr/bin/R"
+
 
 ```
 
@@ -151,7 +154,7 @@ library(magrittr)
 # Save the required packages into a vector of strings
 required_packages <- c(
     "bit64", "cachem", "ids", "memoise", "scales",
-                       "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
+                       "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", 
                        "systemfonts", "clipr", "crayon", 
                        "tzdb", "cellranger", "data.table", "tidyselect",
                        "rematch2", "prettyunits"
@@ -192,7 +195,7 @@ library(magrittr)
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-
+"hms", "progress", "bslib", "gargle", "googledrive", "rmarkdown", "textshaping", "vroom"
                        )
 
 
@@ -232,7 +235,7 @@ library(magrittr)
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-"bslib", "gargle", "googledrive", "progress", "rmarkdown", "textshaping", "vroom", 
+
                        "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2",  
                        "googlesheets4", "hms", "ragg", "readr", "haven", 
                        "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr",
