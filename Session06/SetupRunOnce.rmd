@@ -101,12 +101,51 @@ library(rvest)
 library(magrittr) 
 
 # Save the required packages into a vector of strings
-required_packages <- c("bit", "fastmap", "rappdirs", "gargle", "uuid", "cachem", "htmltools", "viridisLite", 
+required_packages <- c("bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", 
 "colorspace", "xfun", "ps", "processx", "sass", "rappdirs", "base64enc", 
-                        "farver", "labeling", "munsell", "RColorBrewer", "bit64",
-                        "rematch", "memoise", "blob", "DBI", "gtable", "isoband", "scales",
-                       "googledrive", "ids", "rematch2", "prettyunits"
+                        "farver", "labeling", "munsell", "RColorBrewer", 
+                        "rematch", "blob", "DBI", "gtable", "isoband", 
+                       "rematch2", "prettyunits"
+                       )
+# Collect the list of .tar.gz files from the webpage
+url <- "https://cran.r-project.org/src/contrib/"
+page <- rvest::read_html(url)
+tar_gz_files <- page %>% rvest::html_nodes("a") %>% rvest::html_attr("href") %>% 
+                grep("\\.tar\\.gz$", ., value = TRUE)
 
+# Extract the exact full names of the .tar.gz files to be downloaded
+exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
+
+# Start a loop over the list of exact full names of .tar.gz files to download all the files
+for (file in exact_files) {
+  #print(paste0(url, file))
+  download.file(paste0(url, file), destfile = file)
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+# Use remotes::install_local to install all the downloaded packages
+#for (file in exact_files) {
+#  remotes::install_local(file, dependencies = TRUE)
+#}
+
+```
+
+
+# Run the below once to install more packages
+```{r}
+
+# Load necessary libraries
+library(rvest) 
+library(magrittr) 
+
+# Save the required packages into a vector of strings
+required_packages <- c(
+    "bit64", "cachem", "gargle", "googledrive", "ids", "memoise", "scales",
+                       "bslib", "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
+                       "systemfonts", "textshaping", "clipr", "crayon", 
+                       "vroom", "tzdb", "cellranger", "progress", "rmarkdown", "data.table", "tidyselect",
+                       "rematch2", "prettyunits"
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -143,9 +182,7 @@ library(magrittr)
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-                       "bslib", "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
-                       "systemfonts", "textshaping", "clipr", "crayon", 
-                       "vroom", "tzdb", "cellranger", "progress", "rmarkdown", "data.table", "tidyselect",
+
                        "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", 
                        "googlesheets4", "hms", "ragg", "readr", "haven", 
                        "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr",
