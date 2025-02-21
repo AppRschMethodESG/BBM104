@@ -101,11 +101,11 @@ library(rvest)
 library(magrittr) 
 
 # Save the required packages into a vector of strings
-required_packages <- c("colorspace", "xfun", "ps", "processx", "bit", "sass", "rappdirs", "base64enc", 
-                        "fastmap", "cachem", 
-                        "farver", "labeling", "munsell", "RColorBrewer", "viridisLite", "bit64",
+required_packages <- c("bit", "fastmap", "rappdirs", "gargle", "uuid", "cachem", "htmltools", "viridisLite", 
+"colorspace", "xfun", "ps", "processx", "sass", "rappdirs", "base64enc", 
+                        "farver", "labeling", "munsell", "RColorBrewer", "bit64",
                         "rematch", "memoise", "blob", "DBI", "gtable", "isoband", "scales",
-                       "gargle", "uuid", "googledrive", "ids", "rematch2", "prettyunits"
+                       "googledrive", "ids", "rematch2", "prettyunits"
 
                        )
 # Collect the list of .tar.gz files from the webpage
