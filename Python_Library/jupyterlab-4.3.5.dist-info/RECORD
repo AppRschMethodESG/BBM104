@@ -1,7 +1,7 @@
-../../bin/jlpm,sha256=DDrc49TnMtnucT5WuJWJ-OVbXOAhJfg76owUtuTifcc,237
-../../bin/jupyter-lab,sha256=-FkAJIXlmHWqSAKm_p3eL0JJcNtjh5c5DVaFGc1g6jg,236
-../../bin/jupyter-labextension,sha256=bzuXHNGKsLGY-8jdTd-7bloDWRsKszJnn3JnV4obCqE,243
-../../bin/jupyter-labhub,sha256=3ix-XvtR0GLfXAPdlsu8_BGr4z8E-QTelQ_z0Kfnl9Q,239
+../../bin/jlpm,sha256=_KoqeXjFrT7TSi2A6RKg1Z3l1EAkyvJ-UKpopDbFsjE,244
+../../bin/jupyter-lab,sha256=BXN118bqtHNWCwIwO705a8K8uvLrKHkjam_F89SmjPE,243
+../../bin/jupyter-labextension,sha256=r4L8d4syWriP30NbkxvF-F8MDhCtrOMBNAac2wC6gco,250
+../../bin/jupyter-labhub,sha256=FafINSjxoK2x629yP_SvXJvq75ToN2W-FrBky3DPJUc,246
 ../../etc/jupyter/jupyter_notebook_config.d/jupyterlab.json,sha256=RL_pBS157V67FsOnyJLohgp1WjmyNztRkrnkJkBZbCU,87
 ../../etc/jupyter/jupyter_server_config.d/jupyterlab.json,sha256=bjK3XM4BK5zKmuRXJ5T0HycyRNlytW5SJDkcphLFUTQ,85
 ../../share/applications/jupyterlab.desktop,sha256=1TBKnoMuZmQHo4KUzcU8CCHi3fXZtLa_jQYTef09Y88,227

@@ -1,6 +1,6 @@
-../../bin/jupyter-kernel,sha256=E20wt1LFYt4j7XpdMl3LH_O6SzY3k4IGKq2b10zGMI0,243
-../../bin/jupyter-kernelspec,sha256=1hcmDBQi0QoQpACFbIwmHPzCuxZ_GRjr3kz-SdIOARk,281
-../../bin/jupyter-run,sha256=i4cIUfUzxLSr40egfUVogonBngCaEvZ2cHIa4cKJfJc,260
+../../bin/jupyter-kernel,sha256=PKnvDnTnmXSNgOuOcaph8fcaDXOIR4tN4hsLa1HTv3k,250
+../../bin/jupyter-kernelspec,sha256=ZKd8CYF8aB4NGLRWmGTL5YG4ibHe-jz2N9Oe8crYf_c,288
+../../bin/jupyter-run,sha256=ZEcvG-ILidOPiOv-Yzhg8ULHKacs4PZ3thVg4z89TsI,267
 jupyter_client-8.6.3.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
 jupyter_client-8.6.3.dist-info/METADATA,sha256=A8nUw-nMO4ykef5ypCSTEX5HyKDH9a7WCDA6Vp4Zzbs,8311
 jupyter_client-8.6.3.dist-info/RECORD,,

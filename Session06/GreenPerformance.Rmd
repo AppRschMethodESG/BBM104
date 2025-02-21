@@ -18,12 +18,12 @@ load(file.path(repo_path, "/Session06/ESG_data.RData"))
 
 ```
 
-#q: what does the selected code chunk do? Please summarize the logical flow intuitively without showing each line of code in your reply.
+#q: What does the selected code chunk do? Please summarize the logical flow intuitively without showing each line of code in your reply.
 
 #A: The selected code chunk sets up the environment for the analysis. It defines the repository path, loads necessary libraries (tidyverse, lubridate, and kableExtra), and loads the ESG_data dataset from a specified file path. This setup ensures that all required tools and data are available for subsequent analysis in the document.
 
 
-# Filtering and Classifying ESG Data by Date and Source
+
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -37,10 +37,16 @@ ESG_data |>
 
 ```
 
+What does the selected code chunk do? Please summarize the logical flow intuitively without showing each line of code in your reply.
+
+
 #A: The selected code chunk processes the ESG_data dataset to analyze firm performance based on ESG metrics. It filters the data to include records from 2003 to 2023 and only from "Provider_B". It groups the data by date and classifies firms into "Green" or "Brown" based on whether their ESG metric is above or below the median for that date. Finally, it selects relevant columns (name, date, close, esg_metric, and type) for further analysis.
 
-#q: Based on your reply above, how should the heading of this chunk be set?
+#q: Based on your reply above, how should the heading of this chunk be called?
 #A: Filtering and Classifying ESG Data by Date and Source
+
+Classifying Firms Based on ESG Metrics
+
 
 
 # Processing and Analyzing ESG Data for Firm Performance

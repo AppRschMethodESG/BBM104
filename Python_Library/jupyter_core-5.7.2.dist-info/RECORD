@@ -1,6 +1,6 @@
-../../bin/jupyter,sha256=P15Ki5jLi4uKtvCCAhHsrvS2oiekRd0nH39VIlQcyrI,239
-../../bin/jupyter-migrate,sha256=MOkhVAKeVpz1i83JVS-QQHsWY84OXb7glgE9UjDsL54,239
-../../bin/jupyter-troubleshoot,sha256=prMD0vFzUCOB7ChjNJFJaMhX2zXFKszKNzfcV2rt2yw,244
+../../bin/jupyter,sha256=znrP-D5frPMbQT47VGT5TbiwpPWZm67IDRNJZFmk2y4,246
+../../bin/jupyter-migrate,sha256=aPflswf6xjGjSqq1GpVOIUYfoeGCp8bRYgcm0EJsjMg,246
+../../bin/jupyter-troubleshoot,sha256=dZockMjqV1iVRUeAzU5mTU0rEBsMP4krgdIlKEqe1YU,251
 __pycache__/jupyter.cpython-312.pyc,,
 jupyter.py,sha256=gsV1w0ThBkm_F_oHhFeKZ8achVPM4iHIXMdcPRRExKE,155
 jupyter_core-5.7.2.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
