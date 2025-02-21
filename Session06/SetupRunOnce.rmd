@@ -30,6 +30,11 @@ system("sudo apt-get install -y libfribidi-dev")
 system("dpkg-query -L libharfbuzz-dev")
 system("dpkg-query -L libharfbuzz-dev")
 
+system("sudo apt-get install libfreetype6-dev")
+system("dpkg-query -L libfreetype6-dev")
+
+
+
 # Install radian Terminal
 system("mkdir -p /workspaces/BBM104/Python_Library")
 system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
@@ -57,6 +62,8 @@ install.packages("lubridate")  # This will also install "generics", "timechange"
 install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
 install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
 install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
+install.packages("purrr")#, lib="/workspaces/BBM104/R_Library")
+
 
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
@@ -194,13 +201,15 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 # fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
 system("sudo apt-get install -y libharfbuzz-dev")
 system("sudo apt-get install -y libfribidi-dev")
+system("sudo apt-get install libfreetype6-dev")
 # To find the installed location
 system("dpkg-query -L libharfbuzz-dev")
 system("dpkg-query -L libharfbuzz-dev")
-
+system("dpkg-query -L libfreetype6-dev")
 
 # Run the below once to install more packages
 ```{r}
+
 # Load necessary libraries
 library(rvest) 
 library(magrittr) 
@@ -209,10 +218,8 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(#"hms", "progress", "bslib", "rmarkdown", "vroom", "fs", "textshaping", "gargle"
-"purrr", "googledrive", 
-                       "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2",  
-                       "googlesheets4", "hms", "ragg", "readr", "haven", 
+required_packages <- c(
+  "hms", "progress", "bslib", "rmarkdown", "vroom", "fs", "textshaping", "gargle", "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "hms", "readr", 
                        )
 
 
@@ -248,9 +255,12 @@ library(magrittr)
 
 #ps_1.9.0.tar.gz, processx_3.8.5.tar.gz,
 
+required_packages <- c()
+tar_gz_files <- c()
+exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
-
+"googledrive", "googlesheets4", "ragg", "haven",
                        "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr",
                        "ps", "processx", "rlang", "digest", "lazyeval", "languageserver")
 
