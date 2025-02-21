@@ -141,12 +141,14 @@ library(magrittr)
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-    "bit64", "cachem", "gargle", "googledrive", "ids", "memoise", "scales",
-                       "bslib", "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
-                       "systemfonts", "textshaping", "clipr", "crayon", 
-                       "vroom", "tzdb", "cellranger", "progress", "rmarkdown", "data.table", "tidyselect",
+    "bit64", "cachem", "ids", "memoise", "scales",
+                       "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", "progress",
+                       "systemfonts", "clipr", "crayon", 
+                       "tzdb", "cellranger", "data.table", "tidyselect",
                        "rematch2", "prettyunits"
                        )
+
+
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
 page <- rvest::read_html(url)
@@ -182,8 +184,8 @@ library(magrittr)
 
 # Save the required packages into a vector of strings
 required_packages <- c(
-
-                       "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", 
+"bslib", "gargle", "googledrive", "progress", "rmarkdown", "textshaping", "vroom", 
+                       "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2",  
                        "googlesheets4", "hms", "ragg", "readr", "haven", 
                        "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr",
                        "ps", "processx", "rlang", "digest", "lazyeval", "languageserver")
