@@ -26,13 +26,14 @@ sudo apt install --no-install-recommends r-base
 # fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
 system("sudo apt-get install -y libharfbuzz-dev")
 system("sudo apt-get install -y libfribidi-dev")
+system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
 # To find the installed location
 system("dpkg-query -L libharfbuzz-dev")
 system("dpkg-query -L libharfbuzz-dev")
+system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
 
-system("sudo apt-get install libfreetype6-dev")
-system("dpkg-query -L libfreetype6-dev")
-
+# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
+Sys.setenv(PKG_CONFIG_PATH = "/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig")
 
 
 # Install radian Terminal
@@ -86,6 +87,9 @@ packageVersion("languageserver")
 library(rvest) 
 library(magrittr) 
 
+required_packages <- c()
+tar_gz_files <- c()
+exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
 'cli', 'glue', 'stringi', 
@@ -124,6 +128,9 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 library(rvest) 
 library(magrittr) 
 
+required_packages <- c()
+tar_gz_files <- c()
+exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c("bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", 
 "colorspace", "xfun", "ps", "processx", "sass", "base64enc", 
@@ -163,6 +170,9 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 library(rvest) 
 library(magrittr) 
 
+required_packages <- c()
+tar_gz_files <- c()
+exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
     "bit64", "cachem", "ids", "memoise", "scales",
@@ -248,20 +258,18 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```
 
 
-# Run the below once to install even more  packages
+# Run the below once to install even more packages
 ```{r}
 # Load necessary libraries
 library(rvest) 
 library(magrittr) 
 
-#ps_1.9.0.tar.gz, processx_3.8.5.tar.gz,
-
 required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(#"googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "rlang", "digest", "lazyeval", "languageserver", 
-                       "rstudioapi", "broom", "dbplyr", "modelr", "ragg", "reprex"
+required_packages <- c(
+  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "rlang", "digest", "lazyeval", "languageserver", "rstudioapi", "dbplyr", "reprex", "backports", "broom", "modelr", "ragg"
                        )
 
 
@@ -292,7 +300,7 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```{r}
 
-#install.packages(c("tidyverse"), dependencies = TRUE)
+install.packages(c("tidyverse"), dependencies = TRUE)
 #install.packages(c("kableExtra"), dependencies = TRUE)
 ```
 
