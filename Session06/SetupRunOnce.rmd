@@ -33,14 +33,29 @@ system("mkdir -p /workspaces/BBM104/R_Library")
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
 
-# Run the below  to install the necessary packages
-# Download the package using wget; Install the downloaded package
-system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
-install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
-
 # Install radian Terminal
 system("mkdir -p /workspaces/BBM104/Python_Library")
-system("pip3 install -U radian --target /workspaces/BBM104/Python_Library)
+system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
+
+system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
+install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+
+
+# Run the below to install the necessary packages
+# Download the package using wget; Install the downloaded package
+#system("wget https://cran.r-project.org/src/contrib/ps_1.9.0.tar.gz")
+#install.packages("ps_1.9.0.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+#system("wget https://cran.r-project.org/src/contrib/processx_3.8.5.tar.gz")
+#install.packages("processx_3.8.5.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+#system("wget https://cran.r-project.org/src/contrib/languageserver_0.3.16.tar.gz")
+#install.packages("languageserver_0.3.16.tar.gz", repos = NULL, type = "source", dependencies = TRUE)
+
+#/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', dependencies=TRUE, lib='/workspaces/BBM104/R_Library')"
+
+
+
+
 ```
 
 
@@ -51,14 +66,23 @@ system("pip3 install -U radian --target /workspaces/BBM104/Python_Library)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
 
 # Install packages required for installing rvest
-required_packages <- c('languageserver', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys')
-exact_files <- c('languageserver_0.3.16.tar.gz', 
+required_packages <- c(#'languageserver', 
+'cli', 'magrittr', 'glue', 'stringi', 
+'rlang', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
+'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'vctrs', 'xml2', 'pillar', 'tibble'
+)
+exact_files <- c(#'languageserver_0.3.16.tar.gz', 
+'cli_3.6.4.tar.gz', 'magrittr_2.0.3.tar.gz', 'glue_1.8.0.tar.gz', 'stringi_1.8.4.tar.gz',
+'rlang_1.1.5.tar.gz',
 'curl_6.2.1.tar.gz', 
 'mime_0.12.tar.gz', 
 'fansi_1.0.6.tar.gz',  
 'pkgconfig_2.0.3.tar.gz', 
-'sys_3.4.3.tar.gz'
+'sys_3.4.3.tar.gz',
+'askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz',
+'vctrs_0.6.5.tar.gz', 'xml2_1.3.6.tar.gz', 'pillar_1.10.1.tar.gz', 'tibble_3.2.1.tar.gz' 
 )
+
 
 for (file in exact_files) {
   system(paste0("wget https://cran.r-project.org/src/contrib/", file))
@@ -67,16 +91,61 @@ for (file in exact_files) {
 # Use a vector-based syntax to install all the downloaded packages
 install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
 
+# Use remotes::install_local to install all the downloaded packages
+#for (file in exact_files) {
+#  remotes::install_local(file, dependencies = TRUE)
+#}
+
+```
+
+
+```{r}
+
+install.packages("rvest", dependencies = TRUE)
+
+
+# Install packages required for installing rvest
+required_packages <- c(
+  'rvest'
+)
+exact_files <- c(
+  'rvest_1.0.4.tar.gz'
+)
+
+
+for (file in exact_files) {
+  system(paste0("wget https://cran.r-project.org/src/contrib/", file))
+}
+
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+
+```
+
+
+
+
+
+
+```{r}
+# Use a vector-based syntax to install all the downloaded packages
+install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+
 # Install more required packages and rvest
-required_packages <- c('askpass', 'openssl', 'utf8', 'pillar', 'httr', 'selectr', 'tibble', 'rvest', 'remotes')
-exact_files <- c('askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'pillar_1.10.1.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz', 'tibble_3.2.1.tar.gz', 'rvest_1.0.4.tar.gz', 'remotes_2.5.0.tar.gz')
+required_packages <- c('askpass', 'openssl', 'utf8', 'pillar', 'httr', 'selectr', 'tibble', 'rvest')
+exact_files <- c('askpass_1.2.1.tar.gz', 'openssl_2.3.2.tar.gz', 'utf8_1.2.4.tar.gz', 'pillar_1.10.1.tar.gz', 'httr_1.4.7.tar.gz', 'selectr_0.4-2.tar.gz', 'tibble_3.2.1.tar.gz', 'rvest_1.0.4.tar.gz')
 
 for (file in exact_files) {
     system(paste0("wget https://cran.r-project.org/src/contrib/", file))
 }
 
 # Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+#install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
+
+# Use remotes::install_local to install all the downloaded packages
+for (file in exact_files) {
+  remotes::install_local(file, dependencies = TRUE)
+}
 
 ```
 
@@ -101,7 +170,8 @@ required_packages <- c("bit", "sass", "rappdirs", "base64enc", "fastmap", "cache
                        "vroom", "tzdb", "cellranger", "progress", "rmarkdown", "data.table", "tidyselect",
                        "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", 
                        "googlesheets4", "hms", "lubridate", "ragg", "readr", "haven", 
-                       "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr")
+                       "readxl", "rstudioapi", "reprex", "tidyr", "broom", "dbplyr", "modelr",
+                       "ps", "processx", "rlang", "digest", "lazyeval", "languageserver")
 
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
