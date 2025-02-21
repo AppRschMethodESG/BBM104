@@ -46,7 +46,7 @@ install.packages("rvest")
 install.packages("magrittr")
 install.packages("lubridate")  # This will also install "generics", "timechange"
 
-#install.packages(c("tidyverse", "lubridate", "kableExtra"), dependencies = TRUE)
+#install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
 # Removed the dependencies=T flag
 #/usr/bin/R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/',lib='/workspaces/BBM104/R_Library')"
