@@ -30,6 +30,12 @@ system("sudo apt-get install -y libfribidi-dev")
 # Install radian Terminal
 system("mkdir -p /workspaces/BBM104/Python_Library")
 system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
+# To install Jupyter and upgrade pip
+#pip3 install -U Jupyter --target /workspaces/BBM104/Python_Library
+#python3 -m pip install --upgrade pip
+# To ensure that the directory is included in your PYTHONPATH permanently
+#echo 'export PYTHONPATH=/workspaces/BBM104/Python_Library:$PYTHONPATH' >> ~/.bashrc
+#source ~/.bashrc
 
 # Create the R_Library directory
 system("mkdir -p /workspaces/BBM104/R_Library")
