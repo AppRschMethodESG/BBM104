@@ -205,6 +205,9 @@ system("dpkg-query -L libharfbuzz-dev")
 library(rvest) 
 library(magrittr) 
 
+required_packages <- c()
+tar_gz_files <- c()
+exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(#"hms", "progress", "bslib", "rmarkdown", "vroom", "fs", "textshaping", "gargle"
 "purrr", "googledrive", 
