@@ -17,25 +17,17 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sud
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 # install R itself
 sudo apt install --no-install-recommends r-base
+# Click 'extension' button on the left vertical bar of VS Code; search REditorSupport; install this extension
+# To ensure R executable path is correctly set in your VS Code settings, 
+#   click 'wheel' button on the left vertical bar of VS Code; select Settings;
+#   search for r.rpath.linux; set it to the path of your R executable, e.g., "r.rpath.linux": "/usr/bin/R"
 
 
-# Run this chunk **only once** to set up the R environment
-```{r setup, include=FALSE}
-# Install Ubuntu packages harfbuzz and libfribidi
-# harfbuzz is primarily a text shaping library used for rendering text
-# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-system("sudo apt-get install -y libharfbuzz-dev")
-system("sudo apt-get install -y libfribidi-dev")
-system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
-# To find the installed location
-system("dpkg-query -L libharfbuzz-dev")
-system("dpkg-query -L libfribidi-dev")
-system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
+# Run commands in this chunk one by one (**only once**) to install radian Terminal and Jupyter (if you know how to use them)
+```{r}
 
 # Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
 Sys.setenv(PKG_CONFIG_PATH = "/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig")
-
-
 # Install radian Terminal
 system("mkdir -p /workspaces/BBM104/Python_Library")
 system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
@@ -46,11 +38,19 @@ system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
 #echo 'export PYTHONPATH=/workspaces/BBM104/Python_Library:$PYTHONPATH' >> ~/.bashrc
 #source ~/.bashrc
 
+```
+
+
+# Run commands in this chunk one by one (**only once**) to set up the R environment
+```{r setup, include=FALSE}
+
 # Create the R_Library directory
 system("mkdir -p /workspaces/BBM104/R_Library")
 
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
+
+install.packages('languageserver')
 
 install.packages("remotes")
 install.packages(c("xml2", "stringi", "vctrs"))
@@ -66,10 +66,7 @@ install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
 
 install.packages("dplyr")
 install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
-
-
-
-
+install.packages("ggplot2")
 
 #install.packages(c("timechange", "lubridate"))
 #install.packages("htmltools")
@@ -77,16 +74,25 @@ install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
 #install.packages("kableExtra")
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
-#install.packages("ggplot2")
-
 
 # Do not include the dependencies=T flag
 #/usr/bin/
 #R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
-packageVersion("languageserver")
-# To ensure that the R executable path is correctly set in your VS Code settings. Open your VS Code settings and search for r.rpath.linux. Set it to the path of your R executable, for example:
-#"r.rpath.linux": "/usr/bin/R"
+#packageVersion("languageserver")
 
+
+#====================================================
+
+# Install Ubuntu packages harfbuzz and libfribidi
+# harfbuzz is primarily a text shaping library used for rendering text
+# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
+system("sudo apt-get install -y libharfbuzz-dev")
+system("sudo apt-get install -y libfribidi-dev")
+system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
+# To find the installed location
+system("dpkg-query -L libharfbuzz-dev")
+system("dpkg-query -L libfribidi-dev")
+system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
 
 ```
 
@@ -266,8 +272,8 @@ exact_files <- c()
 required_packages <- c(
   "fontawesome", "jquerylib", 
   "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
-  "textshaping", "gargle", "conflicted", #"dplyr", 
-  "dtplyr", "forcats", "ggplot2"  
+  "textshaping", "gargle", "conflicted", #"dplyr", "ggplot2", 
+  "dtplyr", "forcats",  
                        )
 
 
