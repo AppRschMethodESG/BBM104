@@ -11,6 +11,9 @@ date: "2025-02-20"
 ```{r setup, include=FALSE}
 repo_path = "/workspaces/BBM104"
 
+# Add the R-library directory to the search path 
+#.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
+
 library(tidyverse)
 library(lubridate)
 library(kableExtra)

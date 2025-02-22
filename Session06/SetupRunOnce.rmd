@@ -29,7 +29,7 @@ system("sudo apt-get install -y libfribidi-dev")
 system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
 # To find the installed location
 system("dpkg-query -L libharfbuzz-dev")
-system("dpkg-query -L libharfbuzz-dev")
+system("dpkg-query -L libfribidi-dev")
 system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
 
 # Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
@@ -52,22 +52,33 @@ system("mkdir -p /workspaces/BBM104/R_Library")
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
 
-#system(paste0("wget https://cran.r-project.org/src/contrib/", 'remotes_2.5.0.tar.gz'))
-#install.packages("remotes_2.5.0.tar.gz", repos = NULL, type = "source")#, dependencies = TRUE)
 install.packages("remotes")
-#system(paste0("wget https://cran.r-project.org/src/contrib/", 'rvest_1.0.4.tar.gz'))
-#install.packages('rvest_1.0.4.tar.gz', repos = NULL, type = "source")#, dependencies = TRUE)
+install.packages(c("xml2", "stringi", "vctrs"))
 install.packages("rvest")
 install.packages("magrittr")
-install.packages("lubridate")  # This will also install "generics", "timechange"
+
+
 install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
 install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
 install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
-install.packages("purrr")#, lib="/workspaces/BBM104/R_Library")
+#  install.packages("purrr")#, lib="/workspaces/BBM104/R_Library")
+
+
+install.packages("dplyr")
 install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
 
 
+
+
+
+#install.packages(c("timechange", "lubridate"))
+#install.packages("htmltools")
+#install.packages("svglite")
+#install.packages("kableExtra")
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
+
+
+
 
 # Do not include the dependencies=T flag
 #/usr/bin/
@@ -91,10 +102,11 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(
-'cli', 'glue', 'stringi', 
+required_packages <- c(#'vctrs', 
+'cli', 'glue', #'stringi', 
 'rlang', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
-'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'vctrs', 'xml2', 'pillar', 'tibble'
+'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', #'xml2', 
+'pillar', 'tibble'
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -175,11 +187,13 @@ tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
-    "bit64", "cachem", "ids", "memoise", "scales",
-                       "htmltools", "fontawesome", "jquerylib", "tinytex", "bit64", 
+  "bit64", "cachem", "ids", "memoise", "scales",
+                       "tinytex", "bit64", 
                        "systemfonts", "clipr", "crayon", 
                        "tzdb", "cellranger", "data.table", "tidyselect",
-                       "rematch2", "prettyunits"
+                       "rematch2", "prettyunits", "readr", "digest", 
+                       "timechange", "lubridate", "tidyverse",
+                       "htmltools", "svglite", "kableExtra"
                        )
 
 
@@ -207,6 +221,27 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```
 
+
+
+
+
+#================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Install Ubuntu packages harfbuzz and libfribidi
 # harfbuzz is primarily a text shaping library used for rendering text
 # fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
@@ -230,7 +265,10 @@ tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
-  "hms", "progress", "bslib", "rmarkdown", "vroom", "fs", "textshaping", "gargle", "conflicted", "dplyr", "dtplyr", "forcats", "ggplot2", "hms", "readr", 
+  "fontawesome", "jquerylib", 
+  "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
+  "textshaping", "gargle", "conflicted", #"dplyr", 
+  "dtplyr", "forcats", "ggplot2",  
                        )
 
 
@@ -269,7 +307,8 @@ tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
-  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "rlang", "digest", "lazyeval", "languageserver", "rstudioapi", "dbplyr", "reprex", "backports", "broom", "modelr", "ragg"
+  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "rlang",  
+  "lazyeval", "languageserver", "rstudioapi", "dbplyr", "reprex", "backports", "broom", "modelr", "ragg"
                        )
 
 
@@ -297,6 +336,13 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```
 
+
+#export LD_LIBRARY_PATH=/workspaces/BBM104/R_Library:$LD_LIBRARY_PATH
+#source ~/.bashrc
+```{r}
+#Sys.getenv("LD_LIBRARY_PATH")
+Sys.setenv(LD_LIBRARY_PATH = paste("/workspaces/BBM104/R_Library", Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
+```
 
 ```{r}
 
