@@ -95,7 +95,6 @@ Sys.setenv(LD_LIBRARY_PATH = paste(file.path(normalizePath(getwd()), "R_Library"
 Sys.getenv("LD_LIBRARY_PATH")
 #================================================================
 
-
 install.packages("stringi")
 install.packages("rlang")
 install.packages("xml2")
