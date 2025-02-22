@@ -4,84 +4,126 @@ output: html_document
 date: "2025-02-20"
 ---
 
-# Run the commands below **once** to install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
+# Run the commands below **once** to 
+#   1. install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
+#   2. install Ubuntu packages harfbuzz, libfribidi, etc
+#      - harfbuzz is primarily a text shaping library used for rendering text
+#      - fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
 # Use a Terminal to execute the following commands:
 ```bash
 # update indices
-sudo apt update -qq
+sudo apt update -qq;
 # install two helper packages we need
-sudo apt install --no-install-recommends software-properties-common dirmngr
+sudo apt install --no-install-recommends software-properties-common dirmngr;
 # add the signing key (by Michael Rutter) for these repos
 # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
 # Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
-wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc;
 # add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
-sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/";
 # install R itself
-sudo apt install -y --no-install-recommends r-base
+sudo apt install -y --no-install-recommends r-base;
 # Click 'extension' button on the left vertical bar of VS Code; search REditorSupport; install this extension
 # To ensure R executable path is correctly set in your VS Code settings, 
 #   click 'wheel' button on the left vertical bar of VS Code; select Settings;
 #   search for r.rpath.linux; set it to the path of your R executable, e.g., "r.rpath.linux": "/usr/bin/R"
+
+#================================================================
+
+# Install Ubuntu packages harfbuzz, libfribidi, etc; then find the installed locations
+sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev &&
+dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev;
+
+
+
+# Create the R_Library directory 
+mkdir -p "$(pwd)/R_Library";
+# Add the following lines to the end of ~/.bashrc  
+echo '
+
+# Add R Library to LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$(pwd)/R_Library:$LD_LIBRARY_PATH
+
+# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
+export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
+
+' >> ~/.bashrc
+# Source the ~/.bashrc file to apply the changes
+source ~/.bashrc
+
 ```
+
 
 # Run commands in this chunk one by one (**only once**) to install radian Terminal and Jupyter (if you know how to use them)
 # Use a Terminal to execute the following commands:
 ```bash
-# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
-export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
 
-# Install radian Terminal
-mkdir -p /workspaces/BBM104/Python_Library
+# Create the Python_Library directory 
+mkdir -p "$(pwd)/Python_Library";
 
-python3 -m pip install --upgrade pip
-pip3 install -U radian --target /workspaces/BBM104/Python_Library
+# Upgrade pip and install radian
+python3 -m pip install --upgrade pip;
+pip3 install -U radian;  
 # Use a Terminal to install Jupyter and upgrade pip
-#pip3 install -U Jupyter --target /workspaces/BBM104/Python_Library
+#pip3 install -U Jupyter 
 
-# Use the text editor nano to open the ~/.bashrc file
-nano ~/.bashrc
+# Add the following lines to the end of ~/.bashrc  
+echo '
 
-# Add the following lines to the end of the file
-
-# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
-export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
 # Add Python Library to PYTHONPATH
-export PYTHONPATH=/workspaces/BBM104/Python_Library:$PYTHONPATH
+export PYTHONPATH=$(pwd)/Python_Library:$PYTHONPATH
+
 # Alias for radian
 alias r="radian"
 
-# Save the file and exit nano by pressing Ctrl+O, Enter, Ctrl+X
+' >> ~/.bashrc
+
 # Source the ~/.bashrc file to apply the changes
 source ~/.bashrc
+
 ```
 
 # Run commands in this chunk one by one (**only once**) to set up the R environment
-```{r setup, include=FALSE}
+```{r}
 
+
+#================================================================
 # Create the R_Library directory
-system("mkdir -p /workspaces/BBM104/R_Library", wait = TRUE)
+#system("mkdir -p /workspaces/BBM104/R_Library", wait = TRUE)
 
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
-.libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
+#.libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
+# Add the R-library directory to LD_LIBRARY_PATH
+#Sys.getenv("LD_LIBRARY_PATH")
+#Sys.setenv(LD_LIBRARY_PATH = paste("/workspaces/BBM104/R_Library", Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
+#================================================================
+
 
 install.packages("stringi")
 install.packages("rlang")
 install.packages("xml2")
 install.packages("vctrs")
 install.packages("glue")
-install.packages("magrittr")
 install.packages("systemfonts")
 install.packages("ps")
-#install.packages("jsonlite")
+install.packages("bslib")  # also installing ‘fs’, ‘cachem’, ‘memoise’, ‘sass’
+install.packages("withr")
+install.packages("fontawesome") # 
+install.packages("tidyr")  # this also installs "magrittr"
+install.packages("ids")
+```
+
+
+
+```{r}
+
+install.packages("tinytex")
+install.packages("knitr")  #
+install.packages("readr") # this also installs "bit64", "clipr", "crayon", "hms", "progress", "vroom",
+install.packages("scales")
 install.packages("rvest")
 install.packages("remotes")
-
-
-# Do not include the dependencies=T flag
-#/usr/bin/
-#R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
-#packageVersion("languageserver")
+install.packages("languageserver")
 
 ```
 
@@ -97,17 +139,16 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(#"systemfonts", 
-  "digest", "colorspace", 'cli', 
-'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
-'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', 
-'pillar', 'tibble', "processx", #"ps",
+required_packages <- c("rematch2", #"ids",  
+  "textshaping", #"lintr", "roxygen2", "styler", "rappdirs", "digest", 
+"rmarkdown", #"generics", "knitr", "evaluate", "sass", "jquerylib", 'mime', "fastmap", "base64enc", "tidyselect", 
+  "rstudioapi", 'cli', #"processx",  'pkgconfig', 
+'askpass', #'purrr', 'httr', 'tibble', 'openssl', 'selectr', 'pillar', 'fansi', 'curl', 'utf8', 'sys', "xfun", 
 
 
-  "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
-                        "farver", "labeling", "munsell", "RColorBrewer", 
+  "bit", "uuid", "htmltools", #"colorspace", "viridisLite", "farver", "labeling", "RColorBrewer", "munsell", 
                         "rematch", "blob", "DBI", "gtable", "isoband", "svglite", 
-                       "prettyunits", "sass", "timechange", "tzdb" 
+                       "prettyunits", "timechange", "tzdb" 
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -146,12 +187,13 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c("dplyr", "ggplot2", "rematch2", "jsonlite", 
-  "bit64", "cachem", "ids", "memoise", "scales",
-                       "tinytex", "bit64", "clipr", "crayon", 
-                       "cellranger", "data.table", "tidyselect", 
-                       "rematch2", "prettyunits", "readr", "lubridate", "tidyr", "tidyverse", 
-                       "htmltools", "kableExtra", "languageserver"
+required_packages <- c("dplyr", "ggplot2",  "cellranger", "data.table", 
+                       "rematch2", "prettyunits", #"readr", 
+                       "broom", "conflicted", "dbplyr", "dtplyr", "forcats", 
+                       "gargle", "googledrive", "googlesheets4", "haven", 
+                       "modelr", "ragg", "readxl", "reprex", 
+                                               
+                       "lubridate", "tidyverse", "kableExtra"
                        )
 
 
@@ -183,14 +225,4 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```{r}
 system("rm *.tar.gz*", wait = TRUE)
 ```
-
-
-
-#export LD_LIBRARY_PATH=/workspaces/BBM104/R_Library:$LD_LIBRARY_PATH
-#source ~/.bashrc
-```{r}
-#Sys.getenv("LD_LIBRARY_PATH")
-Sys.setenv(LD_LIBRARY_PATH = paste("/workspaces/BBM104/R_Library", Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
-```
-
 
