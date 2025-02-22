@@ -22,7 +22,7 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sud
 # add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/";
 # install R itself
-sudo apt install -y --no-install-recommends r-base;
+sudo apt install -y --no-install-recommends r-base
 # Click 'extension' button on the left vertical bar of VS Code; search REditorSupport; install this extension
 # To ensure R executable path is correctly set in your VS Code settings, 
 #   click 'wheel' button on the left vertical bar of VS Code; select Settings;
@@ -85,17 +85,14 @@ source ~/.bashrc
 
 # Run commands in this chunk one by one (**only once**) to set up the R environment
 ```{r}
-
-
 #================================================================
-# Create the R_Library directory
-#system("mkdir -p /workspaces/BBM104/R_Library", wait = TRUE)
-
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
-#.libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
+repo_path <- normalizePath(getwd())
+lib_path <- file.path(repo_path, "R_Library")
+.libPaths(c(lib_path, .libPaths()))
 # Add the R-library directory to LD_LIBRARY_PATH
-#Sys.getenv("LD_LIBRARY_PATH")
-#Sys.setenv(LD_LIBRARY_PATH = paste("/workspaces/BBM104/R_Library", Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
+Sys.setenv(LD_LIBRARY_PATH = paste(file.path(normalizePath(getwd()), "R_Library"), Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
+Sys.getenv("LD_LIBRARY_PATH")
 #================================================================
 
 
@@ -111,12 +108,6 @@ install.packages("withr")
 install.packages("fontawesome") # 
 install.packages("tidyr")  # this also installs "magrittr"
 install.packages("ids")
-```
-
-
-
-```{r}
-
 install.packages("tinytex")
 install.packages("knitr")  #
 install.packages("readr") # this also installs "bit64", "clipr", "crayon", "hms", "progress", "vroom",
