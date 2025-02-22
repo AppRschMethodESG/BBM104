@@ -16,7 +16,7 @@ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sud
 # add the repo from CRAN -- lsb_release adjusts to 'noble' or 'jammy' or ... as needed
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 # install R itself
-sudo apt install --no-install-recommends r-base
+sudo apt install -y --no-install-recommends r-base
 # Click 'extension' button on the left vertical bar of VS Code; search REditorSupport; install this extension
 # To ensure R executable path is correctly set in your VS Code settings, 
 #   click 'wheel' button on the left vertical bar of VS Code; select Settings;
@@ -24,22 +24,35 @@ sudo apt install --no-install-recommends r-base
 
 
 # Run commands in this chunk one by one (**only once**) to install radian Terminal and Jupyter (if you know how to use them)
-```{r}
+# Use a Terminal to execute the following commands:
+```bash
+# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
+export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
+
+# Install radian Terminal
+mkdir -p /workspaces/BBM104/Python_Library
+
+python3 -m pip install --upgrade pip
+pip3 install -U radian --target /workspaces/BBM104/Python_Library
+# Use a Terminal to install Jupyter and upgrade pip
+#pip3 install -U Jupyter --target /workspaces/BBM104/Python_Library
+
+# Use the text editor nano to open the ~/.bashrc file
+nano ~/.bashrc
+
+# Add the following lines to the end of the file
 
 # Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
-Sys.setenv(PKG_CONFIG_PATH = "/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig")
-# Install radian Terminal
-system("mkdir -p /workspaces/BBM104/Python_Library")
-system("pip3 install -U radian --target /workspaces/BBM104/Python_Library")
-# To install Jupyter and upgrade pip
-#pip3 install -U Jupyter --target /workspaces/BBM104/Python_Library
-#python3 -m pip install --upgrade pip
-# To ensure that the directory is included in your PYTHONPATH permanently
-#echo 'export PYTHONPATH=/workspaces/BBM104/Python_Library:$PYTHONPATH' >> ~/.bashrc
-#source ~/.bashrc
+export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
+# Add Python Library to PYTHONPATH
+export PYTHONPATH=/workspaces/BBM104/Python_Library:$PYTHONPATH
+# Alias for radian
+alias r="radian"
 
+# Save the file and exit nano by pressing Ctrl+O, Enter, Ctrl+X
+# Source the ~/.bashrc file to apply the changes
+source ~/.bashrc
 ```
-
 
 # Run commands in this chunk one by one (**only once**) to set up the R environment
 ```{r setup, include=FALSE}
@@ -50,12 +63,16 @@ system("mkdir -p /workspaces/BBM104/R_Library")
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
 
-install.packages('languageserver')
-
 install.packages("remotes")
-install.packages(c("xml2", "stringi", "vctrs"))
-install.packages("rvest")
+install.packages("stringi")
+install.packages("rlang")
+install.packages("xml2")
+install.packages("vctrs")
+install.packages("glue")
 install.packages("magrittr")
+install.packages("rvest")
+
+
 
 
 install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
@@ -64,6 +81,8 @@ install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
 #  install.packages("purrr")#, lib="/workspaces/BBM104/R_Library")
 
 
+#install.packages('languageserver')  #‘processx.so’ not found
+#install.packages("colorspace")
 install.packages("dplyr")
 install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
 install.packages("ggplot2")
@@ -86,13 +105,13 @@ install.packages("ggplot2")
 # Install Ubuntu packages harfbuzz and libfribidi
 # harfbuzz is primarily a text shaping library used for rendering text
 # fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-system("sudo apt-get install -y libharfbuzz-dev")
-system("sudo apt-get install -y libfribidi-dev")
-system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
+system("sudo apt-get install -y libharfbuzz-dev", wait = TRUE)
+system("sudo apt-get install -y libfribidi-dev", wait = TRUE)
+system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
 # To find the installed location
-system("dpkg-query -L libharfbuzz-dev")
-system("dpkg-query -L libfribidi-dev")
-system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev")
+system("dpkg-query -L libharfbuzz-dev", wait = TRUE)
+system("dpkg-query -L libfribidi-dev", wait = TRUE)
+system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
 
 ```
 
@@ -108,11 +127,10 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(#'vctrs', 
-'cli', 'glue', #'stringi', 
-'rlang', 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
+required_packages <- c("digest", "colorspace", 'cli', #'glue', 'stringi', 'rlang', 
+'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
 'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', #'xml2', 
-'pillar', 'tibble'
+'pillar', 'tibble', "ps"
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -150,11 +168,11 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c("bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", 
-"colorspace", "xfun", "ps", "processx", "sass", "base64enc", 
+required_packages <- c("bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", #"colorspace", 
+"xfun", "base64enc", 
                         "farver", "labeling", "munsell", "RColorBrewer", 
                         "rematch", "blob", "DBI", "gtable", "isoband", 
-                       "rematch2", "prettyunits"
+                       "rematch2", "prettyunits", "processx", "sass",
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -192,11 +210,11 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(
+required_packages <- c( 
   "bit64", "cachem", "ids", "memoise", "scales",
                        "tinytex", "bit64", "systemfonts", "clipr", "crayon", 
                        "tzdb", "cellranger", "data.table", "tidyselect",
-                       "rematch2", "prettyunits", "readr", "digest", "timechange", "lubridate", 
+                       "rematch2", "prettyunits", "readr", "timechange", "lubridate", 
                        "ggplot2", "tidyverse",
                        "htmltools", "svglite", "kableExtra"
                        )
