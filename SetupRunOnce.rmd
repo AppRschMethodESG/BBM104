@@ -60,7 +60,7 @@ source ~/.bashrc
 ```{r setup, include=FALSE}
 
 # Create the R_Library directory
-system("mkdir -p /workspaces/BBM104/R_Library")
+system("mkdir -p /workspaces/BBM104/R_Library", wait = TRUE)
 
 # Add the R-library directory to the search path (Run in R after R is installed but before any R library is installed)
 .libPaths(c("/workspaces/BBM104/R_Library", .libPaths()))
@@ -77,43 +77,19 @@ install.packages("rvest")
 
 
 
-install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
-install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
-install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
-#  install.packages("purrr")#, lib="/workspaces/BBM104/R_Library")
+#install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
+#install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
+#install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
+
+#install.packages('languageserver') 
 
 
-#install.packages('languageserver')  #‘processx.so’ not found
-#install.packages("colorspace")
-install.packages("dplyr")
-install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
-install.packages("ggplot2")
-
-#install.packages(c("timechange", "lubridate"))
-#install.packages("htmltools")
-#install.packages("svglite")
-#install.packages("kableExtra")
-#install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
 
 # Do not include the dependencies=T flag
 #/usr/bin/
 #R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
 #packageVersion("languageserver")
-
-
-#====================================================
-
-# Install Ubuntu packages harfbuzz and libfribidi
-# harfbuzz is primarily a text shaping library used for rendering text
-# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-system("sudo apt-get install -y libharfbuzz-dev", wait = TRUE)
-system("sudo apt-get install -y libfribidi-dev", wait = TRUE)
-system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
-# To find the installed location
-system("dpkg-query -L libharfbuzz-dev", wait = TRUE)
-system("dpkg-query -L libfribidi-dev", wait = TRUE)
-system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
 
 ```
 
@@ -129,7 +105,8 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c("digest", "colorspace", 'cli', #'glue', 'stringi', 'rlang', 
+required_packages <- c(
+  "digest", "colorspace", 'cli', #'glue', 'stringi', 'rlang', 
 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
 'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', #'xml2', 
 'pillar', 'tibble', "ps"
@@ -218,7 +195,7 @@ required_packages <- c( #"svglite", "systemfonts", "timechange", "tzdb",
                        "tinytex", "bit64", "clipr", "crayon", 
                        "cellranger", "data.table", "tidyselect",
                        "rematch2", "prettyunits", "readr", "lubridate", "tidyr", "tidyverse", #"ggplot2", 
-                       "htmltools", "kableExtra"
+                       "htmltools", "kableExtra", "languageserver"
                        )
 
 
@@ -246,26 +223,13 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 
 ```
 
-
-
+# Clean up downloaded files
+```{r}
+system("rm *.tar.gz*", wait = TRUE)
+```
 
 
 #================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Install Ubuntu packages harfbuzz and libfribidi
 # harfbuzz is primarily a text shaping library used for rendering text
@@ -278,6 +242,23 @@ system("dpkg-query -L libharfbuzz-dev")
 system("dpkg-query -L libharfbuzz-dev")
 system("dpkg-query -L libfreetype6-dev")
 
+
+# Install Ubuntu packages: harfbuzz, libfribidi, ...
+```{r}
+
+# harfbuzz is primarily a text shaping library used for rendering text
+# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
+system("sudo apt-get install -y libharfbuzz-dev", wait = TRUE)
+system("sudo apt-get install -y libfribidi-dev", wait = TRUE)
+system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
+# To find the installed location
+system("dpkg-query -L libharfbuzz-dev", wait = TRUE)
+system("dpkg-query -L libfribidi-dev", wait = TRUE)
+system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
+
+```
+
+
 # Run the below once to install more packages
 ```{r}
 
@@ -289,7 +270,7 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c(
+required_packages <- c("collections", "jsonlite", "fs",
   "fontawesome", "jquerylib", 
   "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
   "textshaping", "gargle", "conflicted", #"dplyr", "ggplot2", 
@@ -367,12 +348,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```{r}
 #Sys.getenv("LD_LIBRARY_PATH")
 Sys.setenv(LD_LIBRARY_PATH = paste("/workspaces/BBM104/R_Library", Sys.getenv("LD_LIBRARY_PATH"), sep = ":"))
-```
-
-```{r}
-
-install.packages("tidyverse")#, dependencies = TRUE)
-install.packages("kableExtra")#, dependencies = TRUE)
 ```
 
 
