@@ -77,7 +77,7 @@ install.packages("tidyr")#, lib="/workspaces/BBM104/R_Library")
 #install.packages("kableExtra")
 #install.packages(c("tidyverse", "kableExtra"), dependencies = TRUE)
 
-
+#install.packages("ggplot2")
 
 
 # Do not include the dependencies=T flag
@@ -188,11 +188,10 @@ exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
   "bit64", "cachem", "ids", "memoise", "scales",
-                       "tinytex", "bit64", 
-                       "systemfonts", "clipr", "crayon", 
+                       "tinytex", "bit64", "systemfonts", "clipr", "crayon", 
                        "tzdb", "cellranger", "data.table", "tidyselect",
-                       "rematch2", "prettyunits", "readr", "digest", 
-                       "timechange", "lubridate", "tidyverse",
+                       "rematch2", "prettyunits", "readr", "digest", "timechange", "lubridate", 
+                       "ggplot2", "tidyverse",
                        "htmltools", "svglite", "kableExtra"
                        )
 
@@ -268,7 +267,7 @@ required_packages <- c(
   "fontawesome", "jquerylib", 
   "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
   "textshaping", "gargle", "conflicted", #"dplyr", 
-  "dtplyr", "forcats", "ggplot2",  
+  "dtplyr", "forcats", "ggplot2"  
                        )
 
 
