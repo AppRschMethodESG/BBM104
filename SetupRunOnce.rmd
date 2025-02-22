@@ -4,7 +4,9 @@ output: html_document
 date: "2025-02-20"
 ---
 
-# Run the below once to install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
+# Run the commands below **once** to install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
+# Use a Terminal to execute the following commands:
+```bash
 # update indices
 sudo apt update -qq
 # install two helper packages we need
@@ -21,7 +23,7 @@ sudo apt install -y --no-install-recommends r-base
 # To ensure R executable path is correctly set in your VS Code settings, 
 #   click 'wheel' button on the left vertical bar of VS Code; select Settings;
 #   search for r.rpath.linux; set it to the path of your R executable, e.g., "r.rpath.linux": "/usr/bin/R"
-
+```
 
 # Run commands in this chunk one by one (**only once**) to install radian Terminal and Jupyter (if you know how to use them)
 # Use a Terminal to execute the following commands:
@@ -168,11 +170,12 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c("bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", #"colorspace", 
-"xfun", "base64enc", 
+required_packages <- c("dplyr", "ggplot2", 
+  "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
                         "farver", "labeling", "munsell", "RColorBrewer", 
                         "rematch", "blob", "DBI", "gtable", "isoband", 
                        "rematch2", "prettyunits", "processx", "sass",
+                       "svglite", "systemfonts", "timechange", "tzdb" 
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
@@ -210,13 +213,12 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c( 
+required_packages <- c( #"svglite", "systemfonts", "timechange", "tzdb", 
   "bit64", "cachem", "ids", "memoise", "scales",
-                       "tinytex", "bit64", "systemfonts", "clipr", "crayon", 
-                       "tzdb", "cellranger", "data.table", "tidyselect",
-                       "rematch2", "prettyunits", "readr", "timechange", "lubridate", 
-                       "ggplot2", "tidyverse",
-                       "htmltools", "svglite", "kableExtra"
+                       "tinytex", "bit64", "clipr", "crayon", 
+                       "cellranger", "data.table", "tidyselect",
+                       "rematch2", "prettyunits", "readr", "lubridate", "tidyr", "tidyverse", #"ggplot2", 
+                       "htmltools", "kableExtra"
                        )
 
 
