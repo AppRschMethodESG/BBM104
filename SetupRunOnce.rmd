@@ -151,8 +151,8 @@ required_packages <- c("dplyr", "ggplot2",
   "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
                         "farver", "labeling", "munsell", "RColorBrewer", 
                         "rematch", "blob", "DBI", "gtable", "isoband", 
-                       "rematch2", "prettyunits", "processx", "sass",
-                       "svglite", "systemfonts", "timechange", "tzdb" 
+                       "rematch2", "prettyunits", "processx", "sass", "svglite", 
+                       "systemfonts", "timechange", "tzdb" 
                        )
 # Collect the list of .tar.gz files from the webpage
 url <- "https://cran.r-project.org/src/contrib/"
