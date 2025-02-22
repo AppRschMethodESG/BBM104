@@ -71,10 +71,10 @@ install.packages("xml2")
 install.packages("vctrs")
 install.packages("glue")
 install.packages("magrittr")
+install.packages("systemfonts")
+install.packages("ps")
 install.packages("rvest")
 install.packages("remotes")
-install.packages("systemfonts")
-
 
 
 
@@ -110,7 +110,7 @@ required_packages <- c(#"systemfonts",
   "digest", "colorspace", 'cli', 
 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
 'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', 
-'pillar', 'tibble', "ps",
+'pillar', 'tibble', "processx", #"ps",
 
 
   "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
@@ -143,49 +143,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```
 
 
-# Run the below once to install more packages
-#================================================================
-```{r}
-
-# Load necessary libraries
-library(rvest) 
-library(magrittr) 
-
-required_packages <- c()
-tar_gz_files <- c()
-exact_files <- c()
-# Save the required packages into a vector of strings
-required_packages <- c("dplyr", "ggplot2", 
-  "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
-                        "farver", "labeling", "munsell", "RColorBrewer", 
-                        "rematch", "blob", "DBI", "gtable", "isoband", 
-                       "rematch2", "prettyunits", "processx", "sass", "svglite",  #"systemfonts", 
-                       "timechange", "tzdb" 
-                       )
-# Collect the list of .tar.gz files from the webpage
-url <- "https://cran.r-project.org/src/contrib/"
-page <- rvest::read_html(url)
-tar_gz_files <- page %>% rvest::html_nodes("a") %>% rvest::html_attr("href") %>% 
-                grep("\\.tar\\.gz$", ., value = TRUE)
-
-# Extract the exact full names of the .tar.gz files to be downloaded
-exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
-
-# Start a loop over the list of exact full names of .tar.gz files to download all the files
-for (file in exact_files) {
-  #print(paste0(url, file))
-  download.file(paste0(url, file), destfile = file)
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-# Use remotes::install_local to install all the downloaded packages
-#for (file in exact_files) {
-#  remotes::install_local(file, dependencies = TRUE)
-#}
-
-```
-
 
 # Run the below once to install more packages
 ```{r}
@@ -199,7 +156,7 @@ tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c( #"svglite", "systemfonts", "timechange", "tzdb", 
-"dplyr", "ggplot2", "processx", "rematch2", #"svglite", 
+"dplyr", "ggplot2", "rematch2", #"svglite", "processx", 
   "bit64", "cachem", "ids", "memoise", "scales",
                        "tinytex", "bit64", "clipr", "crayon", 
                        "cellranger", "data.table", "tidyselect",
@@ -322,7 +279,7 @@ tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c(
-  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "languageserver", #"rlang",  
+  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", #"languageserver", 
   "lazyeval", "dbplyr", "reprex", "backports", "broom", "modelr", "ragg"
                        )
 
