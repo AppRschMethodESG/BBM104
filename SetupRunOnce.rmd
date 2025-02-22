@@ -71,20 +71,11 @@ install.packages("xml2")
 install.packages("vctrs")
 install.packages("glue")
 install.packages("magrittr")
+install.packages("systemfonts")
+install.packages("ps")
+#install.packages("jsonlite")
 install.packages("rvest")
 install.packages("remotes")
-install.packages("systemfonts")
-
-
-
-
-#install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
-#install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
-#install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
-
-#install.packages('languageserver') 
-
-
 
 
 # Do not include the dependencies=T flag
@@ -110,7 +101,7 @@ required_packages <- c(#"systemfonts",
   "digest", "colorspace", 'cli', 
 'curl', 'mime', 'fansi', 'pkgconfig', 'sys',
 'askpass', 'openssl', 'utf8', 'httr', 'selectr', 'purrr', 
-'pillar', 'tibble', "ps",
+'pillar', 'tibble', "processx", #"ps",
 
 
   "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
@@ -143,49 +134,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 ```
 
 
-# Run the below once to install more packages
-#================================================================
-```{r}
-
-# Load necessary libraries
-library(rvest) 
-library(magrittr) 
-
-required_packages <- c()
-tar_gz_files <- c()
-exact_files <- c()
-# Save the required packages into a vector of strings
-required_packages <- c("dplyr", "ggplot2", 
-  "bit", "fastmap", "rappdirs", "uuid", "htmltools", "viridisLite", "xfun", "base64enc", 
-                        "farver", "labeling", "munsell", "RColorBrewer", 
-                        "rematch", "blob", "DBI", "gtable", "isoband", 
-                       "rematch2", "prettyunits", "processx", "sass", "svglite",  #"systemfonts", 
-                       "timechange", "tzdb" 
-                       )
-# Collect the list of .tar.gz files from the webpage
-url <- "https://cran.r-project.org/src/contrib/"
-page <- rvest::read_html(url)
-tar_gz_files <- page %>% rvest::html_nodes("a") %>% rvest::html_attr("href") %>% 
-                grep("\\.tar\\.gz$", ., value = TRUE)
-
-# Extract the exact full names of the .tar.gz files to be downloaded
-exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
-
-# Start a loop over the list of exact full names of .tar.gz files to download all the files
-for (file in exact_files) {
-  #print(paste0(url, file))
-  download.file(paste0(url, file), destfile = file)
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-# Use remotes::install_local to install all the downloaded packages
-#for (file in exact_files) {
-#  remotes::install_local(file, dependencies = TRUE)
-#}
-
-```
-
 
 # Run the below once to install more packages
 ```{r}
@@ -198,11 +146,10 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c( #"svglite", "systemfonts", "timechange", "tzdb", 
-"dplyr", "ggplot2", "processx", "rematch2", #"svglite", 
+required_packages <- c("dplyr", "ggplot2", "rematch2", "jsonlite", 
   "bit64", "cachem", "ids", "memoise", "scales",
                        "tinytex", "bit64", "clipr", "crayon", 
-                       "cellranger", "data.table", "tidyselect",
+                       "cellranger", "data.table", "tidyselect", 
                        "rematch2", "prettyunits", "readr", "lubridate", "tidyr", "tidyverse", 
                        "htmltools", "kableExtra", "languageserver"
                        )
@@ -237,119 +184,6 @@ install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE
 system("rm *.tar.gz*", wait = TRUE)
 ```
 
-
-#================================================================
-
-# Install Ubuntu packages harfbuzz and libfribidi
-# harfbuzz is primarily a text shaping library used for rendering text
-# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-system("sudo apt-get install -y libharfbuzz-dev")
-system("sudo apt-get install -y libfribidi-dev")
-system("sudo apt-get install libfreetype6-dev")
-# To find the installed location
-system("dpkg-query -L libharfbuzz-dev")
-system("dpkg-query -L libharfbuzz-dev")
-system("dpkg-query -L libfreetype6-dev")
-
-
-# Install Ubuntu packages: harfbuzz, libfribidi, ...
-```{r}
-
-# harfbuzz is primarily a text shaping library used for rendering text
-# fribidi is a library that provides support for the Unicode Bidirectional Algorithm (Bidi)
-system("sudo apt-get install -y libharfbuzz-dev", wait = TRUE)
-system("sudo apt-get install -y libfribidi-dev", wait = TRUE)
-system("sudo apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
-# To find the installed location
-system("dpkg-query -L libharfbuzz-dev", wait = TRUE)
-system("dpkg-query -L libfribidi-dev", wait = TRUE)
-system("dpkg-query -L libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev", wait = TRUE)
-
-```
-
-
-# Run the below once to install more packages
-```{r}
-
-# Load necessary libraries
-library(rvest) 
-library(magrittr) 
-
-required_packages <- c()
-tar_gz_files <- c()
-exact_files <- c()
-# Save the required packages into a vector of strings
-required_packages <- c("collections", "jsonlite", "fs",
-  "fontawesome", "jquerylib", 
-  "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
-  "textshaping", "gargle", "conflicted", #"dplyr", "ggplot2", 
-  "dtplyr", "forcats",  
-                       )
-
-
-# Collect the list of .tar.gz files from the webpage
-url <- "https://cran.r-project.org/src/contrib/"
-page <- rvest::read_html(url)
-tar_gz_files <- page %>% rvest::html_nodes("a") %>% rvest::html_attr("href") %>% 
-                grep("\\.tar\\.gz$", ., value = TRUE)
-
-# Extract the exact full names of the .tar.gz files to be downloaded
-exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
-
-# Start a loop over the list of exact full names of .tar.gz files to download all the files
-for (file in exact_files) {
-  #print(paste0(url, file))
-  download.file(paste0(url, file), destfile = file)
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-# Use remotes::install_local to install all the downloaded packages
-#for (file in exact_files) {
-#  remotes::install_local(file, dependencies = TRUE)
-#}
-```
-
-
-# Run the below once to install even more packages
-```{r}
-# Load necessary libraries
-library(rvest) 
-library(magrittr) 
-
-required_packages <- c()
-tar_gz_files <- c()
-exact_files <- c()
-# Save the required packages into a vector of strings
-required_packages <- c(
-  "googledrive", "googlesheets4", "haven", "readxl", "rstudioapi", "languageserver", #"rlang",  
-  "lazyeval", "dbplyr", "reprex", "backports", "broom", "modelr", "ragg"
-                       )
-
-
-# Collect the list of .tar.gz files from the webpage 
-url <- "https://cran.r-project.org/src/contrib/"
-page <- read_html(url)
-tar_gz_files <- page %>% html_nodes("a") %>% html_attr("href") %>% 
-                grep("\\.tar\\.gz$", ., value = TRUE)
-
-# Extract the exact full names of the .tar.gz files to be downloaded
-exact_files <- tar_gz_files[grepl(paste0("^(", paste(required_packages, collapse = "|"), ")_.*\\.tar\\.gz$"), basename(tar_gz_files))]
-
-# Start a loop over the list of exact full names of .tar.gz files to download all the files
-for (file in exact_files) {
-  #print(paste0(url, file))
-  download.file(paste0(url, file), destfile = file)
-}
-
-# Use a vector-based syntax to install all the downloaded packages
-install.packages(exact_files, repos = NULL, type = "source", dependencies = TRUE)
-# Use remotes::install_local to install all the downloaded packages
-#for (file in exact_files) {
-#  remotes::install_local(file, dependencies = TRUE)
-#}
-
-```
 
 
 #export LD_LIBRARY_PATH=/workspaces/BBM104/R_Library:$LD_LIBRARY_PATH

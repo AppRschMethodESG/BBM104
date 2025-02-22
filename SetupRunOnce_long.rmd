@@ -73,6 +73,7 @@ install.packages("glue")
 install.packages("magrittr")
 install.packages("systemfonts")
 install.packages("ps")
+#install.packages("jsonlite")
 install.packages("rvest")
 install.packages("remotes")
 
@@ -145,11 +146,10 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c( #"svglite", "systemfonts", "timechange", "tzdb", 
-"dplyr", "ggplot2", "rematch2", #"svglite", "processx", 
+required_packages <- c("dplyr", "ggplot2", "rematch2", "jsonlite", 
   "bit64", "cachem", "ids", "memoise", "scales",
                        "tinytex", "bit64", "clipr", "crayon", 
-                       "cellranger", "data.table", "tidyselect",
+                       "cellranger", "data.table", "tidyselect", 
                        "rematch2", "prettyunits", "readr", "lubridate", "tidyr", "tidyverse", 
                        "htmltools", "kableExtra", "languageserver"
                        )
@@ -226,14 +226,14 @@ required_packages <- c()
 tar_gz_files <- c()
 exact_files <- c()
 # Save the required packages into a vector of strings
-required_packages <- c("collections", "jsonlite", "fs",
+required_packages <- c("collections", "fs", #"jsonlite", 
   "fontawesome", "jquerylib", 
   "hms", "progress", "bslib", "rmarkdown", "vroom",   
   "textshaping", "gargle", "conflicted", 
   "dtplyr", "forcats"
 
 
-  
+
                        )
 
 
