@@ -77,16 +77,6 @@ install.packages("rvest")
 install.packages("remotes")
 
 
-
-#install.packages("collections") #, lib="/workspaces/BBM104/R_Library")
-#install.packages("jsonlite")#, lib="/workspaces/BBM104/R_Library")
-#install.packages("fs")#, lib="/workspaces/BBM104/R_Library")
-
-#install.packages('languageserver') 
-
-
-
-
 # Do not include the dependencies=T flag
 #/usr/bin/
 #R --silent --slave --no-save --no-restore -e "install.packages('languageserver', repos='https://cloud.r-project.org/', lib='/workspaces/BBM104/R_Library')"
@@ -238,9 +228,12 @@ exact_files <- c()
 # Save the required packages into a vector of strings
 required_packages <- c("collections", "jsonlite", "fs",
   "fontawesome", "jquerylib", 
-  "hms", "progress", "bslib", "rmarkdown", "vroom", #"fs", 
-  "textshaping", "gargle", "conflicted", #"dplyr", "ggplot2", 
-  "dtplyr", "forcats",  
+  "hms", "progress", "bslib", "rmarkdown", "vroom",   
+  "textshaping", "gargle", "conflicted", 
+  "dtplyr", "forcats"
+
+
+  
                        )
 
 
