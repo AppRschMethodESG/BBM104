@@ -14,6 +14,9 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install git
+RUN apt-get update && apt-get install -y git
+
 # Create the vscode user and set it as the default user
 RUN useradd -ms /bin/bash vscode
 USER vscode
