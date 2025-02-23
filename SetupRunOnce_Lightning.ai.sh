@@ -1,7 +1,19 @@
 #!/bin/bash
 
-# Run the commands below **once** to 
+#===================================================================================
+# !!! Note: 
+#   0. This script is for setting up a **Lightning.ai Studio** environment, 
+#      where R and radian are NOT pre-installed in this repo's custom container.
+#      (Thus, step 1 and 4 are NOT skipped.)
+#   1. Do NOT change the sequence of code lines or combine code chunks;
+#      The sequence is critical, so is the break between two [bash] code chunks
+#   2. If this repo comes with a non-empty R_Library, it must be deleted first
+#      (Otherwise, it would cause a mysterious error.)
+#===================================================================================
 
+##================================================================
+# Run the commands below **once** to 
+#
 #   1. install R (instructions from https://cran.r-project.org/bin/linux/ubuntu/)
 #
 #   2. install Ubuntu packages harfbuzz, libfribidi, etc
@@ -13,7 +25,6 @@
 #   4. install radian Terminal and Jupyter (if you know how to use them)
 #
 # Use a Terminal to execute the following commands:
-
 #================================================================
 
 # update indices
