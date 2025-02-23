@@ -33,9 +33,12 @@ sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_
 # install R itself
 sudo apt install -y --no-install-recommends r-base
 
+sudo apt-get update
 # Install Ubuntu packages harfbuzz, libfribidi, etc; then find the installed locations
-sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev &&
-dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev &&
+dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev
+#sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev &&
+#dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
 # Create the R_Library directory and add lines to the end of ~/.bashrc  
 mkdir -p "$(pwd)/R_Library"
