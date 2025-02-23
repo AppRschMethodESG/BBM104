@@ -35,8 +35,8 @@ sudo apt install -y --no-install-recommends r-base
 
 sudo apt-get update
 # Install Ubuntu packages harfbuzz, libfribidi, etc; then find the installed locations
-sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev &&
-dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev
+sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev &&
+dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev
 #sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev &&
 #dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
