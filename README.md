@@ -5,5 +5,5 @@ R Library with tidyverse installed for R 4.4.2
 
 * To set up R and install the required packages, execute the commands below in a terminal
 
-`chmod +x SetupRunOnce.sh`
+`chmod +x SetupRunOnce.sh`  
 `./SetupRunOnce.sh`
