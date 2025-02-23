@@ -9,10 +9,10 @@ date: "2025-02-20"
 
 # Load libraries and data
 ```{r setup, include=FALSE}
+repo_path = "/workspaces/BBM104"
 
-repo_path <- normalizePath(getwd())
 # Add the R-library directory to the search path 
-.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
+#.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
 
 library(tidyverse)
 library(lubridate)
