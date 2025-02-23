@@ -11,6 +11,10 @@ RUN python3 -m venv /opt/venv && \
 # Set the virtual environment as the default Python environment
 ENV PATH="/opt/venv/bin:$PATH"
 
+# Create the vscode user and set it as the default user
+RUN useradd -ms /bin/bash vscode
+USER vscode
+
 # Install additional R packages
 #RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
 
