@@ -14,8 +14,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install git and sudo
-RUN apt-get update && apt-get install -y git sudo
+# Install git, sudo, and nano
+RUN apt-get update && apt-get install -y git sudo nano
 
 # Create the necessary groups
 RUN groupadd ssh && \
@@ -79,7 +79,7 @@ USER codespace
 # Install R packages
 RUN ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib && \
-    R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), repos="http://cran.rstudio.com/")' && \
+    R -e 'print(getwd()); install.packages(c("languageserver", "withr"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
 
