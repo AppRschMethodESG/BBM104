@@ -61,6 +61,11 @@ RUN apt-get update && apt-get install -y \
     libfreetype-dev \
     libfreetype6-dev
 
+# Install additional software
+RUN apt-get update && apt-get install -y \
+    jupyter-core \
+    jupyter-notebook
+
 # Change ownership of the R library directory to the codespace user
 RUN mkdir -p /usr/local/lib/R/site-library && \
     chown -R codespace:codespace /usr/local/lib/R/site-library
