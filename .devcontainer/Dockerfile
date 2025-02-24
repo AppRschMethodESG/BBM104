@@ -28,7 +28,6 @@ RUN apt-get update && apt-get install -y sudo && \
 RUN apt-get update && apt-get install -y \
     libharfbuzz-dev \
     libfribidi-dev \
-    libfreetype6-dev \
     libpng-dev \
     libtiff5-dev \
     libjpeg-dev \
@@ -37,13 +36,16 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libfreetype-dev || true && \
     libfreetype6-dev || true && \
-    dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev || true 
+    dpkg-query -L libharfbuzz-dev libfribidi-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev libfreetype-dev libfreetype6-dev || true 
 
 RUN ls -la /usr/local/lib/R/site-library && \
 ls -la /usr/local/lib && \
 R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
+
+# Set the home directory for the vscode user to /workspaces/BBM104
+RUN usermod -d /workspaces/BBM104 vscode
 
 USER vscode
 

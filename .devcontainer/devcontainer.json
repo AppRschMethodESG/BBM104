@@ -13,6 +13,6 @@
         "ms-python.python"
     ],
     // Moved to here the creation of the R_Library directory and the installation of the withr and languageserver packages to the postCreateCommand in the devcontainer.json file. This way, the necessary setup will be done after the container is created, ensuring that the R_Library directory is available and the packages are installed correctly.
-    "postCreateCommand": "R -e \"install.packages(c('lintr'), repos='http://cran.rstudio.com/')\"",
+    "postCreateCommand": "R -e \"install.packages(c('withr'), repos='http://cran.rstudio.com/')\"",
     "remoteUser": "vscode"
 }
