@@ -24,6 +24,12 @@ RUN useradd -ms /bin/bash vscode
 RUN apt-get update && apt-get install -y sudo && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+RUN ls -la /usr/local/lib/R/site-library && \
+ls -la /usr/local/lib && \
+R -e 'print(getwd()); install.packages(c("withr"), repos="http://cran.rstudio.com/")' && \
+    ls -la /usr/local/lib/R/site-library && \
+    ls -la /usr/local/lib/R/
+
 USER vscode
 
 #===============================================================================
