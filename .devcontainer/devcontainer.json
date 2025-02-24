@@ -1,3 +1,4 @@
+
 {
     "name": "R Dev Container",
     "build": {
@@ -11,7 +12,7 @@
         "REditorSupport.r",
         "ms-python.python"
     ],
-    "postCreateCommand": "R -e \"install.packages('languageserver', repos='http://cran.rstudio.com/')\"",
-    "remoteUser": "vscode",
-    "features": {}
+    // Moved to here the creation of the R_Library directory and the installation of the withr and languageserver packages to the postCreateCommand in the devcontainer.json file. This way, the necessary setup will be done after the container is created, ensuring that the R_Library directory is available and the packages are installed correctly.
+    "postCreateCommand": "mkdir -p /workspaces/BBM104/R_Library && sudo chown -R vscode:vscode /workspaces/BBM104/R_Library && sudo chmod -R 777 /workspaces/BBM104/R_Library && R -e \".libPaths(c('/workspaces/BBM104/R_Library', .libPaths())); install.packages(c('withr', 'languageserver'), lib='/workspaces/BBM104/R_Library', repos='http://cran.rstudio.com/')\"",
+    "remoteUser": "vscode"
 }

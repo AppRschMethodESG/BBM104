@@ -24,27 +24,17 @@ RUN useradd -ms /bin/bash vscode
 RUN apt-get update && apt-get install -y sudo && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# Ensure the /workspaces directory exists and has the correct permissions
-RUN mkdir -p /workspaces && \
-    chown -R vscode:vscode /workspaces && \
-    chmod -R 777 /workspaces
-
 USER vscode
 
-# Set the library path, create the directory, set permissions, and install the packages
-RUN ls -la && \
-    mkdir -p /workspaces/BBM104 && \
-    ls -la /workspaces && \
-    R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); system(paste("sudo chown -R vscode:vscode", lib_path)); system(paste("sudo chmod -R 777", lib_path)); .libPaths(c(lib_path, .libPaths())); install.packages(c("withr"), lib=lib_path, repos="http://cran.rstudio.com/")' && \
-    ls -la /workspaces/BBM104
-#============================================================================================ 
-#    RUN ls -la /workspaces && \
-#    mkdir -p /workspaces/BBM104 && \
-#    ls -la /workspaces/BBM104 && \
-#    R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); system(paste("sudo chown -R vscode:vscode", lib_path)); system(paste("sudo chmod -R 777", lib_path)); .libPaths(c(lib_path, .libPaths())); install.packages(c("withr"), lib=lib_path, repos="http://cran.rstudio.com/")' && \
-#    ls -la /workspaces/BBM104/R_Library    
-#============================================================================================ 
-# !!!Note: Each RUN command in a Dockerfile is executed in a separate shell, and variables are not persisted between them.
-# Therefore, the lib_path variable is not available in a second RUN command. To avoid this issue, you can combine the two RUN commands into a single command as shown below:
+#===============================================================================
+# Below is an example of how to chain commands in a single RUN command using ';' and '&&' and use  \ to continue the command on the next line. However, the command cannot serve the purpose of creating R_Library for installing the packages there because it was created in a container for preparing a container image for the actual container creation later. 
+# 
+# Note: R_Library should be created using a post-create command in the devcontainer.json file. 
+#===============================================================================
+#RUN R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); system(paste("sudo chown -R vscode:vscode", lib_path)); system(paste("sudo chmod -R 777", lib_path)); .libPaths(c(lib_path, .libPaths())); install.packages(c("withr"), lib=lib_path, repos="http://cran.rstudio.com/")' && \
+#    ls -la /workspaces/BBM104/R_Library 
+#===============================================================================
+# !!!Note: Each RUN command in a Dockerfile is executed in a separate shell, and variables are not persisted between them. Therefore, the lib_path variable is not available in a second RUN command. To avoid this issue, you can combine the two RUN commands into a single command as shown below:
+#===============================================================================
 
 
