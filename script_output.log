@@ -1,0 +1,775 @@
+10 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+software-properties-common is already the newest version (0.99.49.1).
+dirmngr is already the newest version (2.4.4-2ubuntu17).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libharfbuzz-dev is already the newest version (8.3.0-2build2).
+libfribidi-dev is already the newest version (1.0.13-3build1).
+libfreetype-dev is already the newest version (2.13.2+dfsg-1build3).
+libpng-dev is already the newest version (1.6.43-5build1).
+libtiff5-dev is already the newest version (4.5.1+git230720-4ubuntu2.2).
+libjpeg-dev is already the newest version (8c-2ubuntu11).
+libssl-dev is already the newest version (3.0.13-0ubuntu3.5).
+libxml2-dev is already the newest version (2.9.14+dfsg-1.3ubuntu3.1).
+libcurl4-openssl-dev is already the newest version (8.5.0-2ubuntu10.6).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+/.
+/usr
+/usr/include
+/usr/include/harfbuzz
+/usr/include/harfbuzz/hb-aat-layout.h
+/usr/include/harfbuzz/hb-aat.h
+/usr/include/harfbuzz/hb-blob.h
+/usr/include/harfbuzz/hb-buffer.h
+/usr/include/harfbuzz/hb-cairo.h
+/usr/include/harfbuzz/hb-common.h
+/usr/include/harfbuzz/hb-cplusplus.hh
+/usr/include/harfbuzz/hb-deprecated.h
+/usr/include/harfbuzz/hb-draw.h
+/usr/include/harfbuzz/hb-face.h
+/usr/include/harfbuzz/hb-features.h
+/usr/include/harfbuzz/hb-font.h
+/usr/include/harfbuzz/hb-ft.h
+/usr/include/harfbuzz/hb-glib.h
+/usr/include/harfbuzz/hb-gobject-enums.h
+/usr/include/harfbuzz/hb-gobject-structs.h
+/usr/include/harfbuzz/hb-gobject.h
+/usr/include/harfbuzz/hb-graphite2.h
+/usr/include/harfbuzz/hb-icu.h
+/usr/include/harfbuzz/hb-map.h
+/usr/include/harfbuzz/hb-ot-color.h
+/usr/include/harfbuzz/hb-ot-deprecated.h
+/usr/include/harfbuzz/hb-ot-font.h
+/usr/include/harfbuzz/hb-ot-layout.h
+/usr/include/harfbuzz/hb-ot-math.h
+/usr/include/harfbuzz/hb-ot-meta.h
+/usr/include/harfbuzz/hb-ot-metrics.h
+/usr/include/harfbuzz/hb-ot-name.h
+/usr/include/harfbuzz/hb-ot-shape.h
+/usr/include/harfbuzz/hb-ot-var.h
+/usr/include/harfbuzz/hb-ot.h
+/usr/include/harfbuzz/hb-paint.h
+/usr/include/harfbuzz/hb-set.h
+/usr/include/harfbuzz/hb-shape-plan.h
+/usr/include/harfbuzz/hb-shape.h
+/usr/include/harfbuzz/hb-style.h
+/usr/include/harfbuzz/hb-subset-repacker.h
+/usr/include/harfbuzz/hb-subset.h
+/usr/include/harfbuzz/hb-unicode.h
+/usr/include/harfbuzz/hb-version.h
+/usr/include/harfbuzz/hb.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/cmake
+/usr/lib/x86_64-linux-gnu/cmake/harfbuzz
+/usr/lib/x86_64-linux-gnu/cmake/harfbuzz/harfbuzz-config.cmake
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-cairo.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-gobject.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-icu.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz-subset.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/harfbuzz.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libharfbuzz-dev
+/usr/share/doc/libharfbuzz-dev/copyright
+/usr/share/gir-1.0
+/usr/share/gir-1.0/HarfBuzz-0.0.gir
+/usr/lib/x86_64-linux-gnu/libharfbuzz-cairo.so
+/usr/lib/x86_64-linux-gnu/libharfbuzz-gobject.so
+/usr/lib/x86_64-linux-gnu/libharfbuzz-icu.so
+/usr/lib/x86_64-linux-gnu/libharfbuzz-subset.so
+/usr/lib/x86_64-linux-gnu/libharfbuzz.so
+/usr/share/doc/libharfbuzz-dev/changelog.Debian.gz
+
+/.
+/usr
+/usr/include
+/usr/include/fribidi
+/usr/include/fribidi/fribidi-arabic.h
+/usr/include/fribidi/fribidi-begindecls.h
+/usr/include/fribidi/fribidi-bidi-types-list.h
+/usr/include/fribidi/fribidi-bidi-types.h
+/usr/include/fribidi/fribidi-bidi.h
+/usr/include/fribidi/fribidi-brackets.h
+/usr/include/fribidi/fribidi-char-sets-list.h
+/usr/include/fribidi/fribidi-char-sets.h
+/usr/include/fribidi/fribidi-common.h
+/usr/include/fribidi/fribidi-config.h
+/usr/include/fribidi/fribidi-deprecated.h
+/usr/include/fribidi/fribidi-enddecls.h
+/usr/include/fribidi/fribidi-flags.h
+/usr/include/fribidi/fribidi-joining-types-list.h
+/usr/include/fribidi/fribidi-joining-types.h
+/usr/include/fribidi/fribidi-joining.h
+/usr/include/fribidi/fribidi-mirroring.h
+/usr/include/fribidi/fribidi-shape.h
+/usr/include/fribidi/fribidi-types.h
+/usr/include/fribidi/fribidi-unicode-version.h
+/usr/include/fribidi/fribidi-unicode.h
+/usr/include/fribidi/fribidi.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libfribidi.a
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/fribidi.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libfribidi-dev
+/usr/share/doc/libfribidi-dev/copyright
+/usr/share/man
+/usr/share/man/man3
+/usr/share/man/man3/fribidi_charset_to_unicode.3.gz
+/usr/share/man/man3/fribidi_debug_status.3.gz
+/usr/share/man/man3/fribidi_get_bidi_type.3.gz
+/usr/share/man/man3/fribidi_get_bidi_type_name.3.gz
+/usr/share/man/man3/fribidi_get_bidi_types.3.gz
+/usr/share/man/man3/fribidi_get_bracket.3.gz
+/usr/share/man/man3/fribidi_get_bracket_types.3.gz
+/usr/share/man/man3/fribidi_get_joining_type.3.gz
+/usr/share/man/man3/fribidi_get_joining_type_name.3.gz
+/usr/share/man/man3/fribidi_get_joining_types.3.gz
+/usr/share/man/man3/fribidi_get_mirror_char.3.gz
+/usr/share/man/man3/fribidi_get_par_direction.3.gz
+/usr/share/man/man3/fribidi_get_par_embedding_levels.3.gz
+/usr/share/man/man3/fribidi_get_par_embedding_levels_ex.3.gz
+/usr/share/man/man3/fribidi_get_type.3.gz
+/usr/share/man/man3/fribidi_get_type_internal.3.gz
+/usr/share/man/man3/fribidi_join_arabic.3.gz
+/usr/share/man/man3/fribidi_log2vis.3.gz
+/usr/share/man/man3/fribidi_log2vis_get_embedding_levels.3.gz
+/usr/share/man/man3/fribidi_mirroring_status.3.gz
+/usr/share/man/man3/fribidi_parse_charset.3.gz
+/usr/share/man/man3/fribidi_remove_bidi_marks.3.gz
+/usr/share/man/man3/fribidi_reorder_line.3.gz
+/usr/share/man/man3/fribidi_reorder_nsm_status.3.gz
+/usr/share/man/man3/fribidi_set_debug.3.gz
+/usr/share/man/man3/fribidi_set_mirroring.3.gz
+/usr/share/man/man3/fribidi_set_reorder_nsm.3.gz
+/usr/share/man/man3/fribidi_shape.3.gz
+/usr/share/man/man3/fribidi_shape_arabic.3.gz
+/usr/share/man/man3/fribidi_shape_mirroring.3.gz
+/usr/share/man/man3/fribidi_unicode_to_charset.3.gz
+/usr/lib/x86_64-linux-gnu/libfribidi.so
+/usr/share/doc/libfribidi-dev/changelog.Debian.gz
+
+
+/.
+/usr
+/usr/bin
+/usr/bin/libpng16-config
+/usr/include
+/usr/include/libpng16
+/usr/include/libpng16/png.h
+/usr/include/libpng16/pngconf.h
+/usr/include/libpng16/pnglibconf.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libpng16.a
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/libpng16.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libpng-dev
+/usr/share/doc/libpng-dev/copyright
+/usr/share/doc/libpng-dev/examples
+/usr/share/doc/libpng-dev/examples/example.c
+/usr/share/doc/libpng-dev/examples/pngtest.c
+/usr/share/doc/libpng-dev/examples/pngtest.png
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/libpng16-config.1.gz
+/usr/share/man/man3
+/usr/share/man/man3/libpng.3.gz
+/usr/share/man/man3/libpngpf.3.gz
+/usr/share/man/man5
+/usr/share/man/man5/png.5.gz
+/usr/bin/libpng-config
+/usr/include/libpng
+/usr/include/png.h
+/usr/include/pngconf.h
+/usr/include/pnglibconf.h
+/usr/lib/x86_64-linux-gnu/libpng.a
+/usr/lib/x86_64-linux-gnu/libpng.so
+/usr/lib/x86_64-linux-gnu/libpng16.so
+/usr/lib/x86_64-linux-gnu/pkgconfig/libpng.pc
+/usr/share/doc/libpng-dev/changelog.Debian.gz
+/usr/share/man/man1/libpng-config.1.gz
+
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libtiff5-dev
+/usr/share/doc/libtiff5-dev/copyright
+/usr/share/doc/libtiff5-dev/changelog.Debian.gz
+
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libjpeg-dev
+/usr/share/doc/libjpeg-dev/copyright
+/usr/share/doc/libjpeg-dev/changelog.Debian.gz
+
+/.
+/usr
+/usr/include
+/usr/include/openssl
+/usr/include/openssl/aes.h
+/usr/include/openssl/asn1.h
+/usr/include/openssl/asn1_mac.h
+/usr/include/openssl/asn1err.h
+/usr/include/openssl/asn1t.h
+/usr/include/openssl/async.h
+/usr/include/openssl/asyncerr.h
+/usr/include/openssl/bio.h
+/usr/include/openssl/bioerr.h
+/usr/include/openssl/blowfish.h
+/usr/include/openssl/bn.h
+/usr/include/openssl/bnerr.h
+/usr/include/openssl/buffer.h
+/usr/include/openssl/buffererr.h
+/usr/include/openssl/camellia.h
+/usr/include/openssl/cast.h
+/usr/include/openssl/cmac.h
+/usr/include/openssl/cmp.h
+/usr/include/openssl/cmp_util.h
+/usr/include/openssl/cmperr.h
+/usr/include/openssl/cms.h
+/usr/include/openssl/cmserr.h
+/usr/include/openssl/comp.h
+/usr/include/openssl/comperr.h
+/usr/include/openssl/conf.h
+/usr/include/openssl/conf_api.h
+/usr/include/openssl/conferr.h
+/usr/include/openssl/conftypes.h
+/usr/include/openssl/core.h
+/usr/include/openssl/core_dispatch.h
+/usr/include/openssl/core_names.h
+/usr/include/openssl/core_object.h
+/usr/include/openssl/crmf.h
+/usr/include/openssl/crmferr.h
+/usr/include/openssl/crypto.h
+/usr/include/openssl/cryptoerr.h
+/usr/include/openssl/cryptoerr_legacy.h
+/usr/include/openssl/ct.h
+/usr/include/openssl/cterr.h
+/usr/include/openssl/decoder.h
+/usr/include/openssl/decodererr.h
+/usr/include/openssl/des.h
+/usr/include/openssl/dh.h
+/usr/include/openssl/dherr.h
+/usr/include/openssl/dsa.h
+/usr/include/openssl/dsaerr.h
+/usr/include/openssl/dtls1.h
+/usr/include/openssl/e_os2.h
+/usr/include/openssl/ebcdic.h
+/usr/include/openssl/ec.h
+/usr/include/openssl/ecdh.h
+/usr/include/openssl/ecdsa.h
+/usr/include/openssl/ecerr.h
+/usr/include/openssl/encoder.h
+/usr/include/openssl/encodererr.h
+/usr/include/openssl/engine.h
+/usr/include/openssl/engineerr.h
+/usr/include/openssl/err.h
+/usr/include/openssl/ess.h
+/usr/include/openssl/esserr.h
+/usr/include/openssl/evp.h
+/usr/include/openssl/evperr.h
+/usr/include/openssl/fips_names.h
+/usr/include/openssl/fipskey.h
+/usr/include/openssl/hmac.h
+/usr/include/openssl/http.h
+/usr/include/openssl/httperr.h
+/usr/include/openssl/idea.h
+/usr/include/openssl/kdf.h
+/usr/include/openssl/kdferr.h
+/usr/include/openssl/lhash.h
+/usr/include/openssl/macros.h
+/usr/include/openssl/md2.h
+/usr/include/openssl/md4.h
+/usr/include/openssl/md5.h
+/usr/include/openssl/mdc2.h
+/usr/include/openssl/modes.h
+/usr/include/openssl/obj_mac.h
+/usr/include/openssl/objects.h
+/usr/include/openssl/objectserr.h
+/usr/include/openssl/ocsp.h
+/usr/include/openssl/ocsperr.h
+/usr/include/openssl/opensslv.h
+/usr/include/openssl/ossl_typ.h
+/usr/include/openssl/param_build.h
+/usr/include/openssl/params.h
+/usr/include/openssl/pem.h
+/usr/include/openssl/pem2.h
+/usr/include/openssl/pemerr.h
+/usr/include/openssl/pkcs12.h
+/usr/include/openssl/pkcs12err.h
+/usr/include/openssl/pkcs7.h
+/usr/include/openssl/pkcs7err.h
+/usr/include/openssl/prov_ssl.h
+/usr/include/openssl/proverr.h
+/usr/include/openssl/provider.h
+/usr/include/openssl/rand.h
+/usr/include/openssl/randerr.h
+/usr/include/openssl/rc2.h
+/usr/include/openssl/rc4.h
+/usr/include/openssl/rc5.h
+/usr/include/openssl/ripemd.h
+/usr/include/openssl/rsa.h
+/usr/include/openssl/rsaerr.h
+/usr/include/openssl/safestack.h
+/usr/include/openssl/seed.h
+/usr/include/openssl/self_test.h
+/usr/include/openssl/sha.h
+/usr/include/openssl/srp.h
+/usr/include/openssl/srtp.h
+/usr/include/openssl/ssl.h
+/usr/include/openssl/ssl2.h
+/usr/include/openssl/ssl3.h
+/usr/include/openssl/sslerr.h
+/usr/include/openssl/sslerr_legacy.h
+/usr/include/openssl/stack.h
+/usr/include/openssl/store.h
+/usr/include/openssl/storeerr.h
+/usr/include/openssl/symhacks.h
+/usr/include/openssl/tls1.h
+/usr/include/openssl/trace.h
+/usr/include/openssl/ts.h
+/usr/include/openssl/tserr.h
+/usr/include/openssl/txt_db.h
+/usr/include/openssl/types.h
+/usr/include/openssl/ui.h
+/usr/include/openssl/uierr.h
+/usr/include/openssl/whrlpool.h
+/usr/include/openssl/x509.h
+/usr/include/openssl/x509_vfy.h
+/usr/include/openssl/x509err.h
+/usr/include/openssl/x509v3.h
+/usr/include/openssl/x509v3err.h
+/usr/include/x86_64-linux-gnu
+/usr/include/x86_64-linux-gnu/openssl
+/usr/include/x86_64-linux-gnu/openssl/configuration.h
+/usr/include/x86_64-linux-gnu/openssl/opensslconf.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libcrypto.a
+/usr/lib/x86_64-linux-gnu/libssl.a
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/libcrypto.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/libssl.pc
+/usr/lib/x86_64-linux-gnu/pkgconfig/openssl.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libssl-dev
+/usr/lib/x86_64-linux-gnu/libcrypto.so
+/usr/lib/x86_64-linux-gnu/libssl.so
+/usr/share/doc/libssl-dev/changelog.Debian.gz
+/usr/share/doc/libssl-dev/changelog.gz
+/usr/share/doc/libssl-dev/copyright
+
+/.
+/usr
+/usr/bin
+/usr/bin/xml2-config
+/usr/include
+/usr/include/libxml2
+/usr/include/libxml2/libxml
+/usr/include/libxml2/libxml/DOCBparser.h
+/usr/include/libxml2/libxml/HTMLparser.h
+/usr/include/libxml2/libxml/HTMLtree.h
+/usr/include/libxml2/libxml/SAX.h
+/usr/include/libxml2/libxml/SAX2.h
+/usr/include/libxml2/libxml/c14n.h
+/usr/include/libxml2/libxml/catalog.h
+/usr/include/libxml2/libxml/chvalid.h
+/usr/include/libxml2/libxml/debugXML.h
+/usr/include/libxml2/libxml/dict.h
+/usr/include/libxml2/libxml/encoding.h
+/usr/include/libxml2/libxml/entities.h
+/usr/include/libxml2/libxml/globals.h
+/usr/include/libxml2/libxml/hash.h
+/usr/include/libxml2/libxml/list.h
+/usr/include/libxml2/libxml/nanoftp.h
+/usr/include/libxml2/libxml/nanohttp.h
+/usr/include/libxml2/libxml/parser.h
+/usr/include/libxml2/libxml/parserInternals.h
+/usr/include/libxml2/libxml/pattern.h
+/usr/include/libxml2/libxml/relaxng.h
+/usr/include/libxml2/libxml/schemasInternals.h
+/usr/include/libxml2/libxml/schematron.h
+/usr/include/libxml2/libxml/threads.h
+/usr/include/libxml2/libxml/tree.h
+/usr/include/libxml2/libxml/uri.h
+/usr/include/libxml2/libxml/valid.h
+/usr/include/libxml2/libxml/xinclude.h
+/usr/include/libxml2/libxml/xlink.h
+/usr/include/libxml2/libxml/xmlIO.h
+/usr/include/libxml2/libxml/xmlautomata.h
+/usr/include/libxml2/libxml/xmlerror.h
+/usr/include/libxml2/libxml/xmlexports.h
+/usr/include/libxml2/libxml/xmlmemory.h
+/usr/include/libxml2/libxml/xmlmodule.h
+/usr/include/libxml2/libxml/xmlreader.h
+/usr/include/libxml2/libxml/xmlregexp.h
+/usr/include/libxml2/libxml/xmlsave.h
+/usr/include/libxml2/libxml/xmlschemas.h
+/usr/include/libxml2/libxml/xmlschemastypes.h
+/usr/include/libxml2/libxml/xmlstring.h
+/usr/include/libxml2/libxml/xmlunicode.h
+/usr/include/libxml2/libxml/xmlversion.h
+/usr/include/libxml2/libxml/xmlwriter.h
+/usr/include/libxml2/libxml/xpath.h
+/usr/include/libxml2/libxml/xpathInternals.h
+/usr/include/libxml2/libxml/xpointer.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libxml2.a
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/libxml-2.0.pc
+/usr/lib/x86_64-linux-gnu/xml2Conf.sh
+/usr/share
+/usr/share/aclocal
+/usr/share/aclocal/libxml2.m4
+/usr/share/doc
+/usr/share/doc/libxml2-dev
+/usr/share/doc/libxml2-dev/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/xml2-config.1.gz
+/usr/share/man/man3
+/usr/share/man/man3/libxml.3.gz
+/usr/lib/x86_64-linux-gnu/libxml2.so
+/usr/share/doc/libxml2-dev/NEWS.gz
+/usr/share/doc/libxml2-dev/changelog.Debian.gz
+
+/.
+/usr
+/usr/bin
+/usr/bin/curl-config
+/usr/include
+/usr/include/x86_64-linux-gnu
+/usr/include/x86_64-linux-gnu/curl
+/usr/include/x86_64-linux-gnu/curl/curl.h
+/usr/include/x86_64-linux-gnu/curl/curlver.h
+/usr/include/x86_64-linux-gnu/curl/easy.h
+/usr/include/x86_64-linux-gnu/curl/header.h
+/usr/include/x86_64-linux-gnu/curl/mprintf.h
+/usr/include/x86_64-linux-gnu/curl/multi.h
+/usr/include/x86_64-linux-gnu/curl/options.h
+/usr/include/x86_64-linux-gnu/curl/stdcheaders.h
+/usr/include/x86_64-linux-gnu/curl/system.h
+/usr/include/x86_64-linux-gnu/curl/typecheck-gcc.h
+/usr/include/x86_64-linux-gnu/curl/urlapi.h
+/usr/include/x86_64-linux-gnu/curl/websockets.h
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libcurl.a
+/usr/lib/x86_64-linux-gnu/pkgconfig
+/usr/lib/x86_64-linux-gnu/pkgconfig/libcurl.pc
+/usr/share
+/usr/share/aclocal
+/usr/share/aclocal/libcurl.m4
+/usr/share/doc
+/usr/share/doc/libcurl4-openssl-dev
+/usr/share/doc/libcurl4-openssl-dev/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/curl-config.1.gz
+/usr/lib/x86_64-linux-gnu/libcurl.so
+/usr/share/doc/libcurl4-openssl-dev/changelog.Debian.gz
+[1] "/workspaces/BBM104/R_Library:/usr/local/lib/R/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-21-openjdk-amd64/lib/server"
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c clip-lines.cpp -o clip-lines.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c init.cpp -o init.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c isoband.cpp -o isoband.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c polygon.cpp -o polygon.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c separate-polygons.cpp -o separate-polygons.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c test-clip-lines.cpp -o test-clip-lines.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c test-runner.cpp -o test-runner.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c test-separate-polygons.cpp -o test-separate-polygons.o
+g++ -std=gnu++11 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o isoband.so clip-lines.o init.o isoband.o polygon.o separate-polygons.o test-clip-lines.o test-runner.o test-separate-polygons.o -L/usr/local/lib/R/lib -lR
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib -Wall tools/px.c -o tools/px
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib -I../inst/include -Wall tools/sock.c -o tools/sock
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib supervisor/supervisor.c \
+      supervisor/utils.c -o supervisor/supervisor
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c base64.c -o base64.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c client.c -o client.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c errors.c -o errors.o
+gcc -shared -L"/usr/local/lib/R/lib" -L/usr/local/lib -o client.so base64.o client.o errors.o  \
+	 -L"/usr/local/lib/R/lib" -lR
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c poll.c -o poll.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c processx-connection.c -o processx-connection.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c processx-vector.c -o processx-vector.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c create-time.c -o create-time.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/childlist.c -o unix/childlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/connection.c -o unix/connection.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/processx.c -o unix/processx.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/sigchld.c -o unix/sigchld.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/utils.c -o unix/utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/named_pipe.c -o unix/named_pipe.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cleancall.c -o cleancall.o
+gcc -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o processx.so init.o poll.o errors.o processx-connection.o processx-vector.o create-time.o base64.o unix/childlist.o unix/connection.o unix/processx.o unix/sigchld.o unix/utils.o unix/named_pipe.o cleancall.o -L/usr/local/lib/R/lib -lR
+R6Class process: finalize() method is public, but it should be private as of R6 2.4.0. This code will continue to work, but in a future version of R6, finalize() will be required to be private.
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib -Wall tools/px.c -o tools/px
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib -I../inst/include -Wall tools/sock.c -o tools/sock
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -L/usr/local/lib supervisor/supervisor.c \
+      supervisor/utils.c -o supervisor/supervisor
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c base64.c -o base64.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c client.c -o client.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c errors.c -o errors.o
+gcc -shared -L"/usr/local/lib/R/lib" -L/usr/local/lib -o client.so base64.o client.o errors.o  \
+	 -L"/usr/local/lib/R/lib" -lR
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c poll.c -o poll.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c processx-connection.c -o processx-connection.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c processx-vector.c -o processx-vector.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c create-time.c -o create-time.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/childlist.c -o unix/childlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/connection.c -o unix/connection.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/processx.c -o unix/processx.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/sigchld.c -o unix/sigchld.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/utils.c -o unix/utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c unix/named_pipe.c -o unix/named_pipe.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cleancall.c -o cleancall.o
+gcc -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o processx.so init.o poll.o errors.o processx-connection.o processx-vector.o create-time.o base64.o unix/childlist.o unix/connection.o unix/processx.o unix/sigchld.o unix/utils.o unix/named_pipe.o cleancall.o -L/usr/local/lib/R/lib -lR
+R6Class process: finalize() method is public, but it should be private as of R6 2.4.0. This code will continue to work, but in a future version of R6, finalize() will be required to be private.
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++11 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c devSVG.cpp -o devSVG.o
+g++ -std=gnu++11 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o svglite.so cpp11.o devSVG.o -lpng -lz -L/usr/local/lib/R/lib -lR
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi 
+Using PKG_LIBS=-lharfbuzz -lfreetype -lfribidi 
+rm -f textshaping.so cpp11.o face_feature.o hb_shaper.o init.o string_bidi.o string_metrics.o string_shape.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c face_feature.cpp -o face_feature.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c hb_shaper.cpp -o hb_shaper.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c init.cpp -o init.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c string_bidi.cpp -o string_bidi.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c string_metrics.cpp -o string_metrics.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -DNDEBUG -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/fribidi  -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/systemfonts/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c string_shape.cpp -o string_shape.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o textshaping.so cpp11.o face_feature.o hb_shaper.o init.o string_bidi.o string_metrics.o string_shape.o -lharfbuzz -lfreetype -lfribidi -L/usr/local/lib/R/lib -lR
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c common.cpp -o common.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c get.cpp -o get.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c parse.c -o parse.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c round.cpp -o round.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c tzone.cpp -o tzone.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c update.cpp -o update.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_fixed.cc -o cctz/src/time_zone_fixed.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_if.cc -o cctz/src/time_zone_if.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_impl.cc -o cctz/src/time_zone_impl.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_info.cc -o cctz/src/time_zone_info.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_libc.cc -o cctz/src/time_zone_libc.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_lookup.cc -o cctz/src/time_zone_lookup.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/time_zone_posix.cc -o cctz/src/time_zone_posix.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I. -I./cctz/src/ -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cctz/src/zone_info_source.cc -o cctz/src/zone_info_source.o
+ar rcs libcctz.a ./cctz/src/time_zone_fixed.o ./cctz/src/time_zone_if.o ./cctz/src/time_zone_impl.o ./cctz/src/time_zone_info.o ./cctz/src/time_zone_libc.o ./cctz/src/time_zone_lookup.o ./cctz/src/time_zone_posix.o ./cctz/src/zone_info_source.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o timechange.so common.o cpp11.o get.o parse.o round.o tzone.o update.o -L. -lcctz -L/usr/local/lib/R/lib -lR
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c api.cpp -o api.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c names.cpp -o names.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c path.cpp -o path.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c tz.cpp -o tz.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -I../inst/include -DINSTALL=dummy -DAUTO_DOWNLOAD=0 -DHAS_REMOTE_API=0 -DUSE_OS_TZDB=0 -DONLY_C_LOCALE=1 -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c version.cpp -o version.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o tzdb.so api.o cpp11.o names.o path.o tz.o version.o -L/usr/local/lib/R/lib -lR
+gcc 13.3.0
+zlib 1.3 is available ok
+* checking if R installation supports OpenMP without any extra hints... yes
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c assign.c -o assign.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c between.c -o between.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bmerge.c -o bmerge.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c chmatch.c -o chmatch.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cj.c -o cj.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c coalesce.c -o coalesce.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c dogroups.c -o dogroups.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fastmean.c -o fastmean.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fcast.c -o fcast.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fifelse.c -o fifelse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fmelt.c -o fmelt.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c forder.c -o forder.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frank.c -o frank.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fread.c -o fread.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c freadR.c -o freadR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c froll.c -o froll.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frollR.c -o frollR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frolladaptive.c -o frolladaptive.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fsort.c -o fsort.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fwrite.c -o fwrite.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fwriteR.c -o fwriteR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c gsumm.c -o gsumm.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c idatetime.c -o idatetime.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ijoin.c -o ijoin.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c inrange.c -o inrange.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c nafill.c -o nafill.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c negate.c -o negate.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c nqrecreateindices.c -o nqrecreateindices.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c openmp-utils.c -o openmp-utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c programming.c -o programming.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c quickselect.c -o quickselect.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rbindlist.c -o rbindlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c reorder.c -o reorder.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c shift.c -o shift.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c snprintf.c -o snprintf.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c subset.c -o subset.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c transpose.c -o transpose.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c types.c -o types.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c uniqlist.c -o uniqlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utils.c -o utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vecseq.c -o vecseq.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c wrappers.c -o wrappers.o
+gcc -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o data.table.so assign.o between.o bmerge.o chmatch.o cj.o coalesce.o dogroups.o fastmean.o fcast.o fifelse.o fmelt.o forder.o frank.o fread.o freadR.o froll.o frollR.o frolladaptive.o fsort.o fwrite.o fwriteR.o gsumm.o idatetime.o ijoin.o init.o inrange.o nafill.o negate.o nqrecreateindices.o openmp-utils.o programming.o quickselect.o rbindlist.o reorder.o shift.o snprintf.o subset.o transpose.o types.o uniqlist.o utils.o vecseq.o wrappers.o -fopenmp -lz -L/usr/local/lib/R/lib -lR
+PKG_CFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -lz
+if [ "data.table.so" != "data_table.so" ]; then mv data.table.so data_table.so; fi
+if [ "" != "Windows_NT" ] && [ `uname -s` = 'Darwin' ]; then install_name_tool -id data_table.so data_table.so; fi
+gcc 13.3.0
+zlib 1.3 is available ok
+* checking if R installation supports OpenMP without any extra hints... yes
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c assign.c -o assign.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c between.c -o between.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c bmerge.c -o bmerge.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c chmatch.c -o chmatch.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cj.c -o cj.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c coalesce.c -o coalesce.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c dogroups.c -o dogroups.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fastmean.c -o fastmean.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fcast.c -o fcast.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fifelse.c -o fifelse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fmelt.c -o fmelt.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c forder.c -o forder.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frank.c -o frank.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fread.c -o fread.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c freadR.c -o freadR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c froll.c -o froll.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frollR.c -o frollR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c frolladaptive.c -o frolladaptive.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fsort.c -o fsort.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fwrite.c -o fwrite.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c fwriteR.c -o fwriteR.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c gsumm.c -o gsumm.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c idatetime.c -o idatetime.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ijoin.c -o ijoin.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c inrange.c -o inrange.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c nafill.c -o nafill.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c negate.c -o negate.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c nqrecreateindices.c -o nqrecreateindices.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c openmp-utils.c -o openmp-utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c programming.c -o programming.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c quickselect.c -o quickselect.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rbindlist.c -o rbindlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c reorder.c -o reorder.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c shift.c -o shift.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c snprintf.c -o snprintf.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c subset.c -o subset.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c transpose.c -o transpose.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c types.c -o types.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c uniqlist.c -o uniqlist.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utils.c -o utils.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c vecseq.c -o vecseq.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include   -fopenmp  -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c wrappers.c -o wrappers.o
+gcc -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o data.table.so assign.o between.o bmerge.o chmatch.o cj.o coalesce.o dogroups.o fastmean.o fcast.o fifelse.o fmelt.o forder.o frank.o fread.o freadR.o froll.o frollR.o frolladaptive.o fsort.o fwrite.o fwriteR.o gsumm.o idatetime.o ijoin.o init.o inrange.o nafill.o negate.o nqrecreateindices.o openmp-utils.o programming.o quickselect.o rbindlist.o reorder.o shift.o snprintf.o subset.o transpose.o types.o uniqlist.o utils.o vecseq.o wrappers.o -fopenmp -lz -L/usr/local/lib/R/lib -lR
+PKG_CFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -lz
+if [ "data.table.so" != "data_table.so" ]; then mv data.table.so data_table.so; fi
+if [ "" != "Windows_NT" ] && [ `uname -s` = 'Darwin' ]; then install_name_tool -id data_table.so data_table.so; fi
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=
+Using PKG_LIBS=-lz 
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tagged_na.c -o tagged_na.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/CKHashTable.c -o readstat/CKHashTable.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_bits.c -o readstat/readstat_bits.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_convert.c -o readstat/readstat_convert.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_error.c -o readstat/readstat_error.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_io_unistd.c -o readstat/readstat_io_unistd.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_malloc.c -o readstat/readstat_malloc.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_metadata.c -o readstat/readstat_metadata.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_parser.c -o readstat/readstat_parser.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_value.c -o readstat/readstat_value.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_variable.c -o readstat/readstat_variable.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/readstat_writer.c -o readstat/readstat_writer.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/ieee.c -o readstat/sas/ieee.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas.c -o readstat/sas/readstat_sas.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas7bcat_read.c -o readstat/sas/readstat_sas7bcat_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas7bcat_write.c -o readstat/sas/readstat_sas7bcat_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas7bdat_read.c -o readstat/sas/readstat_sas7bdat_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas7bdat_write.c -o readstat/sas/readstat_sas7bdat_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_sas_rle.c -o readstat/sas/readstat_sas_rle.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_xport.c -o readstat/sas/readstat_xport.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_xport_parse_format.c -o readstat/sas/readstat_xport_parse_format.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_xport_read.c -o readstat/sas/readstat_xport_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/sas/readstat_xport_write.c -o readstat/sas/readstat_xport_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_por.c -o readstat/spss/readstat_por.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_por_parse.c -o readstat/spss/readstat_por_parse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_por_read.c -o readstat/spss/readstat_por_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_por_write.c -o readstat/spss/readstat_por_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav.c -o readstat/spss/readstat_sav.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav_compress.c -o readstat/spss/readstat_sav_compress.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav_parse.c -o readstat/spss/readstat_sav_parse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav_parse_timestamp.c -o readstat/spss/readstat_sav_parse_timestamp.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav_read.c -o readstat/spss/readstat_sav_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_sav_write.c -o readstat/spss/readstat_sav_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_spss.c -o readstat/spss/readstat_spss.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_spss_parse.c -o readstat/spss/readstat_spss_parse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_zsav_compress.c -o readstat/spss/readstat_zsav_compress.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_zsav_read.c -o readstat/spss/readstat_zsav_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/spss/readstat_zsav_write.c -o readstat/spss/readstat_zsav_write.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/stata/readstat_dta.c -o readstat/stata/readstat_dta.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/stata/readstat_dta_parse_timestamp.c -o readstat/stata/readstat_dta_parse_timestamp.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/stata/readstat_dta_read.c -o readstat/stata/readstat_dta_read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c readstat/stata/readstat_dta_write.c -o readstat/stata/readstat_dta_write.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c DfReader.cpp -o DfReader.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c DfWriter.cpp -o DfWriter.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG  -I'/workspaces/BBM104/R_Library/cpp11/include' -I/usr/local/include   -Ireadstat -DHAVE_ZLIB -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c haven_types.cpp -o haven_types.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o haven.so tagged_na.o readstat/CKHashTable.o readstat/readstat_bits.o readstat/readstat_convert.o readstat/readstat_error.o readstat/readstat_io_unistd.o readstat/readstat_malloc.o readstat/readstat_metadata.o readstat/readstat_parser.o readstat/readstat_value.o readstat/readstat_variable.o readstat/readstat_writer.o readstat/sas/ieee.o readstat/sas/readstat_sas.o readstat/sas/readstat_sas7bcat_read.o readstat/sas/readstat_sas7bcat_write.o readstat/sas/readstat_sas7bdat_read.o readstat/sas/readstat_sas7bdat_write.o readstat/sas/readstat_sas_rle.o readstat/sas/readstat_xport.o readstat/sas/readstat_xport_parse_format.o readstat/sas/readstat_xport_read.o readstat/sas/readstat_xport_write.o readstat/spss/readstat_por.o readstat/spss/readstat_por_parse.o readstat/spss/readstat_por_read.o readstat/spss/readstat_por_write.o readstat/spss/readstat_sav.o readstat/spss/readstat_sav_compress.o readstat/spss/readstat_sav_parse.o readstat/spss/readstat_sav_parse_timestamp.o readstat/spss/readstat_sav_read.o readstat/spss/readstat_sav_write.o readstat/spss/readstat_spss.o readstat/spss/readstat_spss_parse.o readstat/spss/readstat_zsav_compress.o readstat/spss/readstat_zsav_read.o readstat/spss/readstat_zsav_write.o readstat/stata/readstat_dta.o readstat/stata/readstat_dta_parse_timestamp.o readstat/stata/readstat_dta_read.o readstat/stata/readstat_dta_write.o DfReader.o DfWriter.o cpp11.o haven_types.o -lz -L/usr/local/lib/R/lib -lR
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=-I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp 
+Using PKG_LIBS=-lfreetype -lpng16 -ltiff -ljpeg 
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c capture_dev.cpp -o capture_dev.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c init.cpp -o init.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c jpeg_dev.cpp -o jpeg_dev.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c png_dev.cpp -o png_dev.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c ppm_dev.cpp -o ppm_dev.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c tiff_dev.cpp -o tiff_dev.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_curves.cpp -o agg/src/agg_curves.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_font_freetype.cpp -o agg/src/agg_font_freetype.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_image_filters.cpp -o agg/src/agg_image_filters.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_trans_affine.cpp -o agg/src/agg_trans_affine.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_vcgen_dash.cpp -o agg/src/agg_vcgen_dash.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -I./agg/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/x86_64-linux-gnu -I/usr/include/webp  -I'/workspaces/BBM104/R_Library/systemfonts/include' -I'/workspaces/BBM104/R_Library/textshaping/include' -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c agg/src/agg_vcgen_stroke.cpp -o agg/src/agg_vcgen_stroke.o
+ar rcs agg/libstatagg.a agg/src/agg_curves.o agg/src/agg_font_freetype.o agg/src/agg_image_filters.o agg/src/agg_trans_affine.o agg/src/agg_vcgen_dash.o agg/src/agg_vcgen_stroke.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o ragg.so capture_dev.o init.o jpeg_dev.o png_dev.o ppm_dev.o tiff_dev.o -Lagg -lstatagg -lfreetype -lpng16 -ltiff -ljpeg -L/usr/local/lib/R/lib -lR
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c cpp11.cpp -o cpp11.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c XlsWorkBook.cpp -o XlsWorkBook.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c XlsxWorkBook.cpp -o XlsxWorkBook.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c zip.cpp -o zip.o
+g++ -std=gnu++17 -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g   -c Read.cpp -o Read.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cran.c -o cran.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c libxls/xlstool.c -o libxls/xlstool.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c libxls/endian.c -o libxls/endian.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c libxls/ole.c -o libxls/ole.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c libxls/xls.c -o libxls/xls.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG -Iunix -I. -I'/workspaces/BBM104/R_Library/cpp11/include' -I'/workspaces/BBM104/R_Library/progress/include' -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c libxls/locale.c -o libxls/locale.o
+g++ -std=gnu++17 -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o readxl.so cpp11.o XlsWorkBook.o XlsxWorkBook.o zip.o Read.o cran.o libxls/xlstool.o libxls/endian.o libxls/ole.o libxls/xls.o libxls/locale.o -L/usr/local/lib/R/lib -lR
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c datetime.c -o datetime.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c period.c -o period.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c tparse.c -o tparse.o
+gcc -I"/usr/local/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utils.c -o utils.o
+gcc -shared -L/usr/local/lib/R/lib -L/usr/local/lib -o lubridate.so datetime.o init.o period.o tparse.o utils.o -L/usr/local/lib/R/lib -lR
+[1] "/workspaces/BBM104/R_Library:/usr/local/lib/R/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-21-openjdk-amd64/lib/server"

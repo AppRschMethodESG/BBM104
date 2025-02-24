@@ -23,3 +23,7 @@
       - The window will reload and rebase with the path above as the current working directory   
       - Click `Terminal` on the dropdown menu; select `New Terminal`
       - In the terminal, execute the two commands by replacing `SetupRunOnce.sh` with `SetupRunOnce_Lightning.ai.sh`
+
+- Can use the following command to _**log the output and error to files**_ while also displaying them in the terminal (after replacing the filename `SetupRunOnce.sh` accordingly):
+   - `./SetupRunOnce.sh > >(tee script_output.log) 2> >(tee script_error.log >&2)`
+

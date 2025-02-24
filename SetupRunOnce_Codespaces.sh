@@ -31,7 +31,7 @@
 sudo apt update -qq
 
 # install two helper packages we need
-sudo apt install --no-install-recommends software-properties-common dirmngr
+sudo apt install -y --no-install-recommends software-properties-common dirmngr
 
 # add the signing key (by Michael Rutter) for these repos
 # To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
@@ -84,4 +84,4 @@ alias r="radian"
 source ~/.bashrc
 
 # Call .Rmd file to install packages 
-#Rscript SetupRunOnce.R
+Rscript SetupRunOnce.R

@@ -1,0 +1,1500 @@
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+dpkg-query: package 'libfreetype6-dev' is not installed
+Use dpkg --contents (= dpkg-deb --contents) to list archive files contents.
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘utf8’, ‘generics’, ‘pillar’, ‘R6’, ‘stringi’, ‘fansi’, ‘pkgconfig’, ‘withr’, ‘cli’, ‘dplyr’, ‘glue’, ‘lifecycle’, ‘magrittr’, ‘purrr’, ‘rlang’, ‘stringr’, ‘tibble’, ‘tidyselect’, ‘vctrs’, ‘cpp11’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/utf8_1.2.4.tar.gz'
+Content type 'binary/octet-stream' length 148180 bytes (144 KB)
+==================================================
+downloaded 144 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/generics_0.1.3.tar.gz'
+Content type 'binary/octet-stream' length 81013 bytes (79 KB)
+==================================================
+downloaded 79 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/pillar_1.10.1.tar.gz'
+Content type 'binary/octet-stream' length 658259 bytes (642 KB)
+==================================================
+downloaded 642 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/R6_2.6.1.tar.gz'
+Content type 'binary/octet-stream' length 86805 bytes (84 KB)
+==================================================
+downloaded 84 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/stringi_1.8.4.tar.gz'
+Content type 'binary/octet-stream' length 3290812 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/fansi_1.0.6.tar.gz'
+Content type 'binary/octet-stream' length 317407 bytes (309 KB)
+==================================================
+downloaded 309 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/pkgconfig_2.0.3.tar.gz'
+Content type 'binary/octet-stream' length 18089 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/withr_3.0.2.tar.gz'
+Content type 'binary/octet-stream' length 223887 bytes (218 KB)
+==================================================
+downloaded 218 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/cli_3.6.4.tar.gz'
+Content type 'binary/octet-stream' length 1328636 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/dplyr_1.1.4.tar.gz'
+Content type 'binary/octet-stream' length 1491332 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/glue_1.8.0.tar.gz'
+Content type 'binary/octet-stream' length 168121 bytes (164 KB)
+==================================================
+downloaded 164 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/lifecycle_1.0.4.tar.gz'
+Content type 'binary/octet-stream' length 125006 bytes (122 KB)
+==================================================
+downloaded 122 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/magrittr_2.0.3.tar.gz'
+Content type 'binary/octet-stream' length 223604 bytes (218 KB)
+==================================================
+downloaded 218 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/purrr_1.0.4.tar.gz'
+Content type 'binary/octet-stream' length 536982 bytes (524 KB)
+==================================================
+downloaded 524 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/rlang_1.1.5.tar.gz'
+Content type 'binary/octet-stream' length 1595150 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/stringr_1.5.1.tar.gz'
+Content type 'binary/octet-stream' length 311167 bytes (303 KB)
+==================================================
+downloaded 303 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/tibble_3.2.1.tar.gz'
+Content type 'binary/octet-stream' length 678504 bytes (662 KB)
+==================================================
+downloaded 662 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/tidyselect_1.2.1.tar.gz'
+Content type 'binary/octet-stream' length 225331 bytes (220 KB)
+==================================================
+downloaded 220 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/vctrs_0.6.5.tar.gz'
+Content type 'binary/octet-stream' length 1313013 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/cpp11_0.5.1.tar.gz'
+Content type 'binary/octet-stream' length 289273 bytes (282 KB)
+==================================================
+downloaded 282 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/tidyr_1.3.1.tar.gz'
+Content type 'binary/octet-stream' length 1177303 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+* installing *binary* package ‘utf8’ ...
+* DONE (utf8)
+* installing *binary* package ‘generics’ ...
+* DONE (generics)
+* installing *binary* package ‘R6’ ...
+* DONE (R6)
+* installing *binary* package ‘stringi’ ...
+* DONE (stringi)
+* installing *binary* package ‘fansi’ ...
+* DONE (fansi)
+* installing *binary* package ‘pkgconfig’ ...
+* DONE (pkgconfig)
+* installing *binary* package ‘withr’ ...
+* DONE (withr)
+* installing *binary* package ‘cli’ ...
+* DONE (cli)
+* installing *binary* package ‘glue’ ...
+* DONE (glue)
+* installing *binary* package ‘magrittr’ ...
+* DONE (magrittr)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘cpp11’ ...
+* DONE (cpp11)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘purrr’ ...
+* DONE (purrr)
+* installing *binary* package ‘stringr’ ...
+* DONE (stringr)
+* installing *binary* package ‘tidyselect’ ...
+* DONE (tidyselect)
+* installing *binary* package ‘tibble’ ...
+* DONE (tibble)
+* installing *binary* package ‘dplyr’ ...
+* DONE (dplyr)
+* installing *binary* package ‘tidyr’ ...
+* DONE (tidyr)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘digest’, ‘fs’, ‘rappdirs’, ‘base64enc’, ‘cachem’, ‘fastmap’, ‘htmltools’, ‘jquerylib’, ‘jsonlite’, ‘memoise’, ‘mime’, ‘sass’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/digest_0.6.37.tar.gz'
+Content type 'binary/octet-stream' length 227129 bytes (221 KB)
+==================================================
+downloaded 221 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/fs_1.6.5.tar.gz'
+Content type 'binary/octet-stream' length 309916 bytes (302 KB)
+==================================================
+downloaded 302 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/rappdirs_0.3.3.tar.gz'
+Content type 'binary/octet-stream' length 45226 bytes (44 KB)
+==================================================
+downloaded 44 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/base64enc_0.1-3.tar.gz'
+Content type 'binary/octet-stream' length 26593 bytes (25 KB)
+==================================================
+downloaded 25 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/cachem_1.1.0.tar.gz'
+Content type 'binary/octet-stream' length 67449 bytes (65 KB)
+==================================================
+downloaded 65 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/fastmap_1.2.0.tar.gz'
+Content type 'binary/octet-stream' length 66061 bytes (64 KB)
+==================================================
+downloaded 64 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/htmltools_0.5.8.1.tar.gz'
+Content type 'binary/octet-stream' length 354538 bytes (346 KB)
+==================================================
+downloaded 346 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/jquerylib_0.1.4.tar.gz'
+Content type 'binary/octet-stream' length 526852 bytes (514 KB)
+==================================================
+downloaded 514 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/jsonlite_1.9.0.tar.gz'
+Content type 'binary/octet-stream' length 1089599 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/memoise_2.0.1.tar.gz'
+Content type 'binary/octet-stream' length 48793 bytes (47 KB)
+==================================================
+downloaded 47 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/mime_0.12.tar.gz'
+Content type 'binary/octet-stream' length 33223 bytes (32 KB)
+==================================================
+downloaded 32 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/sass_0.4.9.tar.gz'
+Content type 'binary/octet-stream' length 2456243 bytes (2.3 MB)
+==================================================
+downloaded 2.3 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/bslib_0.9.0.tar.gz'
+Content type 'binary/octet-stream' length 5666254 bytes (5.4 MB)
+==================================================
+downloaded 5.4 MB
+
+* installing *binary* package ‘digest’ ...
+* DONE (digest)
+* installing *binary* package ‘fs’ ...
+* DONE (fs)
+* installing *binary* package ‘rappdirs’ ...
+* DONE (rappdirs)
+* installing *binary* package ‘base64enc’ ...
+* DONE (base64enc)
+* installing *binary* package ‘fastmap’ ...
+* DONE (fastmap)
+* installing *binary* package ‘jsonlite’ ...
+* DONE (jsonlite)
+* installing *binary* package ‘mime’ ...
+* DONE (mime)
+* installing *binary* package ‘cachem’ ...
+* DONE (cachem)
+* installing *binary* package ‘htmltools’ ...
+* DONE (htmltools)
+* installing *binary* package ‘jquerylib’ ...
+* DONE (jquerylib)
+* installing *binary* package ‘memoise’ ...
+* DONE (memoise)
+* installing *binary* package ‘sass’ ...
+* DONE (sass)
+* installing *binary* package ‘bslib’ ...
+* DONE (bslib)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/xml2_1.3.6.tar.gz'
+Content type 'binary/octet-stream' length 280174 bytes (273 KB)
+==================================================
+downloaded 273 KB
+
+* installing *binary* package ‘xml2’ ...
+* DONE (xml2)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/systemfonts_1.2.1.tar.gz'
+Content type 'binary/octet-stream' length 335679 bytes (327 KB)
+==================================================
+downloaded 327 KB
+
+* installing *binary* package ‘systemfonts’ ...
+* DONE (systemfonts)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/ps_1.9.0.tar.gz'
+Content type 'binary/octet-stream' length 499236 bytes (487 KB)
+==================================================
+downloaded 487 KB
+
+* installing *binary* package ‘ps’ ...
+* DONE (ps)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/fontawesome_0.5.3.tar.gz'
+Content type 'binary/octet-stream' length 1396249 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+* installing *binary* package ‘fontawesome’ ...
+* DONE (fontawesome)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘sys’, ‘askpass’, ‘openssl’, ‘uuid’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/sys_3.4.3.tar.gz'
+Content type 'binary/octet-stream' length 40768 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/askpass_1.2.1.tar.gz'
+Content type 'binary/octet-stream' length 21896 bytes (21 KB)
+==================================================
+downloaded 21 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/openssl_2.3.2.tar.gz'
+Content type 'binary/octet-stream' length 1310209 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/uuid_1.2-1.tar.gz'
+Content type 'binary/octet-stream' length 48860 bytes (47 KB)
+==================================================
+downloaded 47 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/ids_1.0.1.tar.gz'
+Content type 'binary/octet-stream' length 122444 bytes (119 KB)
+==================================================
+downloaded 119 KB
+
+* installing *binary* package ‘sys’ ...
+* DONE (sys)
+* installing *binary* package ‘uuid’ ...
+* DONE (uuid)
+* installing *binary* package ‘askpass’ ...
+* DONE (askpass)
+* installing *binary* package ‘openssl’ ...
+* DONE (openssl)
+* installing *binary* package ‘ids’ ...
+* DONE (ids)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘xfun’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/xfun_0.51.tar.gz'
+Content type 'binary/octet-stream' length 584716 bytes (571 KB)
+==================================================
+downloaded 571 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/tinytex_0.55.tar.gz'
+Content type 'binary/octet-stream' length 143307 bytes (139 KB)
+==================================================
+downloaded 139 KB
+
+* installing *binary* package ‘xfun’ ...
+* DONE (xfun)
+* installing *binary* package ‘tinytex’ ...
+* DONE (tinytex)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘evaluate’, ‘highr’, ‘yaml’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/evaluate_1.0.3.tar.gz'
+Content type 'binary/octet-stream' length 101604 bytes (99 KB)
+==================================================
+downloaded 99 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/highr_0.11.tar.gz'
+Content type 'binary/octet-stream' length 37489 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/yaml_2.3.10.tar.gz'
+Content type 'binary/octet-stream' length 114762 bytes (112 KB)
+==================================================
+downloaded 112 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/knitr_1.49.tar.gz'
+Content type 'binary/octet-stream' length 1124001 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+* installing *binary* package ‘evaluate’ ...
+* DONE (evaluate)
+* installing *binary* package ‘highr’ ...
+* DONE (highr)
+* installing *binary* package ‘yaml’ ...
+* DONE (yaml)
+* installing *binary* package ‘knitr’ ...
+* DONE (knitr)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘bit’, ‘prettyunits’, ‘bit64’, ‘progress’, ‘clipr’, ‘crayon’, ‘hms’, ‘vroom’, ‘tzdb’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/bit_4.5.0.1.tar.gz'
+Content type 'binary/octet-stream' length 1174871 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/prettyunits_1.2.0.tar.gz'
+Content type 'binary/octet-stream' length 152978 bytes (149 KB)
+==================================================
+downloaded 149 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/bit64_4.6.0-1.tar.gz'
+Content type 'binary/octet-stream' length 491805 bytes (480 KB)
+==================================================
+downloaded 480 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/progress_1.2.3.tar.gz'
+Content type 'binary/octet-stream' length 86326 bytes (84 KB)
+==================================================
+downloaded 84 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/clipr_0.8.0.tar.gz'
+Content type 'binary/octet-stream' length 51189 bytes (49 KB)
+==================================================
+downloaded 49 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/crayon_1.5.3.tar.gz'
+Content type 'binary/octet-stream' length 163484 bytes (159 KB)
+==================================================
+downloaded 159 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/hms_1.1.3.tar.gz'
+Content type 'binary/octet-stream' length 99678 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/vroom_1.6.5.tar.gz'
+Content type 'binary/octet-stream' length 957690 bytes (935 KB)
+==================================================
+downloaded 935 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/tzdb_0.4.0.tar.gz'
+Content type 'binary/octet-stream' length 645296 bytes (630 KB)
+==================================================
+downloaded 630 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/readr_2.1.5.tar.gz'
+Content type 'binary/octet-stream' length 862001 bytes (841 KB)
+==================================================
+downloaded 841 KB
+
+* installing *binary* package ‘bit’ ...
+* DONE (bit)
+* installing *binary* package ‘prettyunits’ ...
+* DONE (prettyunits)
+* installing *binary* package ‘clipr’ ...
+* DONE (clipr)
+* installing *binary* package ‘crayon’ ...
+* DONE (crayon)
+* installing *binary* package ‘hms’ ...
+* DONE (hms)
+* installing *binary* package ‘tzdb’ ...
+* DONE (tzdb)
+* installing *binary* package ‘bit64’ ...
+* DONE (bit64)
+* installing *binary* package ‘progress’ ...
+* DONE (progress)
+* installing *binary* package ‘vroom’ ...
+* DONE (vroom)
+* installing *binary* package ‘readr’ ...
+* DONE (readr)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘colorspace’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/colorspace_2.1-1.tar.gz'
+Content type 'binary/octet-stream' length 2626614 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/farver_2.1.2.tar.gz'
+Content type 'binary/octet-stream' length 1466627 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/labeling_0.4.3.tar.gz'
+Content type 'binary/octet-stream' length 60952 bytes (59 KB)
+==================================================
+downloaded 59 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/munsell_0.5.1.tar.gz'
+Content type 'binary/octet-stream' length 243099 bytes (237 KB)
+==================================================
+downloaded 237 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/RColorBrewer_1.1-3.tar.gz'
+Content type 'binary/octet-stream' length 51823 bytes (50 KB)
+==================================================
+downloaded 50 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/viridisLite_0.4.2.tar.gz'
+Content type 'binary/octet-stream' length 1297555 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/scales_1.3.0.tar.gz'
+Content type 'binary/octet-stream' length 710365 bytes (693 KB)
+==================================================
+downloaded 693 KB
+
+* installing *binary* package ‘colorspace’ ...
+* DONE (colorspace)
+* installing *binary* package ‘farver’ ...
+* DONE (farver)
+* installing *binary* package ‘labeling’ ...
+* DONE (labeling)
+* installing *binary* package ‘RColorBrewer’ ...
+* DONE (RColorBrewer)
+* installing *binary* package ‘viridisLite’ ...
+* DONE (viridisLite)
+* installing *binary* package ‘munsell’ ...
+* DONE (munsell)
+* installing *binary* package ‘scales’ ...
+* DONE (scales)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘curl’, ‘httr’, ‘selectr’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/curl_6.2.1.tar.gz'
+Content type 'binary/octet-stream' length 782850 bytes (764 KB)
+==================================================
+downloaded 764 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/httr_1.4.7.tar.gz'
+Content type 'binary/octet-stream' length 484006 bytes (472 KB)
+==================================================
+downloaded 472 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/selectr_0.4-2.tar.gz'
+Content type 'binary/octet-stream' length 499149 bytes (487 KB)
+==================================================
+downloaded 487 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/rvest_1.0.4.tar.gz'
+Content type 'binary/octet-stream' length 298442 bytes (291 KB)
+==================================================
+downloaded 291 KB
+
+* installing *binary* package ‘curl’ ...
+* DONE (curl)
+* installing *binary* package ‘selectr’ ...
+* DONE (selectr)
+* installing *binary* package ‘httr’ ...
+* DONE (httr)
+* installing *binary* package ‘rvest’ ...
+* DONE (rvest)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/remotes_2.5.0.tar.gz'
+Content type 'binary/octet-stream' length 434593 bytes (424 KB)
+==================================================
+downloaded 424 KB
+
+* installing *binary* package ‘remotes’ ...
+* DONE (remotes)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+Installing package into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘lazyeval’, ‘pkgbuild’, ‘R.methodsS3’, ‘R.oo’, ‘R.utils’, ‘processx’, ‘backports’, ‘rex’, ‘brew’, ‘commonmark’, ‘desc’, ‘pkgload’, ‘R.cache’, ‘rprojroot’, ‘callr’, ‘collections’, ‘lintr’, ‘roxygen2’, ‘styler’, ‘xmlparsedata’
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/lazyeval_0.2.2.tar.gz'
+Content type 'binary/octet-stream' length 157375 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/pkgbuild_1.4.6.tar.gz'
+Content type 'binary/octet-stream' length 203349 bytes (198 KB)
+==================================================
+downloaded 198 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/R.methodsS3_1.8.2.tar.gz'
+Content type 'binary/octet-stream' length 82535 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/R.oo_1.27.0.tar.gz'
+Content type 'binary/octet-stream' length 998703 bytes (975 KB)
+==================================================
+downloaded 975 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/R.utils_2.12.3.tar.gz'
+Content type 'binary/octet-stream' length 1445633 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/processx_3.8.6.tar.gz'
+Content type 'binary/octet-stream' length 337081 bytes (329 KB)
+==================================================
+downloaded 329 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/backports_1.5.0.tar.gz'
+Content type 'binary/octet-stream' length 115743 bytes (113 KB)
+==================================================
+downloaded 113 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/rex_1.2.1.tar.gz'
+Content type 'binary/octet-stream' length 126428 bytes (123 KB)
+==================================================
+downloaded 123 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/brew_1.0-10.tar.gz'
+Content type 'binary/octet-stream' length 76350 bytes (74 KB)
+==================================================
+downloaded 74 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/commonmark_1.9.2.tar.gz'
+Content type 'binary/octet-stream' length 147263 bytes (143 KB)
+==================================================
+downloaded 143 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/desc_1.4.3.tar.gz'
+Content type 'binary/octet-stream' length 334757 bytes (326 KB)
+==================================================
+downloaded 326 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/pkgload_1.4.0.tar.gz'
+Content type 'binary/octet-stream' length 217317 bytes (212 KB)
+==================================================
+downloaded 212 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/R.cache_0.16.0.tar.gz'
+Content type 'binary/octet-stream' length 111833 bytes (109 KB)
+==================================================
+downloaded 109 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/rprojroot_2.0.4.tar.gz'
+Content type 'binary/octet-stream' length 107151 bytes (104 KB)
+==================================================
+downloaded 104 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/callr_3.7.6.tar.gz'
+Content type 'binary/octet-stream' length 445329 bytes (434 KB)
+==================================================
+downloaded 434 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/collections_0.3.7.tar.gz'
+Content type 'binary/octet-stream' length 68091 bytes (66 KB)
+==================================================
+downloaded 66 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/lintr_3.2.0.tar.gz'
+Content type 'binary/octet-stream' length 1380412 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/roxygen2_7.3.2.tar.gz'
+Content type 'binary/octet-stream' length 722087 bytes (705 KB)
+==================================================
+downloaded 705 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/styler_1.10.3.tar.gz'
+Content type 'binary/octet-stream' length 827326 bytes (807 KB)
+==================================================
+downloaded 807 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/xmlparsedata_1.0.5.tar.gz'
+Content type 'binary/octet-stream' length 18820 bytes (18 KB)
+==================================================
+downloaded 18 KB
+
+trying URL 'https://p3m.dev/cran/__linux__/noble/latest/src/contrib/languageserver_0.3.16.tar.gz'
+Content type 'binary/octet-stream' length 801503 bytes (782 KB)
+==================================================
+downloaded 782 KB
+
+* installing *binary* package ‘lazyeval’ ...
+* DONE (lazyeval)
+* installing *binary* package ‘R.methodsS3’ ...
+* DONE (R.methodsS3)
+* installing *binary* package ‘processx’ ...
+* DONE (processx)
+* installing *binary* package ‘backports’ ...
+* DONE (backports)
+* installing *binary* package ‘brew’ ...
+* DONE (brew)
+* installing *binary* package ‘commonmark’ ...
+* DONE (commonmark)
+* installing *binary* package ‘desc’ ...
+* DONE (desc)
+* installing *binary* package ‘rprojroot’ ...
+* DONE (rprojroot)
+* installing *binary* package ‘collections’ ...
+* DONE (collections)
+* installing *binary* package ‘xmlparsedata’ ...
+* DONE (xmlparsedata)
+* installing *binary* package ‘R.oo’ ...
+* DONE (R.oo)
+* installing *binary* package ‘rex’ ...
+* DONE (rex)
+* installing *binary* package ‘callr’ ...
+* DONE (callr)
+* installing *binary* package ‘pkgbuild’ ...
+* DONE (pkgbuild)
+* installing *binary* package ‘R.utils’ ...
+* DONE (R.utils)
+* installing *binary* package ‘lintr’ ...
+* DONE (lintr)
+* installing *binary* package ‘pkgload’ ...
+* DONE (pkgload)
+* installing *binary* package ‘R.cache’ ...
+* DONE (R.cache)
+* installing *binary* package ‘roxygen2’ ...
+* DONE (roxygen2)
+* installing *binary* package ‘styler’ ...
+* DONE (styler)
+* installing *binary* package ‘languageserver’ ...
+* DONE (languageserver)
+
+The downloaded source packages are in
+	‘/tmp/Rtmp9PQr42/downloaded_packages’
+trying URL 'https://cran.r-project.org/src/contrib/DBI_1.2.3.tar.gz'
+Content type 'application/x-gzip' length 1137307 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/blob_1.2.4.tar.gz'
+Content type 'application/x-gzip' length 10620 bytes (10 KB)
+==================================================
+downloaded 10 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/evaluate_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 37753 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/gtable_0.3.6.tar.gz'
+Content type 'application/x-gzip' length 148148 bytes (144 KB)
+==================================================
+downloaded 144 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/isoband_0.2.7.tar.gz'
+Content type 'application/x-gzip' length 1591812 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/knitr_1.49.tar.gz'
+Content type 'application/x-gzip' length 545754 bytes (532 KB)
+==================================================
+downloaded 532 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/processx_3.8.5.tar.gz'
+Content type 'application/x-gzip' length 165103 bytes (161 KB)
+==================================================
+downloaded 161 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/processx_3.8.6.tar.gz'
+Content type 'application/x-gzip' length 165190 bytes (161 KB)
+==================================================
+downloaded 161 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/rematch2_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 13366 bytes (13 KB)
+==================================================
+downloaded 13 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/rematch_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 4781 bytes
+==================================================
+downloaded 4781 bytes
+
+trying URL 'https://cran.r-project.org/src/contrib/rmarkdown_2.29.tar.gz'
+Content type 'application/x-gzip' length 2194660 bytes (2.1 MB)
+==================================================
+downloaded 2.1 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/rstudioapi_0.17.1.tar.gz'
+Content type 'application/x-gzip' length 118455 bytes (115 KB)
+==================================================
+downloaded 115 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/svglite_2.1.3.tar.gz'
+Content type 'application/x-gzip' length 124650 bytes (121 KB)
+==================================================
+downloaded 121 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/textshaping_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 75510 bytes (73 KB)
+==================================================
+downloaded 73 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/timechange_0.3.0.tar.gz'
+Content type 'application/x-gzip' length 103439 bytes (101 KB)
+==================================================
+downloaded 101 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/tzdb_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 586327 bytes (572 KB)
+==================================================
+downloaded 572 KB
+
+Installing packages into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘DBI’ ...
+** package ‘DBI’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (DBI)
+* installing *source* package ‘blob’ ...
+** package ‘blob’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (blob)
+* installing *source* package ‘evaluate’ ...
+** package ‘evaluate’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (evaluate)
+* installing *source* package ‘gtable’ ...
+** package ‘gtable’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gtable)
+* installing *source* package ‘isoband’ ...
+** package ‘isoband’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+using C++11
+installing to /workspaces/BBM104/R_Library/00LOCK-isoband/00new/isoband/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (isoband)
+* installing *source* package ‘knitr’ ...
+** package ‘knitr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (knitr)
+* installing *source* package ‘processx’ ...
+** package ‘processx’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing via 'install.libs.R' to /workspaces/BBM104/R_Library/00LOCK-processx/00new/processx
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (processx)
+* installing *source* package ‘processx’ ...
+** package ‘processx’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing via 'install.libs.R' to /workspaces/BBM104/R_Library/00LOCK-processx/00new/processx
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (processx)
+* installing *source* package ‘rematch2’ ...
+** package ‘rematch2’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rematch2)
+* installing *source* package ‘rematch’ ...
+** package ‘rematch’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rematch)
+* installing *source* package ‘rmarkdown’ ...
+** package ‘rmarkdown’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rmarkdown)
+* installing *source* package ‘rstudioapi’ ...
+** package ‘rstudioapi’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rstudioapi)
+* installing *source* package ‘svglite’ ...
+** package ‘svglite’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+using C++11
+installing to /workspaces/BBM104/R_Library/00LOCK-svglite/00new/svglite/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (svglite)
+* installing *source* package ‘textshaping’ ...
+** package ‘textshaping’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-textshaping/00new/textshaping/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (textshaping)
+* installing *source* package ‘timechange’ ...
+** package ‘timechange’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-timechange/00new/timechange/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (timechange)
+* installing *source* package ‘tzdb’ ...
+** package ‘tzdb’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-tzdb/00new/tzdb/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tzdb)
+trying URL 'https://cran.r-project.org/src/contrib/broom_1.0.7.tar.gz'
+Content type 'application/x-gzip' length 644384 bytes (629 KB)
+==================================================
+downloaded 629 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/cellranger_1.1.0.tar.gz'
+Content type 'application/x-gzip' length 63857 bytes (62 KB)
+==================================================
+downloaded 62 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/conflicted_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 17071 bytes (16 KB)
+==================================================
+downloaded 16 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/data.table_1.16.4.tar.gz'
+Content type 'application/x-gzip' length 5490632 bytes (5.2 MB)
+==================================================
+downloaded 5.2 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/data.table_1.17.0.tar.gz'
+Content type 'application/x-gzip' length 5833671 bytes (5.6 MB)
+==================================================
+downloaded 5.6 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/dbplyr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 770647 bytes (752 KB)
+==================================================
+downloaded 752 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/dtplyr_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 150971 bytes (147 KB)
+==================================================
+downloaded 147 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/forcats_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 294183 bytes (287 KB)
+==================================================
+downloaded 287 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/gargle_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 627560 bytes (612 KB)
+==================================================
+downloaded 612 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/ggplot2_3.5.1.tar.gz'
+Content type 'application/x-gzip' length 3604371 bytes (3.4 MB)
+==================================================
+downloaded 3.4 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/googledrive_2.1.1.tar.gz'
+Content type 'application/x-gzip' length 1609266 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/googlesheets4_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 232584 bytes (227 KB)
+==================================================
+downloaded 227 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/haven_2.5.4.tar.gz'
+Content type 'application/x-gzip' length 313332 bytes (305 KB)
+==================================================
+downloaded 305 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/modelr_0.1.11.tar.gz'
+Content type 'application/x-gzip' length 121480 bytes (118 KB)
+==================================================
+downloaded 118 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/ragg_1.3.3.tar.gz'
+Content type 'application/x-gzip' length 428945 bytes (418 KB)
+==================================================
+downloaded 418 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/readxl_1.4.3.tar.gz'
+Content type 'application/x-gzip' length 2093488 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/reprex_2.1.1.tar.gz'
+Content type 'application/x-gzip' length 1089023 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+Installing packages into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘broom’ ...
+** package ‘broom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (broom)
+* installing *source* package ‘cellranger’ ...
+** package ‘cellranger’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (cellranger)
+* installing *source* package ‘conflicted’ ...
+** package ‘conflicted’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (conflicted)
+* installing *source* package ‘data.table’ ...
+** package ‘data.table’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-data.table/00new/data.table/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (data.table)
+* installing *source* package ‘data.table’ ...
+** package ‘data.table’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-data.table/00new/data.table/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (data.table)
+* installing *source* package ‘dbplyr’ ...
+** package ‘dbplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dbplyr)
+* installing *source* package ‘dtplyr’ ...
+** package ‘dtplyr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (dtplyr)
+* installing *source* package ‘forcats’ ...
+** package ‘forcats’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (forcats)
+* installing *source* package ‘gargle’ ...
+** package ‘gargle’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gargle)
+* installing *source* package ‘ggplot2’ ...
+** package ‘ggplot2’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ggplot2)
+* installing *source* package ‘googledrive’ ...
+** package ‘googledrive’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (googledrive)
+* installing *source* package ‘googlesheets4’ ...
+** package ‘googlesheets4’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (googlesheets4)
+* installing *source* package ‘haven’ ...
+** package ‘haven’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-haven/00new/haven/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (haven)
+* installing *source* package ‘modelr’ ...
+** package ‘modelr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (modelr)
+* installing *source* package ‘ragg’ ...
+** package ‘ragg’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-ragg/00new/ragg/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ragg)
+* installing *source* package ‘readxl’ ...
+** package ‘readxl’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+using C++ compiler: ‘g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-readxl/00new/readxl/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (readxl)
+* installing *source* package ‘reprex’ ...
+** package ‘reprex’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (reprex)
+trying URL 'https://cran.r-project.org/src/contrib/kableExtra_1.4.0.tar.gz'
+Content type 'application/x-gzip' length 1824636 bytes (1.7 MB)
+==================================================
+downloaded 1.7 MB
+
+trying URL 'https://cran.r-project.org/src/contrib/lubridate_1.9.4.tar.gz'
+Content type 'application/x-gzip' length 429341 bytes (419 KB)
+==================================================
+downloaded 419 KB
+
+trying URL 'https://cran.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 704618 bytes (688 KB)
+==================================================
+downloaded 688 KB
+
+Installing packages into ‘/workspaces/BBM104/R_Library’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘kableExtra’ ...
+** package ‘kableExtra’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (kableExtra)
+* installing *source* package ‘lubridate’ ...
+** package ‘lubridate’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
+installing to /workspaces/BBM104/R_Library/00LOCK-lubridate/00new/lubridate/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (lubridate)
+* installing *source* package ‘tidyverse’ ...
+** package ‘tidyverse’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (tidyverse)
