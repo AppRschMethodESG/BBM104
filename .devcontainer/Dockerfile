@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libfreetype-dev || true && \
     libfreetype6-dev || true && \
-    libfontconfig1-dev 
+    libfontconfig1-dev || true 
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
 
 
