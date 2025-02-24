@@ -49,7 +49,8 @@ RUN echo 'codespace ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN chown -R codespace:codespace /home/codespace
 
 # Install additional Ubuntu packages as root
-RUN apt-get update && apt-get install -y \
+# Note: added sudo's below just in case (for the libfontconfig1-dev installation)
+RUN sudo apt-get update && sudo apt-get install -y \
     pkg-config \
     libharfbuzz-dev \
     libfribidi-dev \
@@ -63,7 +64,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev || true && \
     libfontconfig1-dev || true
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
-ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
+ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
+
 
 # Install additional software
 RUN apt-get update && apt-get install -y \
