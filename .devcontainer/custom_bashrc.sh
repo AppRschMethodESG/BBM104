@@ -45,5 +45,8 @@ if [[ "$TERM" == "xterm" ]]; then
     PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }precmd"
 fi
 
+# Set WORKDIR environment variable to the current working directory
+export WORKDIR=$(pwd)
+
 # Alias for radian
 alias r="radian"

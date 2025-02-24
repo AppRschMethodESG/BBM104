@@ -73,13 +73,10 @@ RUN mkdir -p /usr/local/lib/R/site-library && \
 # Switch to the codespace user
 USER codespace
 
-# Set the working directory
-#WORKDIR /home/codespace
-
 # Install R packages
 RUN ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib && \
-    R -e 'print(getwd()); install.packages(c("languageserver", "withr"), repos="http://cran.rstudio.com/")' && \
+    R -e 'print(getwd()); install.packages(c("languageserver", "lubridate", "kableExtra"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
 
