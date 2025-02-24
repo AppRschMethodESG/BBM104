@@ -1,5 +1,5 @@
 ---
-title: "GreenPerformance"
+title: "GreenPerformance - adapted from Ch.5 of https://www.greenfinance.education"
 output: html_document
 date: "2025-01-08"
 ---
