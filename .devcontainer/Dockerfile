@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y sudo && \
 USER vscode
 
 # Set the library path and create the directory
-RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths()))"
+RUN R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, 'R_Library'); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths()))'
+#RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths()))"
 
 # Install multiple R packages
 RUN R -e "install.packages(c('tidyverse'), lib=lib_path, repos='http://cran.rstudio.com/')"
