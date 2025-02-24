@@ -4,8 +4,6 @@ output: html_document
 date: "2025-01-08"
 ---
 
-#q: what does the code chunk below do?
-#A: It loads the necessary libraries and the ESG data.
 
 # Load libraries and data
 ```{r setup, include=FALSE}
@@ -21,12 +19,8 @@ load(file.path(repo_path, "/Session06/ESG_data.RData"))
 
 ```
 
-#q: What does the selected code chunk do? Please summarize the logical flow intuitively without showing each line of code in your reply.
 
-#A: The selected code chunk sets up the environment for the analysis. It defines the repository path, loads necessary libraries (tidyverse, lubridate, and kableExtra), and loads the ESG_data dataset from a specified file path. This setup ensures that all required tools and data are available for subsequent analysis in the document.
-
-
-
+# ? 
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -40,19 +34,17 @@ ESG_data |>
 
 ```
 
-What does the selected code chunk do? Please summarize the logical flow intuitively without showing each line of code in your reply.
+#q: What does the R code chunk just above do? Please explain the logical flow intuitively without showing each line of code in your reply.
+#a: The code filters the data to keep only the years between 2002 and 2024 and the data from Provider_B. It then groups the data by date and creates a new column called type that is Green if the esg_metric is greater than the 50th percentile and Brown otherwise. Finally, it selects only the name, date, close, esg_metric, and type columns.
+
+#q: How should the heading of the R code chunk above be called?
+#a: Filtering and sorting ESG data by date and source
 
 
-#A: The selected code chunk processes the ESG_data dataset to analyze firm performance based on ESG metrics. It filters the data to include records from 2003 to 2023 and only from "Provider_B". It groups the data by date and classifies firms into "Green" or "Brown" based on whether their ESG metric is above or below the median for that date. Finally, it selects relevant columns (name, date, close, esg_metric, and type) for further analysis.
+#q: What does the next R code chunk do? Please explain the logical flow intuitively without showing each line of code in your reply.
+#a: The code groups the data by firm and computes the return of each stock by dividing the close price by the previous close price and subtracting 1. It then removes the grouping and filters out the returns that are greater than 3.
 
-#q: Based on your reply above, how should the heading of this chunk be called?
-#A: Filtering and Classifying ESG Data by Date and Source
-
-Classifying Firms Based on ESG Metrics
-
-
-
-# Processing and Analyzing ESG Data for Firm Performance
+# ? 
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -70,10 +62,14 @@ ESG_data |>
 
 ```
 
-#A: The selected code chunk processes the ESG_data dataset to analyze firm performance based on ESG metrics. It filters the data to include records from 2003 to 2023 and only from "Provider_B". It groups the data by date and classifies firms into "Green" or "Brown" based on whether their ESG metric is above or below the median for that date. After ungrouping, it groups the data by firm and calculates the stock return for each firm. It filters out extreme returns and selects relevant columns for further analysis.
+Note: A different answer was given (see below) when the R code chunk was selected by mouse and the question is asked in the chatbox panel on the right side of the screen.
+
+#Q: What does the selected R code chunk do? Please explain the logical flow intuitively without showing each line of code in your reply.
+
+#A: The selected R code chunk filters the data to keep only the years between 2002 and 2024 and the data from Provider_B. It then groups the data by date and creates a new column called type that is Green if the esg_metric is greater than the 50th percentile and Brown otherwise. After that, it groups the data by firm and computes the return of each stock by dividing the close price by the previous close price and subtracting 1. It then filters out the returns that are greater than 3 and selects only the name, date, close, esg_metric, type, and return columns.
 
 
-
+# ? 
 ```{r}
 ESG_data <- ESG_data |>  
   group_by(name) |>                                           # Now we group by firm
@@ -82,6 +78,7 @@ ESG_data <- ESG_data |>
 ```
 
 
+# ? 
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -99,6 +96,7 @@ ESG_data |>
 ```
 
 
+# ? 
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -116,6 +114,7 @@ ESG_data |>
 ```
 
 
+# ? 
 ```{r}
 q <- 0.5
 ESG_data |> 
@@ -134,6 +133,7 @@ ESG_data |>
 ```
 
 
+# ? 
 ```{r}
 q <- 0.2
 ESG_data |> 
@@ -152,6 +152,8 @@ ESG_data |>
   kableExtra::kable(caption = 'ESG metric and portfolio performance (q = 0.2)')
 ```
 
+
+# ? 
 ```{r}
 q <- 0.2
 ESG_data |> 
