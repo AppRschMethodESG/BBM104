@@ -48,10 +48,16 @@ RUN echo 'codespace ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # Set the appropriate permissions for the home directory
 RUN chown -R codespace:codespace /home/codespace
 
+# Install libfontconfig1-dev with aptitude, instead of apt-get
+RUN aptitude update && aptitude install -y \
+    pkg-config \
+    libfontconfig1-dev || true
+# Set the PKG_CONFIG_PATH environment variable to ensure finding the fontconfig.pc file
+ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
+
 # Install additional Ubuntu packages as root
 # Note: added sudo's below just in case (for the libfontconfig1-dev installation)
-RUN sudo apt-get update && sudo apt-get install -y \
-    pkg-config \
+RUN apt-get update && apt-get install -y \
     libharfbuzz-dev \
     libfribidi-dev \
     libpng-dev \
@@ -61,12 +67,8 @@ RUN sudo apt-get update && sudo apt-get install -y \
     libxml2-dev \
     libcurl4-openssl-dev \
     libfreetype-dev || true && \
-    libfreetype6-dev || true && \
-    libfontconfig1-dev  
-    # #|| true
+    libfreetype6-dev || true 
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
-ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
-
 
 # Install additional software
 RUN apt-get update && apt-get install -y \
