@@ -26,7 +26,12 @@ RUN apt-get update && apt-get install -y sudo && \
 
 USER vscode
 
-# Install additional R packages
-RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('kableExtra', repos='http://cran.rstudio.com/')"
+# Set the library path
+RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); .libPaths(c(lib_path, .libPaths()))"
+
+# Install multiple R packages
+RUN R -e "install.packages(c('tidyverse'), repos='http://cran.rstudio.com/')"
+
+#RUN R -e "install.packages(c('tidyverse', \
+## 'lubridate', \
+#'kableExtra'), repos='http://cran.rstudio.com/')"
