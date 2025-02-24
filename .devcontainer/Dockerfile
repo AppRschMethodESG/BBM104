@@ -24,9 +24,22 @@ RUN useradd -ms /bin/bash vscode
 RUN apt-get update && apt-get install -y sudo && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Install additional Ubuntu packages
+RUN apt-get update && apt-get install -y \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
+    libssl-dev \
+    libxml2-dev \
+    libcurl4-openssl-dev && \
+    dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev
+
 RUN ls -la /usr/local/lib/R/site-library && \
 ls -la /usr/local/lib && \
-R -e 'print(getwd()); install.packages(c("withr"), repos="http://cran.rstudio.com/")' && \
+R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
 
