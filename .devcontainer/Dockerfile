@@ -62,7 +62,8 @@ RUN sudo apt-get update && sudo apt-get install -y \
     libcurl4-openssl-dev \
     libfreetype-dev || true && \
     libfreetype6-dev || true && \
-    libfontconfig1-dev || true
+    libfontconfig1-dev  
+    # #|| true
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
 ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
 
