@@ -24,6 +24,11 @@ RUN useradd -ms /bin/bash vscode
 RUN apt-get update && apt-get install -y sudo && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Ensure the /workspaces directory exists and has the correct permissions
+RUN mkdir -p /workspaces && \
+    chown -R vscode:vscode /workspaces && \
+    chmod -R 777 /workspaces
+
 USER vscode
 
 # Set the library path, create the directory, set permissions, and install the packages
@@ -31,7 +36,7 @@ RUN ls -la && \
     mkdir -p /workspaces/BBM104 && \
     ls -la /workspaces && \
     R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); system(paste("sudo chown -R vscode:vscode", lib_path)); system(paste("sudo chmod -R 777", lib_path)); .libPaths(c(lib_path, .libPaths())); install.packages(c("withr"), lib=lib_path, repos="http://cran.rstudio.com/")' && \
-    ls -la /workspaces/BBM104 
+    ls -la /workspaces/BBM104
 #============================================================================================ 
 #    RUN ls -la /workspaces && \
 #    mkdir -p /workspaces/BBM104 && \
