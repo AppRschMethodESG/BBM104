@@ -26,14 +26,11 @@ RUN apt-get update && apt-get install -y sudo && \
 
 USER vscode
 
-# Create the library directory
-RUN mkdir -p /usr/local/lib/R/site-library
-
-# Set the library path and install the packages
-RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); .libPaths(c(lib_path, .libPaths()))"
+# Set the library path and create the directory
+RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths()))"
 
 # Install multiple R packages
-RUN R -e "install.packages(c('tidyverse'), repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages(c('tidyverse'), lib=lib_path, repos='http://cran.rstudio.com/')"
 
 #RUN R -e "install.packages(c('tidyverse', \
 ## 'lubridate', \
