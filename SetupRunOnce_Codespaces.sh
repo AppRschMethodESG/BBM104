@@ -84,4 +84,4 @@ alias r="radian"
 source ~/.bashrc
 
 # Call .Rmd file to install packages 
-Rscript SetupRunOnce.R
+#Rscript SetupRunOnce.R
