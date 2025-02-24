@@ -69,7 +69,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib
 source ~/.bashrc
 
 # Upgrade pip and install radian
-#python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 #pip3 install -U radian
 
 # Add the following lines to the end of ~/.bashrc  
