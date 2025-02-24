@@ -26,7 +26,10 @@ RUN apt-get update && apt-get install -y sudo && \
 
 USER vscode
 
-# Set the library path
+# Create the library directory
+RUN mkdir -p /usr/local/lib/R/site-library
+
+# Set the library path and install the packages
 RUN R -e "repo_path <- normalizePath(getwd()); lib_path <- file.path(repo_path, 'R_Library'); .libPaths(c(lib_path, .libPaths()))"
 
 # Install multiple R packages
