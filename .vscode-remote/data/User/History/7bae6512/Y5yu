@@ -47,11 +47,9 @@ R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), rep
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
 
-# Set the home directory for the vscode user to /home/codespace
+# Set the home directory for the vscode user to /workspaces/BBM104
 RUN usermod -d /home/codespace vscode
-
-# Ensure the vscode user has the necessary permissions
-RUN chown -R vscode:vscode /home/codespace
+#RUN usermod -d /workspaces/BBM104 vscode
 
 USER vscode
 
