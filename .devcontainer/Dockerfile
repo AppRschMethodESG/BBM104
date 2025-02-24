@@ -34,8 +34,10 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libssl-dev \
     libxml2-dev \
-    libcurl4-openssl-dev && \
-    dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev
+    libcurl4-openssl-dev \
+    libfreetype-dev || true && \
+    libfreetype6-dev || true && \
+    dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev || true 
 
 RUN ls -la /usr/local/lib/R/site-library && \
 ls -la /usr/local/lib && \
