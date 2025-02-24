@@ -50,6 +50,7 @@ RUN chown -R codespace:codespace /home/codespace
 
 # Install additional Ubuntu packages as root
 RUN apt-get update && apt-get install -y \
+    pkg-config \
     libharfbuzz-dev \
     libfribidi-dev \
     libpng-dev \
@@ -60,9 +61,9 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libfreetype-dev || true && \
     libfreetype6-dev || true && \
-    libfontconfig1-dev || true 
+    libfontconfig1-dev || true
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
-
+ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
 # Install additional software
 RUN apt-get update && apt-get install -y \
@@ -80,10 +81,7 @@ USER codespace
 RUN ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib && \
     R -e 'print(getwd()); install.packages(c("languageserver", "tidyverse", "lubridate", "kableExtra"), repos="http://cran.rstudio.com/")' && \
-    ls -la /usr/local/lib/R/site-library && \
-    ls -la /usr/local/lib/R/
-
-#USER vscode
+    ls -la /usr/local/lib/R/site-library 
 
 #===============================================================================
 # Below is an example of how to chain commands in a single RUN command using ';' and '&&' and use  \ to continue the command on the next line. However, the command cannot serve the purpose of creating R_Library for installing the packages there because it was created in a container for preparing a container image for the actual container creation later. 
