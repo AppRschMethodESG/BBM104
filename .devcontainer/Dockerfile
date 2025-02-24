@@ -26,11 +26,11 @@ RUN apt-get update && apt-get install -y sudo && \
 
 USER vscode
 
-# Set the library path and create the directory
-RUN R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths()))'
-
-
 # Set the library path, create the directory, and install the packages
+# Set the library path, create the directory, set permissions, and install the packages
+
+#RUN R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); system(paste("sudo chown -R vscode:vscode", lib_path)); system(paste("sudo chmod -R 777", lib_path)); .libPaths(c(lib_path, .libPaths())); install.packages(c("tidyverse"), lib=lib_path, repos="http://cran.rstudio.com/")'
+
 RUN R -e 'print(getwd()); repo_path <- "/workspaces/BBM104"; lib_path <- file.path(repo_path, "R_Library"); dir.create(lib_path, recursive = TRUE, showWarnings = FALSE); .libPaths(c(lib_path, .libPaths())); install.packages(c("tidyverse"), lib=lib_path, repos="http://cran.rstudio.com/")'
 #!!!Note: Each RUN command in a Dockerfile is executed in a separate shell, and variables are not persisted between them.
 # Therefore, the lib_path variable is not available in a second RUN command. To avoid this issue, you can combine the two RUN commands into a single command as shown below:
