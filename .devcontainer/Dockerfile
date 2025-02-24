@@ -65,9 +65,14 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev || true && \
     dpkg-query -L libharfbuzz-dev libfribidi-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev libfreetype-dev libfreetype6-dev || true 
 
+# Change ownership of the R library directory to the codespace user
+RUN sudo mkdir -p /usr/local/lib/R/site-library && \
+    sudo chown -R codespace:codespace /usr/local/lib/R/site-library
+
+# Install R packages
 RUN ls -la /usr/local/lib/R/site-library && \
-ls -la /usr/local/lib && \
-R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), repos="http://cran.rstudio.com/")' && \
+    ls -la /usr/local/lib && \
+    R -e 'print(getwd()); install.packages(c("withr", "xml2", "languageserver"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib/R/
 
