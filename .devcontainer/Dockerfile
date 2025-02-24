@@ -17,6 +17,20 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Install git
 RUN apt-get update && apt-get install -y git
 
+# Create the necessary groups
+RUN groupadd ssh && \
+    groupadd hugo && \
+    groupadd nvm && \
+    groupadd nvs && \
+    groupadd conda && \
+    groupadd php && \
+    groupadd rvm && \
+    groupadd sdkman && \
+    groupadd docker && \
+    groupadd golang && \
+    groupadd oryx && \
+    groupadd python && \
+    groupadd pipx
 
 # Create the codespace user and set up its home directory
 RUN useradd -m -s /bin/bash codespace
