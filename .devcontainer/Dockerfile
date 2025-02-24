@@ -27,4 +27,6 @@ RUN apt-get update && apt-get install -y sudo && \
 USER vscode
 
 # Install additional R packages
-#RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tidyverse', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
+#RUN R -e "install.packages('kableExtra', repos='http://cran.rstudio.com/')"

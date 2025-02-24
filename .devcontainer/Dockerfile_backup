@@ -19,6 +19,11 @@ RUN apt-get update && apt-get install -y git
 
 # Create the vscode user and set it as the default user
 RUN useradd -ms /bin/bash vscode
+
+# Grant sudo privileges to the vscode user
+RUN apt-get update && apt-get install -y sudo && \
+    echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 USER vscode
 
 # Install additional R packages
