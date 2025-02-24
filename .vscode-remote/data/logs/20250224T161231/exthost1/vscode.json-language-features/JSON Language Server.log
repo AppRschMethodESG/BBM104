@@ -1,0 +1,34 @@
+2025-02-24 16:12:49.553 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:12:52.312 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:12:52.372 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:12:52.417 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:12:54.864 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-02-24 16:12:54.867 [info] read schema from vscode: vscode://schemas/launch
+2025-02-24 16:12:54.869 [info] read schema from vscode: vscode://schemas/token-styling
+2025-02-24 16:12:54.877 [info] read schema from vscode: vscode://schemas/textmate-colors
+2025-02-24 16:12:54.883 [info] read schema from vscode: vscode://schemas/workbench-colors
+2025-02-24 16:12:57.726 [info] cancelled
+2025-02-24 16:12:59.037 [info] schema change detected vscode://schemas/launch
+2025-02-24 16:12:59.037 [info] schema change detected vscode://schemas/launch
+2025-02-24 16:12:59.072 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:12:59.159 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:12:59.603 [info] schema change detected vscode://schemas/settings/resourceLanguage
+2025-02-24 16:12:59.673 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:12:59.790 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-02-24 16:12:59.793 [info] read schema from vscode: vscode://schemas/launch
+2025-02-24 16:12:59.794 [info] read schema from vscode: vscode://schemas/token-styling
+2025-02-24 16:12:59.794 [info] read schema from vscode: vscode://schemas/textmate-colors
+2025-02-24 16:12:59.795 [info] read schema from vscode: vscode://schemas/workbench-colors
+2025-02-24 16:13:00.296 [info] cancelled
+2025-02-24 16:13:00.643 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:13:01.030 [info] schema change detected vscode://schemas/settings/resourceLanguage
+2025-02-24 16:13:01.082 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:13:01.166 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-02-24 16:13:03.311 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:13:03.455 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:13:03.961 [info] read schema from vscode: vscode://schemas/settings/resourceLanguage
+2025-02-24 16:13:04.605 [info] schema change detected vscode://schemas/settings/machine
+2025-02-24 16:13:04.844 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:13:13.613 [info] schema change detected vscode://schemas/launch
+2025-02-24 16:13:13.814 [info] read schema from vscode: vscode://schemas/settings/machine
+2025-02-24 16:13:14.256 [info] read schema from vscode: vscode://schemas/launch

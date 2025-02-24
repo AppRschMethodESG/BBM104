@@ -24,6 +24,9 @@ RUN useradd -ms /bin/bash vscode
 RUN apt-get update && apt-get install -y sudo && \
     echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Create the tlyim user without sudo privileges
+RUN useradd -ms /bin/bash tlyim
+
 # Install additional Ubuntu packages
 RUN apt-get update && apt-get install -y \
     libharfbuzz-dev \
