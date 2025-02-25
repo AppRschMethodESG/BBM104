@@ -48,10 +48,15 @@ RUN echo 'codespace ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # Set the appropriate permissions for the home directory
 RUN chown -R codespace:codespace /home/codespace
 
+# Install aptitude
+RUN apt-get update && apt-get install -y aptitude
+
 # Install libfontconfig1-dev with aptitude, instead of apt-get
 RUN aptitude update && aptitude install -y \
     pkg-config \
     libfontconfig1-dev || true
+# Find the location of the libfontconfig1-dev package    
+RUN dpkg -L libfontconfig1-dev || true
 # Set the PKG_CONFIG_PATH environment variable to ensure finding the fontconfig.pc file
 ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
 
