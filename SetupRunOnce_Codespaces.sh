@@ -3,8 +3,9 @@
 #===================================================================================
 # !!! Note: 
 #   0. This script is for setting up a GitHub Codespaces environment, 
-#      where R and radian are pre-installed in this repo's custom container.
-#      Thus, step 1 and 4 are skipped by commenting out the related code lines.
+#      where R, radian, tidyverse, etc are pre-installed in this repo's custom container.
+#      Thus, now all step 1 to 4 are skipped by commenting out the related code lines.
+#===================================================================================
 #   1. Do NOT change the sequence of code lines or combine code chunks;
 #      The sequence is critical, so is the break between two [bash] code chunks
 #   2. If this repo comes with a non-empty R_Library, it must be deleted first
@@ -44,44 +45,39 @@ sudo apt install -y --no-install-recommends software-properties-common dirmngr
 # install R itself
 #sudo apt install -y --no-install-recommends r-base
 
-sudo apt-get update
+#sudo apt-get update
 # Install Ubuntu packages harfbuzz, libfribidi, etc; then find the installed locations
-sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev &&
-dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev
-#sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev &&
-#dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+#sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev &&
+#dpkg-query -L libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev libssl-dev libxml2-dev libcurl4-openssl-dev
 
 # Create the R_Library directory and add lines to the end of ~/.bashrc  
-mkdir -p "$(pwd)/R_Library"
+#mkdir -p "$(pwd)/R_Library"
 
 # Add the following lines to the end of ~/.bashrc  
-echo '
+#
+#    echo '
+#    # Add R Library to LD_LIBRARY_PATH
+#    export LD_LIBRARY_PATH=$(pwd)/R_Library:$LD_LIBRARY_PATH
+#    # Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
+#    export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
+#    ' >> ~/.bashrc
 
-# Add R Library to LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$(pwd)/R_Library:$LD_LIBRARY_PATH
-
-# Set PKG_CONFIG_PATH to ensure the compiler can find the FreeType headers
-export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
-
-' >> ~/.bashrc
 
 # Source the ~/.bashrc file to apply the changes
-source ~/.bashrc
+#source ~/.bashrc
 
 # Upgrade pip and install radian
 #python3 -m pip install --upgrade pip
 #pip3 install -U radian
 
 # Add the following lines to the end of ~/.bashrc  
-echo '
-
-# Alias for radian
-alias r="radian"
-
-' >> ~/.bashrc
+#    echo '
+#    # Alias for radian
+#    alias r="radian"
+#    ' >> ~/.bashrc
 
 # Source the ~/.bashrc file to apply the changes
-source ~/.bashrc
+#source ~/.bashrc
 
 # Call .Rmd file to install packages 
 #Rscript SetupRunOnce.R
