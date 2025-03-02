@@ -205,3 +205,4 @@ vignettes/*.pdf
 .Renviron
 *.html
 
+*].pdf
