@@ -26,9 +26,6 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Create a Jupyter kernel for the virtual environment
 RUN /opt/venv/bin/python -m ipykernel install --user --name=venv --display-name "Python (venv)"
 
-# Set the Jupyter configuration directory to the user's home directory
-ENV JUPYTER_CONFIG_DIR=/home/codespace/.jupyter
-
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -151,6 +148,10 @@ RUN mkdir -p /usr/local/lib/R/site-library && \
 # Switch to the codespace user
 USER codespace
 
+# Install Chrome browser for Puppeteer
+#RUN npx puppeteer install chrome --platform=linux --install-deps
+#RUN npx puppeteer browsers install chrome # This command is not working in the Dockerfile
+
 # Install Playwright browsers in venv
 RUN /opt/venv/bin/playwright install
 RUN /opt/venv/bin/playwright install-deps 
@@ -160,9 +161,6 @@ RUN ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib && \
     R -e 'print(getwd()); install.packages(c("languageserver", "tidyverse", "lubridate", "kableExtra"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library 
-
-# Ensure the virtual environment is activated and start Jupyter Notebook
-CMD ["/bin/bash", "-c", "source /opt/venv/bin/activate && jupyter notebook --ip=0.0.0.0 --no-browser --allow-root"]
 
 #===============================================================================
 # Below is an example of how to chain commands in a single RUN command using ';' and '&&' and use  \ to continue the command on the next line. However, the command cannot serve the purpose of creating R_Library for installing the packages there because it was created in a container for preparing a container image for the actual container creation later. 
