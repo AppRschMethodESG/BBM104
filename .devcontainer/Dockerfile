@@ -4,18 +4,36 @@ FROM rocker/r-ver:4.4.2
 # Install Python and radian
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
 
-# Create a virtual environment and install radian
+# Create a virtual environment and install required Python packages
 RUN python3 -m venv /opt/venv && \
-    /opt/venv/bin/pip install radian
+    /opt/venv/bin/pip install \
+    radian \
+    pandas \
+    pytesseract \
+    nltk \
+    PyMuPDF \
+    llama_parse \
+    pyppeteer \
+    playwright \
+    rclone \
+    jupyter \
+    ipykernel \
+    notebook
 
 # Set the virtual environment as the default Python environment
 ENV PATH="/opt/venv/bin:$PATH"
 
+# Create a Jupyter kernel for the virtual environment
+RUN /opt/venv/bin/python -m ipykernel install --user --name=venv --display-name "Python (venv)"
+
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install git, sudo, and nano
-RUN apt-get update && apt-get install -y git sudo nano
+# Install git, sudo, ..., and groff (for pdfroff as a pdf_engine)
+RUN apt-get update && apt-get install -y git sudo curl nano groff texlive-latex-base pandoc
+
+# Install rclone
+RUN sudo -v ; curl https://rclone.org/install.sh | sudo bash
 
 # Create the necessary groups
 RUN groupadd ssh && \
@@ -61,8 +79,26 @@ RUN dpkg -L libfontconfig1-dev || true
 ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig
 
 # Install additional Ubuntu packages as root
-# Note: added sudo's below just in case (for the libfontconfig1-dev installation)
 RUN apt-get update && apt-get install -y \
+#    curl \
+    libnss3 \ 
+    libdbus-1-3 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libxcomposite1 \
+    libxrandr2 \
+    libxdamage1 \
+    libxfixes3 \
+    libxext6 \
+    libxi6 \
+    libxtst6 \
+    libxrender1 \
+    libx11-xcb1 \
+    libxcb1 \
+    libxcomposite1 \
+    libxkbcommon0 \
+    libasound2-data \
     libharfbuzz-dev \
     libfribidi-dev \
     libpng-dev \
@@ -75,10 +111,35 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev || true 
 # Note: Adding  || true && allows the Dockerfile to continue processing even if there are errors during the installation of libfreetype-dev and libfreetype6-dev.
 
-# Install additional software
-RUN apt-get update && apt-get install -y \
-    jupyter-core \
-    jupyter-notebook
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs
+
+# Add npm global installation path to PATH
+ENV PATH=/usr/lib/node_modules/.bin:$PATH
+
+# Set NODE_PATH to include global node_modules
+ENV NODE_PATH=/usr/lib/node_modules
+
+# Install globally required npm packages
+RUN npm install -g \
+    yarn \
+    puppeteer \
+    puppeteer-extra \
+    puppeteer-extra-plugin-stealth \
+    user-agents
+
+# Install additional npm package using yarn
+RUN yarn add puppeteer-extra-plugin-user-preferences
+
+# Change ownership of the virtual environment directory to the codespace user
+RUN chown -R codespace:codespace /opt/venv
+
+# Change ownership of the venv site-packages directory to the codespace user
+RUN chown -R codespace:codespace /opt/venv/lib/python3.*/site-packages/
+
+# Change ownership of the global node_modules directory to the codespace user
+RUN chown -R codespace:codespace /usr/lib/node_modules
 
 # Change ownership of the R library directory to the codespace user
 RUN mkdir -p /usr/local/lib/R/site-library && \
@@ -86,6 +147,14 @@ RUN mkdir -p /usr/local/lib/R/site-library && \
 
 # Switch to the codespace user
 USER codespace
+
+# Install Chrome browser for Puppeteer
+#RUN npx puppeteer install chrome --platform=linux --install-deps
+#RUN npx puppeteer browsers install chrome # This command is not working in the Dockerfile
+
+# Install Playwright browsers in venv
+RUN /opt/venv/bin/playwright install
+RUN /opt/venv/bin/playwright install-deps 
 
 # Install R packages
 RUN ls -la /usr/local/lib/R/site-library && \

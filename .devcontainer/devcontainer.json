@@ -11,16 +11,21 @@
                 "terminal.integrated.shell.linux": "/bin/bash",
                 "extensions.ignoreRecommendations": true // Disable extension recommendations
             },
-        "vscode": {
             "extensions": [
-                "REditorSupport.r",
+                "GitHub.copilot", // Added GitHub Copilot extension
+                "REditorSupport.r",                
+                "RDebugger.r-debugger",
+                "ms-azuretools.vscode-docker",
+                "ms-toolsai.jupyter", // Added Jupyter extension
                 "ms-python.python"
             ]
         }
-    }
     },
+    // /home/codespace/.local/share/pyppeteer/local-chromium
+    // /home/codespace/.local/share/pyppeteer/local-chromium/11*/chrom*
+    // /home/codespace/.cache/puppeteer/chrome/lin*/chrom*
     // Moved to here the creation of the R_Library directory and the installation of the withr and languageserver packages to the postCreateCommand in the devcontainer.json file. This way, the necessary setup will be done after the container is created, ensuring that the R_Library directory is available and the packages are installed correctly.
     // "postCreateCommand": "R -e \"install.packages(c(  ), repos='http://cran.rstudio.com/')\"",
-    "postCreateCommand": "cat /workspaces/$RepositoryName/.devcontainer/custom_bashrc.sh >> /home/codespace/.bashrc && R -e \"install.packages(c( ), repos='http://cran.rstudio.com/')\"",
+    "postCreateCommand": "cat $PWD/.devcontainer/custom_bashrc.sh >> /home/codespace/.bashrc && R -e \"install.packages(c( ), repos='http://cran.rstudio.com/')\" && npx puppeteer browsers install chrome",
     "remoteUser": "codespace"
 } 
