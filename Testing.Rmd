@@ -5,11 +5,22 @@ date: "2025-03-02"
 ---
 
 
+q: how to use git to get info about user.name and user.email 
+a: git config --global user.name
+
+
+#Q: how to use git to get info about user.name and user.email
+#A: git config --global user.name
+
+# This is a markdown file
+
+
 
 ```{r setup, include=FALSE}
 
 
-q: how to use git to get info about user.name and user.email 
+ 
+
 
 
 knitr::opts_chunk$set(echo = TRUE)
