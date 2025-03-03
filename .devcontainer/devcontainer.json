@@ -17,6 +17,7 @@
                 "REditorSupport.r",
                 "RDebugger.r-debugger",
                 "maelvalais.madoko",
+				"ms-vscode.live-server",
                 "shd101wyy.markdown-preview-enhanced",
                 "ms-azuretools.vscode-docker",
                 "ms-toolsai.jupyter",
