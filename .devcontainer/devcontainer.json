@@ -8,15 +8,18 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "terminal.integrated.shell.linux": "/bin/bash",
+                "terminal.integrated.shell.linux": "/bin/bash",                
+                "python.defaultInterpreterPath": "/opt/venv/bin/python", // Set the default Python interpreter to the virtual environment
                 "extensions.ignoreRecommendations": true // Disable extension recommendations
             },
             "extensions": [
-                "GitHub.copilot", // Added GitHub Copilot extension
-                "REditorSupport.r",                
+                "GitHub.copilot",
+                "REditorSupport.r",
                 "RDebugger.r-debugger",
+                "maelvalais.madoko",
+                "shd101wyy.markdown-preview-enhanced",
                 "ms-azuretools.vscode-docker",
-                "ms-toolsai.jupyter", // Added Jupyter extension
+                "ms-toolsai.jupyter",
                 "ms-python.python"
             ]
         }
@@ -26,6 +29,6 @@
     // /home/codespace/.cache/puppeteer/chrome/lin*/chrom*
     // Moved to here the creation of the R_Library directory and the installation of the withr and languageserver packages to the postCreateCommand in the devcontainer.json file. This way, the necessary setup will be done after the container is created, ensuring that the R_Library directory is available and the packages are installed correctly.
     // "postCreateCommand": "R -e \"install.packages(c(  ), repos='http://cran.rstudio.com/')\"",
-    "postCreateCommand": "cat $PWD/.devcontainer/custom_bashrc.sh >> /home/codespace/.bashrc && R -e \"install.packages(c( ), repos='http://cran.rstudio.com/')\" && npx puppeteer browsers install chrome",
+    "postCreateCommand": "cat $PWD/.devcontainer/custom_bashrc.sh >> /home/codespace/.bashrc && R -e \"install.packages(c( ), repos='http://cran.rstudio.com/')\" && npx puppeteer browsers install chrome && mkdir -p $PWD/.vscode && echo '{ \"python.defaultInterpreterPath\": \"/opt/venv/bin/python\" }' > $PWD/.vscode/settings.json",
     "remoteUser": "codespace"
 } 
