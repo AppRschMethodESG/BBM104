@@ -1,0 +1,405 @@
+---
+title: "Effect of ESG score on Tobin's q"
+output: html_notebook 
+#output: html_document
+date: "2025-03-13"
+---
+
+# Load DataExplorer for Exploratory Data Analysis (EDA)
+
+- See usage examples at https://github.com/boxuancui/DataExplorer
+- "Exploratory Data Analysis (EDA) is the initial and an important phase of data analysis/predictive modeling. During this process, analysts/modelers will have a first look of the data, and thus generate relevant hypotheses and decide next steps.  `DataExplorer` aims to automate most of data handling and visualization, so that users could focus on studying the data and extracting insights."
+
+```{r, include=FALSE}
+
+library(DataExplorer)
+library(dplyr)
+
+repo_path <- normalizePath(getwd())
+# Add the R-library directory to the search path 
+.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
+# Load the data from Ch.5 of https://www.greenfinance.education"
+load(file.path(repo_path, "/ESG_data.RData"))
+
+```
+
+
+# Get a quick overview of the data
+The sample includes data for the three types of carbon emissions:
+
+- **Scope 1**: Direct emissions from sources owned or controlled by the organization (e.g., company vehicles, on-site fuel combustion)
+- **Scope 2**: Indirect emissions from purchased electricity, steam, heating, and cooling
+- **Scope 3**: All other indirect emissions that occur in a company's value chain
+
+```{r, include=FALSE}
+
+library(ggplot2)
+create_report(ESG_data)
+
+
+
+```
+
+
+q: How to remove all objects include hidden objects in R to clean up the workspace and do garbage collection?
+
+a: You can remove all objects, including hidden objects, in R to save memory and clean up the workspace by using the `rm(list = ls(all.names = TRUE))` command. This command removes all objects in the current workspace, including hidden objects, and frees up memory. You can also perform garbage collection using the `gc()` command to release memory that is no longer in use. Here's an example of how you can do it:   ```{r} rm(list = ls(all.names = TRUE)) gc() ```    This will remove all objects and hidden objects in the workspace and perform garbage collection to free up memory.
+
+
+```{r}
+
+# Clean up memory occupied by DataExplorer
+rm(list = ls(all.names = TRUE))
+gc()
+
+
+# Reload the dplyr package and the ESG data 
+library(dplyr)
+
+repo_path <- normalizePath(getwd())
+# Add the R-library directory to the search path 
+.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
+# Load the data from Ch.5 of https://www.greenfinance.education"
+load(file.path(repo_path, "/ESG_data.RData"))
+
+```
+
+
+
+# Conversation with Github Copilot
+
+```{}
+
+q: What is the definition of Tobin's q?
+
+a: Tobin's q is the ratio of the market value of a firm's assets to the replacement cost of those assets. It is used as a proxy for the value of a firm's investments. A high Tobin's q indicates that the market values the firm's assets more highly than their replacement cost, suggesting that the firm is investing efficiently. A low Tobin's q suggests that the firm is investing inefficiently.
+
+
+q: Can you provide an example of how Tobin's q is calculated?
+  
+a: Sure! Let's say a firm has a market value of $100 million and a replacement cost of $80 million. The firm's Tobin's q would be calculated as follows:   Tobin's q = Market value of assets / Replacement cost of assets = $100 million / $80 million = 1.25    This would indicate that the market values the firm's assets 25% higher than their replacement cost.    
+
+
+q: How is Tobin's q related to ESG scores?
+  
+a: Tobin's q is often used as a measure of firm value and efficiency. Some studies have found that firms with higher ESG scores tend to have higher Tobin's q values, suggesting that they are more efficient and valuable. This relationship is thought to be driven by factors such as improved risk management, stakeholder engagement, and innovation that are associated with high ESG scores.
+
+
+q: I want to do a data analysis using leverage as an explanatory variable. What should its definition be?
+  
+a: Leverage is a measure of a firm's debt relative to its equity. It is calculated as the total debt of the firm divided by the total equity. Leverage is an important financial metric that can impact a firm's risk profile, cost of capital, and financial performance.
+
+
+q: Can you provide an example of how leverage is calculated?
+  
+a: Sure! Let's say a firm has total debt of $50 million and total equity of $100 million. The firm's leverage ratio would be calculated as follows:   Leverage = Total debt / Total equity = $50 million / $100 million = 0.5    This would indicate that the firm has a leverage ratio of 0.5, meaning that it has $0.50 of debt for every $1.00 of equity.
+
+
+q: How is leverage related to Tobin's q?
+
+a: Leverage can impact a firm's Tobin's q in several ways. High levels of leverage can increase a firm's risk profile and cost of capital, which can lower its Tobin's q. On the other hand, leverage can also increase a firm's return on equity, which can increase its Tobin's q. The relationship between leverage and Tobin's q is complex and depends on a variety of factors, including the firm's industry, financial structure, and risk profile.
+
+
+```
+
+---
+
+# Question 1 for DeepSeek (https://chat.deepseek.com/)
+I plan to download data from Compustat (North America) to construct the variables for my analysis. Do you know the variable names of the data for revenue, debt, and equity?
+
+### Answer by DeepSeek:
+
+  Yes, I can provide you with the typical variable names used in Compustat for revenue, debt, and equity. These variables are commonly used in financial research and analysis. Here are the standard variable names:
+  
+  1. **Revenue**:  
+     - **SALE** (Sales/Turnover): This is the total revenue generated by the company from its primary operations.
+  
+  2. **Debt**:  
+     - **DLTT** (Long-Term Debt): This represents the total long-term debt of the company.  
+     - **DLC** (Debt in Current Liabilities): This represents the portion of debt that is due within one year.  
+     - **Total Debt**: If you need total debt, you can calculate it by summing **DLTT** (long-term debt) and **DLC** (short-term debt).
+  
+  3. **Equity**:  
+     - **CEQ** (Common/Ordinary Equity): This represents the total common equity, which is the value of the shareholders' equity.  
+     - **SEQ** (Stockholders' Equity): This is another variable that represents total stockholders' equity, including preferred stock and common equity.
+  
+  These variables are widely used in financial research to construct measures of profitability, leverage, and other financial metrics. Make sure to check the specific Compustat database you are using (e.g., Annual, Quarterly, or Global) as variable names might slightly differ across databases.
+
+---
+
+# Question 2 for DeepSeek
+Do you know the variable names of the data from Compustat (North America) required for computing Tobin's q?
+
+### Answer by DeepSeek:
+
+Yes, I can provide the **variable names from Compustat** that are typically used to compute **Tobin's q**. Tobin's q is a measure of a firm's market value relative to the replacement cost of its assets. The formula for Tobin's q is:
+
+\[
+\text{Tobin's q} = \frac{\text{Market Value of Equity} + \text{Book Value of Liabilities}}{\text{Book Value of Total Assets}}
+\]
+
+Here are the Compustat variable names required to compute Tobin's q:
+
+---
+
+### 1. **Market Value of Equity**
+   - **MKVALT** (Market Value of Common Equity): This is the market value of the firm's common equity, calculated as the share price multiplied by the number of shares outstanding.
+   - If **MKVALT** is not available, you can calculate it using:
+     - **PRCC_F** (Price Close - Fiscal): The closing stock price at the end of the fiscal year.
+     - **CSHO** (Common Shares Outstanding): The number of common shares outstanding.
+     - Formula:  
+       \[
+       \text{Market Value of Equity} = \text{PRCC_F} \times \text{CSHO}
+       \]
+
+---
+
+### 2. **Book Value of Liabilities**
+   - **LT** (Total Liabilities): This represents the total book value of liabilities.
+   - If **LT** is not available, you can calculate it as:
+     - **AT** (Total Assets) - **CEQ** (Common Equity).
+
+---
+
+### 3. **Book Value of Total Assets**
+   - **AT** (Total Assets): This is the book value of the firm's total assets.
+
+---
+
+### 4. **Optional Adjustments**
+   - Some researchers adjust the numerator to include preferred stock or other items. If needed:
+     - **PSTK** (Preferred Stock): The book value of preferred stock.
+     - Adjust the numerator to:  
+       \[
+       \text{Market Value of Equity} + \text{Book Value of Liabilities} + \text{PSTK}
+       \]
+
+---
+
+### Final Formula Using Compustat Variables
+\[
+\text{Tobin's q} = \frac{\text{MKVALT} + \text{LT}}{\text{AT}}
+\]
+
+Or, if **MKVALT** is not available:
+\[
+\text{Tobin's q} = \frac{(\text{PRCC_F} \times \text{CSHO}) + \text{LT}}{\text{AT}}
+\]
+
+
+---
+
+
+# Need to know the range of `date` in order to download the data from Compustat 
+
+q: how to get a summary of the range of the variable date in the ESG_data dataset?
+
+a: You can use the `summary()` function in R to get a summary of the range of the variable `date` in the `ESG_data` dataset. Here's how you can do it:   `summary(ESG_data$date)`    This will provide you with information such as the minimum and maximum values of the `date` variable, as well as the number of missing values. You can use this information to determine the range of dates in the dataset and download the relevant data from Compustat.  
+ 
+ 
+ 
+q: How to find out whether there are more missing values in the variable `esg_metric` for the data from Provider A or Provider B?
+
+a: You can use the `summary()` function in R along with the `filter()` function from the `dplyr` package to find out whether there are more missing values in the variable `esg_metric` for the data from Provider A or Provider B in the `ESG_data` dataset. Here's an example of how you can do it:   `ESG_data %>% filter(is.na(esg_metric)) %>% group_by(source) %>% summarise(count = n())`    This will provide you with the count of missing values in the `esg_metric` variable for each category of the `source` variable in the dataset. You can use this information to determine whether there are more missing values in the data from Provider A or Provider B.
+ 
+ 
+
+q: Regarding finding out how often a category of the variable `source` has missing values in the variable `esg_metric`, how can I use a table to show the number of observations for a category, then the count of the **non-missing** values in the `esg_metric` variable by each category, and finally the percentage of missing values in the `esg_metric` variable by each category? 
+
+a: You can use the `dplyr` package in R to create a table that shows the number of observations for each category of the `source` variable, the count of non-missing values in the `esg_metric` variable by each category, and the percentage of missing values in the `esg_metric` variable by each category. Here's an example of how you can do it:     ```{r}     ESG_data %>% group_by(source) %>% summarise(total_obs = n(), count_non_missing = sum(!is.na(esg_metric)), pct_missing = sum(is.na(esg_metric)) / n())    ```    This will provide you with a table that shows the total number of observations, the count of non-missing values, and the percentage of missing values in the `esg_metric` variable for each category of the `source` variable in the dataset. You can use this information to analyze the missing values in the dataset and make decisions accordingly.
+ 
+ 
+
+```{r}
+
+# Get a summary of the range of the variable date
+summary(ESG_data$date)
+  
+# Find out whether there are more missing values in the variable esg_metric for the data from Provider A or Provider B
+ESG_data %>% filter(is.na(esg_metric)) %>% group_by(source) %>% summarise(count = n()) 
+
+# Create a table to show the number of observations for each category of the source variable, the count of non-missing values in the esg_metric variable by each category, and the percentage of missing values in the esg_metric variable by each category
+ESG_data %>% group_by(source) %>% summarise(total_obs = n(), count_non_missing = sum(!is.na(esg_metric)), pct_missing = sum(is.na(esg_metric)) / n())    
+
+
+```
+
+
+# Need to get a unique list of values for the variable `instrument` 
+## (which appears to be equivalent to ticker symbols from stock exchanges)
+
+q: For `source = "Provider_B"`, how to get a unique list of values for the variable `instrument` in the ESG_data dataset, which appears to be a categorical variable equivalent to ticker symbols from stock exchanges?
+
+a: You can use the `unique()` function in R to get a unique list of values for the variable `instrument` in the `ESG_data` dataset when `source = "Provider_B"`. Here's how you can do it:   `unique(ESG_data %>% filter(source == "Provider_B")$instrument)`    This will provide you with a list of unique values for the `instrument` variable when `source = "Provider_B"`. You can use this information to identify the unique ticker symbols or other categorical values associated with the data from Provider B.
+
+
+q: How to write the unique values of the variable `instrument` in the ESG_data dataset for `source = "Provider_B"` to a CSV file so that I can use it for further analysis?
+
+a: You can use the `write.csv()` function in R to write the unique values of the variable `instrument` in the `ESG_data` dataset for `source = "Provider_B"` to a CSV file. Here's an example of how you can do it:   `unique_instruments <- unique(ESG_data %>% filter(source == "Provider_B")$instrument)`   `write.csv(unique_instruments, file = "unique_instruments.csv", row.names = FALSE)`    This code will create a CSV file named "unique_instruments.csv" in your working directory with the unique values of the `instrument` variable when `source = "Provider_B"`. You can then use this CSV file for further analysis or data processing.
+
+
+
+```{r}
+
+#unique(ESG_data %>% filter(source == "Provider_B") %>% pull(instrument))
+
+
+unique_instruments <- unique(ESG_data %>% filter(source == "Provider_B") %>% pull(instrument))
+write.csv(unique_instruments, file = "unique_instruments.csv", row.names = FALSE)
+
+
+#========================================
+
+#unique_instruments <- unique(ESG_data %>% filter(source == "Provider_B")$instrument)
+#write.csv(unique_instruments, file = "unique_instruments.csv", row.names = FALSE)
+
+#unique(ESG_data %>% filter(source == "Provider_B")$instrument)
+
+```
+
+
+q: got this error from your code: "Error in `$`(., filter(source == "Provider_B"), instrument) : 
+  3 arguments passed to '$' which requires 2." How to fix it?
+  
+a: The error you encountered is due to the incorrect usage of the `$` operator in the code. To fix this error, you can modify the code as follows:   `unique(ESG_data %>% filter(source == "Provider_B") %>% pull(instrument))`    This code uses the `pull()` function from the `dplyr` package to extract the `instrument` variable after filtering the data by `source = "Provider_B"`. This should resolve the error and provide you with a unique list of values for the `instrument` variable when `source = "Provider_B"`.
+
+
+q: got this error from your code: "Error in `$`(., filter(source == "Provider_B"), instrument) : 
+  3 arguments passed to '$' which requires 2." How to fix it?
+  
+a: The error you encountered is due to the incorrect usage of the `$` operator in the code. To fix this error, you can modify the code as follows:   `unique(ESG_data %>% filter(source == "Provider_B") %>% pull(instrument))`    This code uses the `pull()` function from the `dplyr` package to extract the `instrument` variable after filtering the data by `source = "Provider_B"`. This should resolve the error and provide you with a unique list of values for the `instrument` variable when `source = "Provider_B"`.   
+
+
+# Read in variables, including `dltt` and `dlc` newly downloaded from CRSP-Compustat Merged Database on WRDS
+### (Variables `at sale ceq prcc_f csho` already in the list of variables to download in the WRDS preparation exercise)  
+
+- `datadate` range: 1996-12 to 2024-04
+- ticker symbols (`tic`) in `unique_instruments.csv`, to be saved as `unique_instruments.txt`
+- On CRSP-Compustat Merged web query page, select 
+  - `Ticker Symbol (tic)` 
+  - **Company Codes Upload File** 
+  - `Date Format`: YYYY-MM-DD. (e.g. 1984-07-25)
+  
+- CRSP-Compustat Merged web query page:
+  - https://wrds-www.wharton.upenn.edu/pages/get-data/center-research-security-prices-crsp/annual-update/crspcompustat-merged/fundamentals-annual/
+
+```{r}
+
+ESGscore_TobinsQ <- read.csv("ESGscore_TobinsQ.csv")
+
+```
+
+
+q: How to read in the variables from `ESGscore_TobinsQ.csv` that was newly downloaded from the CRSP-Compustat Merged Database on WRDS?
+
+a: You can use the `read.csv()` function in R to read in the variables from the `ESGscore_TobinsQ.csv` file that was newly downloaded from the CRSP-Compustat Merged Database on WRDS. Here's an example of how you can do it:   `ESGscore_TobinsQ <- read.csv("ESGscore_TobinsQ.csv")`    This code will read in the data from the CSV file and store it in a data frame named `ESGscore_TobinsQ`. You can then use this data frame for further analysis and modeling.
+
+
+q: How to merge the variables, dltt dlc at sale ceq prcc_f csho, from ESGscore_TobinsQ into the ESG_data dataset whenever both of the following conditions are satisfied: (i) the year and month of `date` in `ESG_data` match those of the `datadate` in `ESGscore_TobinsQ` and (ii) `tic` in `ESGscore_TobinsQ` matches `instrument` in `ESG_data`?     
+
+a: You can use the `dplyr` package in R to merge the variables `dltt`, `dlc`, `at`, `sale`, `ceq`, `prcc_f`, and `csho` from the `ESGscore_TobinsQ` dataset into the `ESG_data` dataset whenever both of the following conditions are satisfied: (i) the year and month of `date` in `ESG_data` match those of the `datadate` in `ESGscore_TobinsQ` and (ii) `tic` in `ESGscore_TobinsQ` matches `instrument` in `ESG_data`. Here's an example of how you can do it:   ```{r} library(dplyr) ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate")) ```    This code uses the `left_join()` function from the `dplyr` package to merge the two datasets based on the specified conditions. The resulting merged dataset is stored in a new data frame named `ESG_data_new`. You can then use this merged dataset for your analysis and modeling.
+
+
+q: How to (i) retain only observations in ESG_data_new where source = "Provider_B", (ii) save ESG_data_new in .RData and also write ESG_data_new to a new CSV file, and (ii) remove ESG_data to reduce memory usage?
+a: You can use the following code to achieve the tasks you described:   ```{r} library(dplyr) ESG_data_new <- ESG_data_new %>% filter(source == "Provider_B") save(ESG_data_new, file = "ESG_data_new.RData") write.csv(ESG_data_new, file = "ESG_data_new.csv", row.names = FALSE) rm(ESG_data) ```    This code first filters the `ESG_data_new` dataset to retain only observations where `source = "Provider_B"`. It then saves the filtered dataset as an .RData file named "ESG_data_new.RData" and writes it to a new CSV file named "ESG_data_new.csv". Finally, it removes the original `ESG_data` dataset to reduce memory usage.
+
+
+
+# Merge the variables, dltt dlc at sale ceq prcc_f csho, from ESGscore_TobinsQ into the ESG_data dataset whenever both of the following conditions are satisfied: 
+
+- (i) the year and month of `date` in `ESG_data` match those of the `datadate` in `ESGscore_TobinsQ` and 
+- (ii) `tic` in `ESGscore_TobinsQ` matches `instrument` in `ESG_data`
+
+### _**Note**_: Save the merged dataset as `ESG_data_new` to avoid overwriting the original dataset
+```{r}
+
+library(dplyr)
+
+ESG_data$date <- as.character(ESG_data$date) 
+ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate"))
+
+ESG_data_new <- ESG_data_new %>% filter(source == "Provider_B") 
+save(ESG_data_new, file = "ESG_data_new.RData") 
+write.csv(ESG_data_new, file = "ESG_data_new.csv", row.names = FALSE) 
+rm(ESG_data)
+
+#ESG_data$date <- as.character(ESG_data$date) ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate"))
+
+#ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate"))
+
+```
+
+q: got this error from your code: "Error: unexpected symbol in "library(dplyr) ESG_data_new". How to fix it?
+
+a: The error you encountered is due to the incorrect syntax in the code. To fix this error, you need to separate the library loading and data manipulation steps. Here's the corrected code:   ```{r} library(dplyr) ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate")) ```    This code first loads the `dplyr` package using `library(dplyr)` and then performs the data manipulation step to merge the two datasets. This should resolve the error and create the merged dataset `ESG_data_new` for further analysis.
+
+
+q: got this error: "Error in left_join(., ESGscore_TobinsQ, by = c(instrument = "tic", date = "datadate")) : 
+  
+ℹ `x$date` is a <date>.
+ℹ `y$datadate` is a <character>." How to fix it?
+a: The error you encountered is due to a data type mismatch between the `date` variable in the `ESG_data` dataset and the `datadate` variable in the `ESGscore_TobinsQ` dataset. To fix this error, you need to convert the `date` variable in the `ESG_data` dataset to the same data type as the `datadate` variable in the `ESGscore_TobinsQ` dataset. Here's an example of how you can do it:   ```{r} ESG_data$date <- as.character(ESG_data$date) ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate")) ```    This code converts the `date` variable in the `ESG_data` dataset to a character data type before merging the two datasets. This should resolve the error and allow you to merge the datasets successfully.
+
+
+q: got this error: "Error: unexpected symbol in "ESG_data$date <- as.character(ESG_data$date) ESG_data_new" How to fix it?
+
+a: The error you encountered is due to the incorrect syntax in the code. To fix this error, you need to separate the data type conversion step and the data manipulation step. Here's the corrected code:   ```{r} ESG_data$date <- as.character(ESG_data$date) ESG_data_new <- ESG_data %>% left_join(ESGscore_TobinsQ, by = c("instrument" = "tic", "date" = "datadate")) ```    This code first converts the `date` variable in the `ESG_data` dataset to a character data type using `as.character()` and then performs the data manipulation step to merge the two datasets. This should resolve the error and create the merged dataset `ESG_data_new` for further analysis.
+
+
+---
+
+
+q: How to create a new variable `tobins_q` in the merged dataset `ESG_data_new` using the formula for Tobin's q:   Tobin's q = (Market Value of Equity + Book Value of Liabilities) / Book Value of Total Assets   where Market Value of Equity = `prcc_f` * `csho` and Book Value of Liabilities = `dltt` + `dlc`?  
+
+a: You can create a new variable `tobins_q` in the merged dataset `ESG_data_new` using the formula for Tobin's q. Here's an example of how you can do it:   ```{r} ESG_data_new <- ESG_data_new %>% mutate(tobins_q = ((prcc_f * csho) + dltt + dlc) / at) ```    This code uses the `mutate()` function from the `dplyr` package to create a new variable `tobins_q` in the `ESG_data_new` dataset based on the Tobin's q formula. The resulting dataset will have the new variable `tobins_q` calculated for each observation. You can use this information for further analysis and modeling.
+
+
+q: How to create a new variable `leverage_ratio` in the merged dataset `ESG_data_new` using the formula for leverage ratio:   Leverage Ratio = Total Debt / Total Equity   where Total Debt = `dltt` + `dlc` and Total Equity = `ceq`?
+
+a: You can create a new variable `leverage_ratio` in the merged dataset `ESG_data_new` using the formula for leverage ratio. Here's an example of how you can do it:   ```{r} ESG_data_new <- ESG_data_new %>% mutate(leverage_ratio = (dltt + dlc) / ceq) ```    This code uses the `mutate()` function from the `dplyr` package to create a new variable `leverage_ratio` in the `ESG_data_new` dataset based on the leverage ratio formula. The resulting dataset will have the new variable `leverage_ratio` calculated for each observation. You can use this information for further analysis and modeling.
+
+
+q: How to create a new variable `firm_size` in the merged dataset `ESG_data_new` based on the log value of total assets (`at`)?
+
+a: You can create a new variable `firm_size` in the merged dataset `ESG_data_new` based on the log value of total assets (`at`). Here's an example of how you can do it:   ```{r} ESG_data_new <- ESG_data_new %>% mutate(firm_size = log(at)) ```    This code uses the `mutate()` function from the `dplyr` package to create a new variable `firm_size` in the `ESG_data_new` dataset based on the log value of total assets. The resulting dataset will have the new variable `firm_size` calculated for each observation. You can use this information for further analysis and modeling.
+
+# Create new variables for Tobin's q, leverage ratio, and firm size
+
+```{r}
+
+library(dplyr)
+
+repo_path <- normalizePath(getwd())
+# Add the R-library directory to the search path 
+.libPaths(c(file.path(repo_path, "R_Library"), .libPaths()))
+# Load data from the merged dataset ESG_data_new.RData
+load(file.path(repo_path, "/ESG_data_new.RData"))
+
+ESG_data_new <- ESG_data_new %>% mutate(tobins_q = ((prcc_f * csho) + dltt + dlc) / at)
+ESG_data_new <- ESG_data_new %>% mutate(leverage_ratio = (dltt + dlc) / ceq)
+ESG_data_new <- ESG_data_new %>% mutate(firm_size = log(at))
+
+
+```
+
+q: How to run a regression with Tobin's q as the dependent variable and esg_metric, profit_margin, leverage ratio and firm size as independent variables in the merged dataset ESG_data_new?
+a: You can run a regression with Tobin's q as the dependent variable and esg_metric, profit_margin, leverage ratio, and firm size as independent variables in the merged dataset `ESG_data_new`. Here's an example of how you can do it using the `lm()` function in R:   ```{r} model <- lm(tobins_q ~ esg_metric + profit_margin + leverage_ratio + firm_size, data = ESG_data_new) summary(model) ```    This code fits a linear regression model using the `lm()` function with Tobin's q as the dependent variable and the specified independent variables. The `summary()` function provides a summary of the regression results, including coefficients, standard errors, t-values, and p-values. You can use this information to analyze the relationship between Tobin's q and the independent variables.
+
+
+q: How to interpret the regression results? 
+
+a: The regression results provide information on the relationship between Tobin's q and the independent variables (esg_metric, profit_margin, leverage_ratio, and firm_size) in the merged dataset `ESG_data_new`. Here's how you can interpret the results:   - The coefficients in the regression output represent the estimated effect of each independent variable on Tobin's q.   - The p-values associated with the coefficients indicate the statistical significance of the estimated effects. Lower p-values suggest stronger evidence against the null hypothesis of no effect.   - The R-squared value provides a measure of how well the independent variables explain the variation in Tobin's q. A higher R-squared value indicates a better fit of the model.   - The standard errors, t-values, and confidence intervals provide additional information on the precision and reliability of the coefficient estimates.   - You can use the regression results to draw conclusions about the impact of ESG scores, profit margin, leverage ratio, and firm size on Tobin's q in the dataset.
+
+
+# Run a regression with Tobin's q as the dependent variable and esg_metric, profit_margin, leverage ratio, and firm size as independent variables
+
+```{r}
+
+model <- lm(tobins_q ~ esg_metric + profit_margin + leverage_ratio + firm_size, data = ESG_data_new)
+summary(model)
+
+```
+
+
+
+
