@@ -254,3 +254,261 @@ hh; plot(hh)
 ```
 
 
+=======
+---
+title: "Dieselgate"
+output: html_notebook
+---
+
+# Load required packages
+
+```{r}
+library(erer)  # package erer: Empirical Research in Economics with R
+# erer::evReturn() is a function for event study analysis
+library(tidyquant)  # package for fetching stock data from Yahoo Finance.
+library(dplyr)
+library(readr)
+library(tidyr)
+```
+
+
+# define the event date and the window from which we want to fetch the data of the German auto companies.
+
+```{r}
+
+EventDate = 20150918    # The US-EPA announced VW's fraud publicly on 18.09.2015
+
+startDate = "2013-01-01"   
+endDate = "2015-12-31"
+
+```
+
+
+# focus on three motor manufacturers in Germany, namely
+
+- VW Group
+  - VW
+  - Porsche
+- BMW
+
+
+# fetch the stock data from Yahoo Finance
+
+```{r}
+
+# Stock Data
+firmSymbols <- c("VOW.DE", "PAH3.DE", "BMW.DE")
+firmNames <- c("VW preferred", "Porsche Automobil Hld", "BMW")
+firmSymbols %>% 
+  tidyquant::tq_get(from = startDate, to = endDate) %>% 
+  dplyr::mutate(date = as.numeric(format(date, "%Y%m%d"))) -> firmData
+
+# Note: The date is not regular because there is no trading on weekends and holidays. Therefore, erer::evReturn() needs date to be represented by a number, not in a date format.
+
+for (firm in firmSymbols) {
+  knitr::kable(head(firmData %>% filter(firm == symbol)), pad=10) %>% print()
+}
+
+```
+
+
+# choose the DAX as the reference market index
+
+```{r}
+
+# Index Data
+indexSymbol <- c("^GDAXI")
+indexName <- c("DAX")
+indexSymbol %>% 
+  tidyquant::tq_get(from = startDate, to = endDate) %>%  
+  dplyr::mutate(date = as.numeric(format(date, "%Y%m%d"))) -> indexData
+
+indexData$symbol <- "DAX"
+knitr::kable(head(indexData), pad=10)
+
+```
+
+# Merge stock and index data after saving them as .csv files 
+
+```{r}
+
+# Stock data files for firms and market
+firmData %>% 
+  dplyr::select(symbol, date, adjusted) %>% 
+  readr::write_delim(file      = "02_firmDataPrice.csv", 
+                     delim     = ";", 
+                     col_names = F)
+
+indexData %>% 
+  dplyr::select(symbol, date, adjusted) %>% 
+  readr::write_delim(file      = "03_marketDataPrice.csv", 
+                     delim     = ";", 
+                     col_names = F)
+
+# Merge stock and index data
+evData <- indexData %>%  
+  rename(MktIndex = adjusted) %>%
+  select(date, MktIndex) %>% 
+  right_join(firmData, by="date") %>% 
+  select(-c(open, high, low, close)) %>%   # Remove price columns `open, high, low, close`
+  # The above retains the adjusted price, which is the closing price adjusted for splits and dividends
+  arrange(symbol, date)
+
+summary(evData)
+
+```
+
+
+# Clean data: MktIndex has missing value on 2015-12-25, which is a public holiday!
+
+```{r}
+
+evData_is.na <- evData %>% 
+  filter(is.na(MktIndex))
+
+evData_xmas <- evData %>% 
+  filter(date == 20151225)
+
+evData_0vol <- evData %>% 
+  filter(volume == 0) 
+
+# Verify if the different data cleaning strategies yield the same data
+identical(evData_is.na, evData_xmas)
+identical(evData_is.na, evData_0vol)
+
+# Review why the data cleaning strategies yield different data
+View(evData_0vol)
+
+# Ask Grok: https://grok.com
+#   What happened to the stocks of BMW and VOW on 2014-03-18? They have zero trading volume.
+
+# Finalize the data cleaning strategy
+evData_cleaned <- evData %>% 
+  filter(!is.na(MktIndex))   # ! (or != ) is the negation of a condition
+
+```
+
+
+# Housekeeping: Remove dataframe objects no longer needed, garbage collect, and restart R session
+
+```{r}
+
+# Remove dataframe objects no longer needed
+rm(list = setdiff(ls()[sapply(ls(), function(x) is.data.frame(get(x)))], "evData_cleaned"))
+
+# Garbage collection to regain leaked memory
+gc()
+
+# Restart R without removing the environment (only works on Posit Cloud)
+#rstudioapi::restartSession()   
+
+```
+
+
+# Prepare the data for the event study analysis  
+```{r}
+
+evData_final <- evData_cleaned %>% 
+  # arrange(symbol, date) %>%                  # For explaining the importance of group_by() operations
+  # mutate(lag_adjusted = lag(adjusted)) %>%   # For explaining the importance of group_by() operations
+  group_by(symbol) %>%  # For panel date, must group by each stock to calculate returns for each stock
+    arrange(date) %>%   # Make sure date is in ascending order before applying the function lag()
+    mutate(
+      ret = (adjusted/lag(adjusted)) - 1,          # raw stock return
+      MktIndexRet = (MktIndex/lag(MktIndex)) - 1,  # market index return
+      ) %>%
+    filter(!is.na(ret)) %>%  # keep only rows with non-missing ret_mkt 
+    # mutate(
+    #   t = row_number(),  # create t to indicate the time sequence as required by some event study packages
+    #   ) %>%
+  ungroup() %>%   # Good practice to ungroup() after operations requiring group_by() are done
+  arrange(symbol, date) %>% 
+  mutate(
+    ret_mkt = ret - MktIndexRet,  # market-adjusted stock return
+    # log_vol = log(volume + 1),     # define logVol as a control var. ; add 1 to avoid log(0) = -Inf
+    # id = as.numeric(factor(symbol)),  # convert symbol to a number as required by some event study packages
+    # eventtime = EventDate,  
+    # eventON = ifelse(date >= eventtime, 1, 0),  # indicate whether the event has occurred
+  ) %>% 
+  select(symbol, 
+         # id, eventtime, t, eventON, 
+         date, ret_mkt, 
+         # log_vol, 
+         everything()) # organize the columns  
+
+summary(evData_final)
+
+```
+
+
+#============================================================================================
+
+# The parameters for this Event Study are:
+
+  - Estimation window of the market model: 250 days
+  - Event window: -10 to 10 days
+  - Event date: 18 September 2015   (The date on which US-EPA announced VW's fraud publicly)
+
+# The three motor manufacturers in Germany considered here:
+
+- VW Group
+  - VW
+  - Porsche
+- BMW
+
+
+# Event Study analysis by erer::evReturn()
+### BMW
+
+```{r}
+
+# Prepare data for event study analysis by erer::evReturn()
+data_evReturn <- evData_final %>%  
+  select(symbol, date, MktIndexRet, ret) %>%  
+  tidyr::spread(key=symbol, value=ret)  # spread() reorganizes the data in the format required by erer::evReturn()
+# Note: The raw return (ret) of each stock is used here because erer::evReturn() calculates the abnormal return internally from the normal return estimated with a market model based on MktIndexRet specified in the function call below.
+
+# event analysis for multiple firms and one event window
+hh0 <- evReturn(
+  y = data_evReturn,        # data for the event study analysis
+  firm = c("BMW.DE"),       # raw stock return columns used in the analysis 
+  y.date = "date",          # date column in the data
+  index = "MktIndexRet",    # market index return column in the data
+  est.win = 250,            # Estimation window for the market model: 250 trading days ~ 1 calendar year
+  event.date = EventDate,   # date of the event
+  event.win = 10            # Event window: -10 to 10 days around the event date
+  )   
+hh0; plot(hh0)
+
+```
+
+# Event Study analysis by erer::evReturn()
+### VW Group: VW and Porsche
+
+```{r}
+
+# event analysis for multiple firms and one event window
+hh <- evReturn(
+  y = data_evReturn,             # data for the event study analysis
+  firm = c("VOW.DE", "PAH3.DE"), # raw stock return columns used in the analysis 
+  y.date = "date",               # date column in the data
+  index = "MktIndexRet",         # market index return column in the data
+  est.win = 250,                 # Estimation window for the market model: 250 trading days ~ 1 calendar year
+  event.date = EventDate,        # date of the event
+  event.win = 10                 # Event window: -10 to 10 days around the event date
+  )
+hh; plot(hh)
+
+#===============================================================================================
+# Details about the analysis output hh:
+# 
+# Ait.FirmX = hh$abr$Ait.FirmX = abnormal return (AR) of FirmX for period t in the event window
+# HNt = The average AR across firms for period t in the event window
+# CiT.FirmX = hh$abc$Cit.FirmX = sum(hh$abr$Ait.FirmX) 
+#   = The cumulative abnormal return (CAR) of FirmX, where FirmX = {VOW.DE, PAH3.DE}
+# GNT = The average CAR across firms
+
+```
+
+
+>>>>>>> edf37a385343bb258421cccfbbcedc3ca131612f
