@@ -35,7 +35,7 @@ load("ESG_data_new.RData")
 ESG_data_scope <- ESG_data_new %>% 
   mutate(
     scope = scope_1 + scope_2 + scope_3,  # Sum of Scope 1, 2, and 3 emissions
-    lscope = log(scope + 1),  # Log transformation of scope_1 variable
+    lscope = log(scope + 1),  # Log transformation of the scope variable
     lscope_decile = ntile(lscope, 10),  # Divide lscope into 10 deciles for later analysis
     date = as.numeric(gsub("-", "", date)),  # Convert date in character type to numeric  
     YearMonth = as.numeric(substr(date, 1, 6)),  # YearMonth of an observation
@@ -69,7 +69,7 @@ ESG_data_scope <- ESG_data_new %>%
 
   - Units with lscope outside the range are used as the control group
   - Assumption: 
-    - Companies with lscope at the two tails are likely to be constrained by structural factors (e.g., moral commitment or fundamental nature of a business) and hence unlikely to be influenced by any policy change
+    - Companies with lscope in the tails are likely to be constrained by structural factors (e.g., moral commitment or fundamental nature of a business) and hence, relatively speaking, unlikely to be influenced by any policy change
     
 ```{r}
 
@@ -121,15 +121,15 @@ ESG_data_scope %>%
 
   - Variation in treatment timing (i.e., units can become treated at different points in time)
 
-- The `ESG_data_scope` dataset prepared earlier contains 4 years of monthly data during the period of the first Trump administration (November 2016 to October 2020). The important variables are: 
+- The `ESG_data_scope` dataset prepared earlier above contains 1 year of monthly data during year 2017 in the period of the first Trump administration (November 2016 to October 2020). The important variables are: 
 
-  - **lscope**: The log value of Scope 1 emissions as the `outcome` variable in DiD analysis
+  - **lscope**: The log value of scope emissions as the `outcome` variable in DiD analysis
   
   - **YearMonth**: The year-month of an observation as the `time period` variable (integer) in DiD analysis
   
-  - **first.treat**: The first time period when a unit is treated (e.g., when the direct greenhouse gas emission of a company is influenced by a policy change). It is the `group` variable in DiD analysis that defines the treatment timing. 
+  - **first.treat**: The first time period when a unit is treated (e.g., when the total greenhouse gas emission of a company may be influenced by a policy change). It is the `group` variable in DiD analysis that defines the treatment timing. 
     - Set `first.treat = 0` for units in the **control group**, which are never treated
-    - In this example, **green** companies (with `lscope <= LogThreshold`) are used as the control group (assumed to be unaffected by a policy change)
+    - In this example, companies in the tails (i.e., `lscope < lowerlim` or `lscope > upperlim`) are used as the control group (assumed to be less likely to be influenced by a policy change)
   
   - **GVKEY**:  The GVKEY of a company as the `id name` variable in DiD analysis, i.e., the individual (cross-sectional unit) identifier, which must be numeric as required by `did`. 
   
@@ -138,11 +138,9 @@ ESG_data_scope %>%
 
 # Estimate the group-time average treatment effects using the `att_gt()` function
 
-- Set first.treat = withdrawParis
-
 ```{r}
 
-# Set first.treat to withdrawParis
+# Set first.treat to withdrawParis unless a unit is in the control group (i.e., lscope in the tails) 
 ESG_data_scope <- ESG_data_scope %>% 
   mutate(
     first.treat = ifelse(lscope >= lowerlim & lscope <= upperlim, 0, !!sym(Event))  # Define the first.treat variable
