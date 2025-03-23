@@ -2,10 +2,16 @@
 FROM rocker/r-ver:4.4.2
 
 # Install Python and radian
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+#RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+# Install Python 3.11 and radian
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y python3.11 python3.11-venv python3.11-dev python3-pip
 
 # Create a virtual environment and install required Python packages
-RUN python3 -m venv /opt/venv && \
+RUN python3.11 -m venv /opt/venv && \
     /opt/venv/bin/pip install \
     radian \
     pandas \
@@ -15,6 +21,7 @@ RUN python3 -m venv /opt/venv && \
     llama_parse \
     pyppeteer \
     playwright \
+    pycaret \
     rclone \
     jupyter \
     ipykernel \
@@ -158,7 +165,7 @@ RUN /opt/venv/bin/playwright install-deps
 # Install R packages
 RUN ls -la /usr/local/lib/R/site-library && \
     ls -la /usr/local/lib && \
-    R -e 'print(getwd()); install.packages(c("languageserver", "tidyverse", "lubridate", "kableExtra"), repos="http://cran.rstudio.com/")' && \
+    R -e 'print(getwd()); install.packages(c("languageserver", "tidyverse", "lubridate", "kableExtra", "tidyquant"), repos="http://cran.rstudio.com/")' && \
     ls -la /usr/local/lib/R/site-library 
 
 # Ensure the virtual environment is activated and start Jupyter Notebook
