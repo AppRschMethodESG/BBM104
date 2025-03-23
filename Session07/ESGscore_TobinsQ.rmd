@@ -270,6 +270,16 @@ q: got this error from your code: "Error in `$`(., filter(source == "Provider_B"
 a: The error you encountered is due to the incorrect usage of the `$` operator in the code. To fix this error, you can modify the code as follows:   `unique(ESG_data %>% filter(source == "Provider_B") %>% pull(instrument))`    This code uses the `pull()` function from the `dplyr` package to extract the `instrument` variable after filtering the data by `source = "Provider_B"`. This should resolve the error and provide you with a unique list of values for the `instrument` variable when `source = "Provider_B"`.   
 
 
+# Filter the ESG_data dataset for `source = "Provider_B"` and write the data to a CSV file for later use in Session 9
+
+```{r}
+
+ESG_data_Provider_B <- ESG_data %>% filter(source == "Provider_B")
+write.csv(ESG_data_Provider_B, file = "ESG_data_Provider_B.csv", row.names = FALSE)
+
+```
+
+
 # Read in variables, including `dltt` and `dlc` newly downloaded from CRSP-Compustat Merged Database on WRDS
 ### (Variables `at sale ceq prcc_f csho` already in the list of variables to download in the WRDS preparation exercise)  
 
