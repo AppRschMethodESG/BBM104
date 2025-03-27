@@ -8,7 +8,7 @@ const topLevelURL = 'https://www.siemens.com/global/en/company/investor-relation
 //==============================================================================
 // This flag determines whether there are hidden elements that need to be expanded
 const ExpandHiddenParts = true; // false; // 
-const yearStart = 2023;
+const yearStart = 2019;  // 2023;
 const yearEnd = 2014;
 const years = Array.from({ length: yearStart - yearEnd + 1 }, (_, i) => yearStart - i);
 //==============================================================================
