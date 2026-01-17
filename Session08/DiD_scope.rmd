@@ -19,6 +19,8 @@ library(ggplot2)
 ```
 
 
+
+
 # Data preparation
 
 - Load ESG data from Provider_B
